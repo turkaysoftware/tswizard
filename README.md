@@ -1,4 +1,5 @@
 # TS Wizard - Türkay Software Software Solutions
+# Soon to be released
 
 **TS Wizard** is a powerful **central management software** created by **Eray Türkay**, programmed to enable you to use and manage all Türkay Software software under one roof. It is extremely easy to use with a **simple, user-friendly** interface.
 
