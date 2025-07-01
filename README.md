@@ -48,6 +48,7 @@ With these instructions, you can download and use the correct version of TS Wiza
 
 - English
 - Turkish
+- **For translation support: [Translation Guide for TS Wizard](https://github.com/turkaysoftware/tswizard/discussions/1)**
 
 # Supported Themes
 
