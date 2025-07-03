@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Main Files\\TSWizard\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5CF211E9-3C8C-48A0-A5FA-CADA31E0B3F4}|TSWizard.csproj|e:\\main files\\tswizard\\ts_wizard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5CF211E9-3C8C-48A0-A5FA-CADA31E0B3F4}|TSWizard.csproj|solutionrelative:ts_wizard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CF211E9-3C8C-48A0-A5FA-CADA31E0B3F4}|TSWizard.csproj|E:\\Main Files\\TSWizard\\ts_wizard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CF211E9-3C8C-48A0-A5FA-CADA31E0B3F4}|TSWizard.csproj|solutionrelative:ts_wizard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TS_Wizard.cs",
+              "DocumentMoniker": "E:\\Main Files\\TSWizard\\TS_Wizard.cs",
+              "RelativeDocumentMoniker": "TS_Wizard.cs",
+              "ToolTip": "E:\\Main Files\\TSWizard\\TS_Wizard.cs",
+              "RelativeToolTip": "TS_Wizard.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T03:58:38.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TS_Wizard.cs [Tasar\u0131m]",
+              "DocumentMoniker": "E:\\Main Files\\TSWizard\\TS_Wizard.cs",
+              "RelativeDocumentMoniker": "TS_Wizard.cs",
+              "ToolTip": "E:\\Main Files\\TSWizard\\TS_Wizard.cs [Tasar\u0131m]",
+              "RelativeToolTip": "TS_Wizard.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T23:50:36.399Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
