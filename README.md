@@ -68,3 +68,26 @@ With these instructions, you can download and use the correct version of TS Wiza
 | OS: | Windows 10 x64 | Windows 10 22H2 x64|
 | RAM: | 50 MB Free RAM | 100 MB Free RAM |
 | .NET: | .NET Framework 4.8.1 | .NET Framework 4.8.1 |
+
+# Shortcut Key Layouts
+
+| Main Features | Key |
+| -- | :--: |
+| **Theme:** Light | F1 |
+| **Theme:** Dark | F2 |
+| **Start:** Windowed | F3 |
+| **Start:** Full Screen | F4 |
+| **Window Behavior:** Minimize to Icon | F5 |
+| **Window Behavior:** Turn Off Software | F6 |
+| **Update Notifications:** On | F7 |
+| **Update Notifications:** Off | F8 |
+| **Architecture Mode:** x64 (**64 Bit CPU**) | CTRL + 1 |
+| **Architecture Mode:** ARM64 (**ARM CPU**) | CTRL + 2 |
+| **Architecture Mode:** Manual Selection | CTRL + 3 |
+| **Check for Updates** | CTRL + R |
+
+| Extras | Key |
+| -- | :--: |
+| **Check Update** | F11 |
+| **About** | F12 |
+| **TS Wizard** | CTRL + Shift + S |
