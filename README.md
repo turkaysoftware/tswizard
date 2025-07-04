@@ -1,4 +1,4 @@
-# TS Wizard - Türkay Software Software Solutions
+# TS Wizard - Software Solutions
 
 Hi there! I'm an open-source developer doing my best to contribute and build tools that (hopefully) make your life a bit easier. If you’ve found my work helpful or interesting, consider buying me a coffee to show your support! 💛
 
