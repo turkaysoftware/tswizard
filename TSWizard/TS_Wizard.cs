@@ -198,7 +198,7 @@ namespace TSWizard{
             // RUN ENGINE
             RunSoftwareEngine();
             // UPDATE CHECKER
-            // Task softwareUpdateCheck = Task.Run(() => software_update_check(0));
+            Task softwareUpdateCheck = Task.Run(() => software_update_check(0));
             // SERVER CONNECTION DELAY
             Task ts_website_control = Task.Run(() => { ts_website_uptime_module(); });
             // AUTOMATIC UPDATE CONTROLLER
