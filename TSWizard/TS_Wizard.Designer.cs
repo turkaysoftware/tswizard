@@ -109,6 +109,7 @@
             this.showAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.softwareUpdateCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bmacToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BackPanel.SuspendLayout();
             this.InTLP.SuspendLayout();
             this.MPanelYamira.SuspendLayout();
@@ -841,6 +842,7 @@
             this.HeaderMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
             this.checkForSoftwareUpdateToolStripMenuItem,
+            this.bmacToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.HeaderMenu.Location = new System.Drawing.Point(0, 0);
             this.HeaderMenu.Name = "HeaderMenu";
@@ -1091,6 +1093,16 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // bmacToolStripMenuItem
+            // 
+            this.bmacToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bmacToolStripMenuItem.Name = "bmacToolStripMenuItem";
+            this.bmacToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.D)));
+            this.bmacToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.bmacToolStripMenuItem.Text = "Bmac";
+            this.bmacToolStripMenuItem.Click += new System.EventHandler(this.bmacToolStripMenuItem_Click);
+            // 
             // TS_Wizard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1224,6 +1236,7 @@
         private System.Windows.Forms.LinkLabel MPanelVimeraLinkText;
         private System.Windows.Forms.PictureBox MPanelGlowShortcutBtn;
         private System.Windows.Forms.LinkLabel MPanelGlowLinkText;
+        private System.Windows.Forms.ToolStripMenuItem bmacToolStripMenuItem;
     }
 }
 

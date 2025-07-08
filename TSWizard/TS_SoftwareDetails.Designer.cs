@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TS_SoftwareDetails));
             this.BackPanel = new System.Windows.Forms.Panel();
+            this.SInfoDetail = new System.Windows.Forms.Label();
             this.InPanel = new System.Windows.Forms.Panel();
             this.SPanel11 = new System.Windows.Forms.Panel();
             this.BSLinkTS = new System.Windows.Forms.LinkLabel();
@@ -97,20 +98,33 @@
             // 
             // BackPanel
             // 
+            this.BackPanel.Controls.Add(this.SInfo);
+            this.BackPanel.Controls.Add(this.SInfoDetail);
             this.BackPanel.Controls.Add(this.InPanel);
             this.BackPanel.Controls.Add(this.TLinkInstagram);
             this.BackPanel.Controls.Add(this.TLinkGitHub);
             this.BackPanel.Controls.Add(this.TLinkWebSite);
             this.BackPanel.Controls.Add(this.TLinkX);
-            this.BackPanel.Controls.Add(this.SInfo);
             this.BackPanel.Controls.Add(this.SName);
             this.BackPanel.Controls.Add(this.SLogo);
             this.BackPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BackPanel.Location = new System.Drawing.Point(0, 0);
             this.BackPanel.Name = "BackPanel";
             this.BackPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.BackPanel.Size = new System.Drawing.Size(806, 551);
+            this.BackPanel.Size = new System.Drawing.Size(934, 561);
             this.BackPanel.TabIndex = 0;
+            // 
+            // SInfoDetail
+            // 
+            this.SInfoDetail.AutoSize = true;
+            this.SInfoDetail.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.SInfoDetail.ForeColor = System.Drawing.Color.White;
+            this.SInfoDetail.Location = new System.Drawing.Point(100, 67);
+            this.SInfoDetail.Margin = new System.Windows.Forms.Padding(3, 0, 3, 7);
+            this.SInfoDetail.Name = "SInfoDetail";
+            this.SInfoDetail.Size = new System.Drawing.Size(77, 19);
+            this.SInfoDetail.TabIndex = 2;
+            this.SInfoDetail.Text = "N/A Bilgisi";
             // 
             // InPanel
             // 
@@ -127,11 +141,11 @@
             this.InPanel.Controls.Add(this.SPanel2);
             this.InPanel.Controls.Add(this.SPanel1);
             this.InPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.InPanel.Location = new System.Drawing.Point(10, 111);
+            this.InPanel.Location = new System.Drawing.Point(10, 121);
             this.InPanel.Name = "InPanel";
             this.InPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.InPanel.Size = new System.Drawing.Size(786, 430);
-            this.InPanel.TabIndex = 2;
+            this.InPanel.Size = new System.Drawing.Size(914, 430);
+            this.InPanel.TabIndex = 3;
             // 
             // SPanel11
             // 
@@ -140,10 +154,10 @@
             this.SPanel11.Controls.Add(this.BSLinkPN);
             this.SPanel11.Controls.Add(this.BSLinkGitHub);
             this.SPanel11.Controls.Add(this.LLink);
-            this.SPanel11.Location = new System.Drawing.Point(526, 294);
+            this.SPanel11.Location = new System.Drawing.Point(612, 294);
             this.SPanel11.Name = "SPanel11";
             this.SPanel11.Padding = new System.Windows.Forms.Padding(10);
-            this.SPanel11.Size = new System.Drawing.Size(254, 130);
+            this.SPanel11.Size = new System.Drawing.Size(296, 130);
             this.SPanel11.TabIndex = 10;
             // 
             // BSLinkTS
@@ -155,7 +169,7 @@
             this.BSLinkTS.LinkColor = System.Drawing.Color.DeepSkyBlue;
             this.BSLinkTS.Location = new System.Drawing.Point(10, 89);
             this.BSLinkTS.Name = "BSLinkTS";
-            this.BSLinkTS.Size = new System.Drawing.Size(234, 25);
+            this.BSLinkTS.Size = new System.Drawing.Size(276, 25);
             this.BSLinkTS.TabIndex = 3;
             this.BSLinkTS.TabStop = true;
             this.BSLinkTS.Text = "N/A Website";
@@ -171,7 +185,7 @@
             this.BSLinkPN.LinkColor = System.Drawing.Color.DeepSkyBlue;
             this.BSLinkPN.Location = new System.Drawing.Point(10, 64);
             this.BSLinkPN.Name = "BSLinkPN";
-            this.BSLinkPN.Size = new System.Drawing.Size(234, 25);
+            this.BSLinkPN.Size = new System.Drawing.Size(276, 25);
             this.BSLinkPN.TabIndex = 2;
             this.BSLinkPN.TabStop = true;
             this.BSLinkPN.Text = "N/A Yama Notları";
@@ -187,7 +201,7 @@
             this.BSLinkGitHub.LinkColor = System.Drawing.Color.DeepSkyBlue;
             this.BSLinkGitHub.Location = new System.Drawing.Point(10, 39);
             this.BSLinkGitHub.Name = "BSLinkGitHub";
-            this.BSLinkGitHub.Size = new System.Drawing.Size(234, 25);
+            this.BSLinkGitHub.Size = new System.Drawing.Size(276, 25);
             this.BSLinkGitHub.TabIndex = 1;
             this.BSLinkGitHub.TabStop = true;
             this.BSLinkGitHub.Text = "N/A GitHub";
@@ -216,7 +230,7 @@
             this.SPanel10.Location = new System.Drawing.Point(6, 294);
             this.SPanel10.Name = "SPanel10";
             this.SPanel10.Padding = new System.Windows.Forms.Padding(10);
-            this.SPanel10.Size = new System.Drawing.Size(514, 130);
+            this.SPanel10.Size = new System.Drawing.Size(600, 130);
             this.SPanel10.TabIndex = 9;
             // 
             // LSystemReq_V
@@ -251,10 +265,10 @@
             this.SPanel9.BackColor = System.Drawing.Color.Black;
             this.SPanel9.Controls.Add(this.LDependence_V);
             this.SPanel9.Controls.Add(this.LDependence);
-            this.SPanel9.Location = new System.Drawing.Point(526, 198);
+            this.SPanel9.Location = new System.Drawing.Point(612, 198);
             this.SPanel9.Name = "SPanel9";
             this.SPanel9.Padding = new System.Windows.Forms.Padding(10);
-            this.SPanel9.Size = new System.Drawing.Size(254, 90);
+            this.SPanel9.Size = new System.Drawing.Size(296, 90);
             this.SPanel9.TabIndex = 8;
             // 
             // LDependence_V
@@ -265,7 +279,7 @@
             this.LDependence_V.Location = new System.Drawing.Point(10, 39);
             this.LDependence_V.Margin = new System.Windows.Forms.Padding(3, 0, 3, 7);
             this.LDependence_V.Name = "LDependence_V";
-            this.LDependence_V.Size = new System.Drawing.Size(234, 40);
+            this.LDependence_V.Size = new System.Drawing.Size(276, 40);
             this.LDependence_V.TabIndex = 1;
             this.LDependence_V.Text = "N/A";
             // 
@@ -288,10 +302,10 @@
             this.SPanel8.BackColor = System.Drawing.Color.Black;
             this.SPanel8.Controls.Add(this.LCodeTypeLicense_V);
             this.SPanel8.Controls.Add(this.LCodeTypeLicense);
-            this.SPanel8.Location = new System.Drawing.Point(266, 198);
+            this.SPanel8.Location = new System.Drawing.Point(308, 198);
             this.SPanel8.Name = "SPanel8";
             this.SPanel8.Padding = new System.Windows.Forms.Padding(10);
-            this.SPanel8.Size = new System.Drawing.Size(254, 90);
+            this.SPanel8.Size = new System.Drawing.Size(298, 90);
             this.SPanel8.TabIndex = 7;
             // 
             // LCodeTypeLicense_V
@@ -302,7 +316,7 @@
             this.LCodeTypeLicense_V.Location = new System.Drawing.Point(10, 39);
             this.LCodeTypeLicense_V.Margin = new System.Windows.Forms.Padding(3, 0, 3, 7);
             this.LCodeTypeLicense_V.Name = "LCodeTypeLicense_V";
-            this.LCodeTypeLicense_V.Size = new System.Drawing.Size(234, 40);
+            this.LCodeTypeLicense_V.Size = new System.Drawing.Size(278, 40);
             this.LCodeTypeLicense_V.TabIndex = 1;
             this.LCodeTypeLicense_V.Text = "N/A";
             // 
@@ -328,7 +342,7 @@
             this.SPanel7.Location = new System.Drawing.Point(6, 198);
             this.SPanel7.Name = "SPanel7";
             this.SPanel7.Padding = new System.Windows.Forms.Padding(10);
-            this.SPanel7.Size = new System.Drawing.Size(254, 90);
+            this.SPanel7.Size = new System.Drawing.Size(296, 90);
             this.SPanel7.TabIndex = 6;
             // 
             // LSuppThemes_V
@@ -339,7 +353,7 @@
             this.LSuppThemes_V.Location = new System.Drawing.Point(10, 39);
             this.LSuppThemes_V.Margin = new System.Windows.Forms.Padding(3, 0, 3, 7);
             this.LSuppThemes_V.Name = "LSuppThemes_V";
-            this.LSuppThemes_V.Size = new System.Drawing.Size(234, 40);
+            this.LSuppThemes_V.Size = new System.Drawing.Size(276, 40);
             this.LSuppThemes_V.TabIndex = 1;
             this.LSuppThemes_V.Text = "N/A";
             // 
@@ -362,10 +376,10 @@
             this.SPanel6.BackColor = System.Drawing.Color.Black;
             this.SPanel6.Controls.Add(this.LSuppLanguage_V);
             this.SPanel6.Controls.Add(this.LSuppLanguage);
-            this.SPanel6.Location = new System.Drawing.Point(526, 102);
+            this.SPanel6.Location = new System.Drawing.Point(612, 102);
             this.SPanel6.Name = "SPanel6";
             this.SPanel6.Padding = new System.Windows.Forms.Padding(10);
-            this.SPanel6.Size = new System.Drawing.Size(254, 90);
+            this.SPanel6.Size = new System.Drawing.Size(296, 90);
             this.SPanel6.TabIndex = 5;
             // 
             // LSuppLanguage_V
@@ -376,7 +390,7 @@
             this.LSuppLanguage_V.Location = new System.Drawing.Point(10, 39);
             this.LSuppLanguage_V.Margin = new System.Windows.Forms.Padding(3, 0, 3, 7);
             this.LSuppLanguage_V.Name = "LSuppLanguage_V";
-            this.LSuppLanguage_V.Size = new System.Drawing.Size(234, 40);
+            this.LSuppLanguage_V.Size = new System.Drawing.Size(276, 40);
             this.LSuppLanguage_V.TabIndex = 1;
             this.LSuppLanguage_V.Text = "N/A";
             // 
@@ -399,10 +413,10 @@
             this.SPanel5.BackColor = System.Drawing.Color.Black;
             this.SPanel5.Controls.Add(this.LArch_V);
             this.SPanel5.Controls.Add(this.LArch);
-            this.SPanel5.Location = new System.Drawing.Point(266, 102);
+            this.SPanel5.Location = new System.Drawing.Point(308, 102);
             this.SPanel5.Name = "SPanel5";
             this.SPanel5.Padding = new System.Windows.Forms.Padding(10);
-            this.SPanel5.Size = new System.Drawing.Size(254, 90);
+            this.SPanel5.Size = new System.Drawing.Size(298, 90);
             this.SPanel5.TabIndex = 4;
             // 
             // LArch_V
@@ -413,7 +427,7 @@
             this.LArch_V.Location = new System.Drawing.Point(10, 41);
             this.LArch_V.Margin = new System.Windows.Forms.Padding(3, 0, 3, 7);
             this.LArch_V.Name = "LArch_V";
-            this.LArch_V.Size = new System.Drawing.Size(234, 40);
+            this.LArch_V.Size = new System.Drawing.Size(278, 40);
             this.LArch_V.TabIndex = 1;
             this.LArch_V.Text = "N/A";
             // 
@@ -439,7 +453,7 @@
             this.SPanel4.Location = new System.Drawing.Point(6, 102);
             this.SPanel4.Name = "SPanel4";
             this.SPanel4.Padding = new System.Windows.Forms.Padding(10);
-            this.SPanel4.Size = new System.Drawing.Size(254, 90);
+            this.SPanel4.Size = new System.Drawing.Size(296, 90);
             this.SPanel4.TabIndex = 3;
             // 
             // LPlatform_V
@@ -450,7 +464,7 @@
             this.LPlatform_V.Location = new System.Drawing.Point(10, 41);
             this.LPlatform_V.Margin = new System.Windows.Forms.Padding(3, 0, 3, 7);
             this.LPlatform_V.Name = "LPlatform_V";
-            this.LPlatform_V.Size = new System.Drawing.Size(234, 40);
+            this.LPlatform_V.Size = new System.Drawing.Size(276, 40);
             this.LPlatform_V.TabIndex = 1;
             this.LPlatform_V.Text = "N/A";
             // 
@@ -473,10 +487,10 @@
             this.SPanel3.BackColor = System.Drawing.Color.Black;
             this.SPanel3.Controls.Add(this.LVersion_V);
             this.SPanel3.Controls.Add(this.LVersion);
-            this.SPanel3.Location = new System.Drawing.Point(526, 6);
+            this.SPanel3.Location = new System.Drawing.Point(612, 6);
             this.SPanel3.Name = "SPanel3";
             this.SPanel3.Padding = new System.Windows.Forms.Padding(10);
-            this.SPanel3.Size = new System.Drawing.Size(254, 90);
+            this.SPanel3.Size = new System.Drawing.Size(296, 90);
             this.SPanel3.TabIndex = 2;
             // 
             // LVersion_V
@@ -487,7 +501,7 @@
             this.LVersion_V.Location = new System.Drawing.Point(10, 39);
             this.LVersion_V.Margin = new System.Windows.Forms.Padding(3, 0, 3, 7);
             this.LVersion_V.Name = "LVersion_V";
-            this.LVersion_V.Size = new System.Drawing.Size(234, 40);
+            this.LVersion_V.Size = new System.Drawing.Size(276, 40);
             this.LVersion_V.TabIndex = 1;
             this.LVersion_V.Text = "N/A";
             // 
@@ -510,10 +524,10 @@
             this.SPanel2.BackColor = System.Drawing.Color.Black;
             this.SPanel2.Controls.Add(this.LCopyright_V);
             this.SPanel2.Controls.Add(this.LCopyright);
-            this.SPanel2.Location = new System.Drawing.Point(266, 6);
+            this.SPanel2.Location = new System.Drawing.Point(308, 6);
             this.SPanel2.Name = "SPanel2";
             this.SPanel2.Padding = new System.Windows.Forms.Padding(10);
-            this.SPanel2.Size = new System.Drawing.Size(254, 90);
+            this.SPanel2.Size = new System.Drawing.Size(298, 90);
             this.SPanel2.TabIndex = 1;
             // 
             // LCopyright_V
@@ -524,7 +538,7 @@
             this.LCopyright_V.Location = new System.Drawing.Point(10, 39);
             this.LCopyright_V.Margin = new System.Windows.Forms.Padding(3, 0, 3, 7);
             this.LCopyright_V.Name = "LCopyright_V";
-            this.LCopyright_V.Size = new System.Drawing.Size(234, 40);
+            this.LCopyright_V.Size = new System.Drawing.Size(278, 40);
             this.LCopyright_V.TabIndex = 1;
             this.LCopyright_V.Text = "N/A";
             // 
@@ -550,7 +564,7 @@
             this.SPanel1.Location = new System.Drawing.Point(6, 6);
             this.SPanel1.Name = "SPanel1";
             this.SPanel1.Padding = new System.Windows.Forms.Padding(10);
-            this.SPanel1.Size = new System.Drawing.Size(254, 90);
+            this.SPanel1.Size = new System.Drawing.Size(296, 90);
             this.SPanel1.TabIndex = 0;
             // 
             // LDeveloper_V
@@ -561,7 +575,7 @@
             this.LDeveloper_V.Location = new System.Drawing.Point(10, 39);
             this.LDeveloper_V.Margin = new System.Windows.Forms.Padding(3, 0, 3, 7);
             this.LDeveloper_V.Name = "LDeveloper_V";
-            this.LDeveloper_V.Size = new System.Drawing.Size(234, 40);
+            this.LDeveloper_V.Size = new System.Drawing.Size(276, 40);
             this.LDeveloper_V.TabIndex = 1;
             this.LDeveloper_V.Text = "N/A";
             // 
@@ -584,7 +598,7 @@
             this.TLinkInstagram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
             this.TLinkInstagram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.TLinkInstagram.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TLinkInstagram.Location = new System.Drawing.Point(726, 50);
+            this.TLinkInstagram.Location = new System.Drawing.Point(854, 51);
             this.TLinkInstagram.Name = "TLinkInstagram";
             this.TLinkInstagram.Size = new System.Drawing.Size(32, 32);
             this.TLinkInstagram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -597,7 +611,7 @@
             this.TLinkGitHub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
             this.TLinkGitHub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.TLinkGitHub.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TLinkGitHub.Location = new System.Drawing.Point(764, 50);
+            this.TLinkGitHub.Location = new System.Drawing.Point(892, 51);
             this.TLinkGitHub.Name = "TLinkGitHub";
             this.TLinkGitHub.Size = new System.Drawing.Size(32, 32);
             this.TLinkGitHub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -610,7 +624,7 @@
             this.TLinkWebSite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
             this.TLinkWebSite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.TLinkWebSite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TLinkWebSite.Location = new System.Drawing.Point(726, 12);
+            this.TLinkWebSite.Location = new System.Drawing.Point(854, 13);
             this.TLinkWebSite.Name = "TLinkWebSite";
             this.TLinkWebSite.Size = new System.Drawing.Size(32, 32);
             this.TLinkWebSite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -623,7 +637,7 @@
             this.TLinkX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
             this.TLinkX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.TLinkX.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TLinkX.Location = new System.Drawing.Point(764, 12);
+            this.TLinkX.Location = new System.Drawing.Point(892, 13);
             this.TLinkX.Name = "TLinkX";
             this.TLinkX.Size = new System.Drawing.Size(32, 32);
             this.TLinkX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -636,8 +650,8 @@
             this.SInfo.AutoSize = true;
             this.SInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.SInfo.ForeColor = System.Drawing.Color.White;
-            this.SInfo.Location = new System.Drawing.Point(98, 54);
-            this.SInfo.Margin = new System.Windows.Forms.Padding(3, 0, 3, 7);
+            this.SInfo.Location = new System.Drawing.Point(100, 36);
+            this.SInfo.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
             this.SInfo.Name = "SInfo";
             this.SInfo.Size = new System.Drawing.Size(88, 19);
             this.SInfo.TabIndex = 1;
@@ -648,7 +662,7 @@
             this.SName.AutoSize = true;
             this.SName.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.SName.ForeColor = System.Drawing.Color.Lime;
-            this.SName.Location = new System.Drawing.Point(97, 26);
+            this.SName.Location = new System.Drawing.Point(98, 10);
             this.SName.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.SName.Name = "SName";
             this.SName.Size = new System.Drawing.Size(124, 25);
@@ -676,15 +690,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(806, 551);
+            this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.BackPanel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(822, 590);
+            this.MaximumSize = new System.Drawing.Size(950, 600);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(822, 590);
+            this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "TS_SoftwareDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TS Wizard - Yazılım Detayları / Glow";
@@ -769,5 +783,6 @@
         private System.Windows.Forms.Label LDeveloper_V;
         private System.Windows.Forms.Label LDeveloper;
         private System.Windows.Forms.ToolTip MainToolTip;
+        private System.Windows.Forms.Label SInfoDetail;
     }
 }

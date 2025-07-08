@@ -240,7 +240,7 @@ namespace TSWizard{
                 var removeButtons = new[]{ MPanelAstelRemoveBtn, MPanelGlowRemoveBtn, MPanelVimeraRemoveBtn, MPanelYamiraRemoveBtn };
                 for (int i = 0; i < ts_softwares_location.Length; i++){
                     string dirPath = ts_softwares_location[i];
-                    string exeName = ts_softwares_location_exe_name[i];
+                    string exeName = File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ts_softwares_location[i], ts_softwares_location_exe_name[i])) ? ts_softwares_location_exe_name[i] : (File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ts_softwares_location[i], ts_softwares_location_exe_name[i].Replace("_x64", string.Empty))) ? ts_softwares_location_exe_name[i].Replace("_x64", string.Empty) : ts_softwares_location_exe_name[i]);
                     string exePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, dirPath, exeName);
                     //
                     if (!Directory.Exists(dirPath))
@@ -747,6 +747,7 @@ namespace TSWizard{
                     updateNotificationsToolStripMenuItem.Image = Properties.Resources.m_notifications_light;
                     architectureModeToolStripMenuItem.Image = Properties.Resources.m_architecture_light;
                     checkForUpdateToolStripMenuItem.Image = Properties.Resources.m_update_light;
+                    bmacToolStripMenuItem.Image = Properties.Resources.m_bmac_light;
                     aboutToolStripMenuItem.Image = Properties.Resources.m_about_light;
                     //
                     checkForSoftwareUpdateToolStripMenuItem.Image = Properties.Resources.m_s_check_update_light;
@@ -779,6 +780,7 @@ namespace TSWizard{
                     updateNotificationsToolStripMenuItem.Image = Properties.Resources.m_notifications_dark;
                     architectureModeToolStripMenuItem.Image = Properties.Resources.m_architecture_dark;
                     checkForUpdateToolStripMenuItem.Image = Properties.Resources.m_update_dark;
+                    bmacToolStripMenuItem.Image = Properties.Resources.m_bmac_dark;
                     aboutToolStripMenuItem.Image = Properties.Resources.m_about_dark;
                     //
                     checkForSoftwareUpdateToolStripMenuItem.Image = Properties.Resources.m_s_check_update_dark;
@@ -876,6 +878,9 @@ namespace TSWizard{
                 // CHECK FOR SOFTWARE UPDATE
                 checkForSoftwareUpdateToolStripMenuItem.BackColor = TS_ThemeEngine.ColorMode(theme, "HeaderBGColor");
                 checkForSoftwareUpdateToolStripMenuItem.ForeColor = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor");
+                // BMAC
+                bmacToolStripMenuItem.BackColor = TS_ThemeEngine.ColorMode(theme, "HeaderBGColor");
+                bmacToolStripMenuItem.ForeColor = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor");
                 // ABOUT
                 aboutToolStripMenuItem.BackColor = TS_ThemeEngine.ColorMode(theme, "HeaderBGColor");
                 aboutToolStripMenuItem.ForeColor = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor");
@@ -1132,6 +1137,8 @@ namespace TSWizard{
                 checkForUpdateToolStripMenuItem.Text = TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_update"));
                 // CHECK FOR SOFTWARE UPDATE
                 checkForSoftwareUpdateToolStripMenuItem.Text = TS_String_Encoder(software_lang.TSReadLangs("ContextMenu", "cm_s_u_check"));
+                // BMAC
+                bmacToolStripMenuItem.Text = TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_bmac"));
                 // ABOUT
                 aboutToolStripMenuItem.Text = TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_about"));
                 //
@@ -1373,6 +1380,13 @@ namespace TSWizard{
             }
             //
             update_list.Clear();
+        }
+        // BUY ME A COFFEE LINK
+        // ======================================================================================================
+        private void bmacToolStripMenuItem_Click(object sender, EventArgs e){
+            try{
+                Process.Start(new ProcessStartInfo(TS_LinkSystem.ts_bmac) { UseShellExecute = true });
+            }catch (Exception){ }
         }
         // ABOUT
         // ======================================================================================================

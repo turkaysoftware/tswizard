@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>25.07.0.%2a</ApplicationVersion>
+    <ApplicationVersion>25.08.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -196,6 +196,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TSWizardLogo.ico" />
+    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_bmac_dark.png" />
+    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_bmac_light.png" />
     <None Include="tswizard_images\tswizard_interface\software_banner\yamira_banner.png" />
     <None Include="tswizard_images\tswizard_interface\software_banner\vimera_banner.png" />
     <None Include="tswizard_images\tswizard_interface\software_banner\glow_banner.png" />

@@ -193,6 +193,26 @@ namespace TSWizard.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap m_bmac_dark {
+            get {
+                object obj = ResourceManager.GetObject("m_bmac_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap m_bmac_light {
+            get {
+                object obj = ResourceManager.GetObject("m_bmac_light", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap m_exit_dark {
             get {
                 object obj = ResourceManager.GetObject("m_exit_dark", resourceCulture);

@@ -13,13 +13,15 @@ namespace TSWizard{
         // ======================================================================================================
         public class TS_LinkSystem{
             public static string
-            website_link = "https://www.turkaysoftware.com",
-            twitter_x_link = "https://x.com/turkaysoftware",
-            instagram_link = "https://www.instagram.com/erayturkayy/",
-            github_link = "https://github.com/turkaysoftware",
+            website_link        = "https://www.turkaysoftware.com",
+            twitter_x_link      = "https://x.com/turkaysoftware",
+            instagram_link      = "https://www.instagram.com/erayturkayy/",
+            github_link         = "https://github.com/turkaysoftware",
             //
-            github_link_lt = "https://raw.githubusercontent.com/turkaysoftware/tswizard/main/TSWizard/SoftwareVersion.txt",
-            github_link_lr = "https://github.com/turkaysoftware/tswizard/releases/latest";
+            github_link_lt      = "https://raw.githubusercontent.com/turkaysoftware/tswizard/main/TSWizard/SoftwareVersion.txt",
+            github_link_lr      = "https://github.com/turkaysoftware/tswizard/releases/latest",
+            //
+            ts_bmac             = "https://buymeacoffee.com/turkaysoftware";
         }
         // VERSIONS
         // ======================================================================================================

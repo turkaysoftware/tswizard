@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "E:\\Main Files\\TSWizard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5CF211E9-3C8C-48A0-A5FA-CADA31E0B3F4}|TSWizard.csproj|e:\\main files\\tswizard\\ts_wizard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5CF211E9-3C8C-48A0-A5FA-CADA31E0B3F4}|TSWizard.csproj|E:\\Main Files\\TSWizard\\ts_wizard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5CF211E9-3C8C-48A0-A5FA-CADA31E0B3F4}|TSWizard.csproj|solutionrelative:ts_wizard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CF211E9-3C8C-48A0-A5FA-CADA31E0B3F4}|TSWizard.csproj|E:\\Main Files\\TSWizard\\ts_wizard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5CF211E9-3C8C-48A0-A5FA-CADA31E0B3F4}|TSWizard.csproj|e:\\main files\\tswizard\\ts_wizard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5CF211E9-3C8C-48A0-A5FA-CADA31E0B3F4}|TSWizard.csproj|solutionrelative:ts_wizard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "TS_Wizard.cs",
               "ToolTip": "E:\\Main Files\\TSWizard\\TS_Wizard.cs",
               "RelativeToolTip": "TS_Wizard.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABpAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-02T03:58:38.413Z",
               "EditorCaption": ""

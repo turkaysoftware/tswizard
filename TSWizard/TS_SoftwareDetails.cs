@@ -55,7 +55,8 @@ namespace TSWizard{
             TLinkX.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
             TLinkInstagram.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
             TLinkGitHub.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
-            SInfo.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIFEColor2");
+            SInfo.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIFEColor3");
+            SInfoDetail.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIFEColor2");
             // CONTENT
             InPanel.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
             SPanel1.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor2");
@@ -109,21 +110,25 @@ namespace TSWizard{
                         Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_title")), Application.ProductName, TS_Wizard.ts_softwares_list[0]);
                         SLogo.BackgroundImage = Properties.Resources.astel_logo;
                         SInfo.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_t_astel"));
+                        SInfoDetail.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_d_astel"));
                         break;
                     case 1:
                         Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_title")), Application.ProductName, TS_Wizard.ts_softwares_list[1]);
                         SLogo.BackgroundImage = Properties.Resources.glow_logo;
                         SInfo.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_t_glow"));
+                        SInfoDetail.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_d_glow"));
                         break;
                     case 2:
                         Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_title")), Application.ProductName, TS_Wizard.ts_softwares_list[2]);
                         SLogo.BackgroundImage = Properties.Resources.vimera_logo;
                         SInfo.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_t_vimera"));
+                        SInfoDetail.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_d_vimera"));
                         break;
                     case 3:
                         Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_title")), Application.ProductName, TS_Wizard.ts_softwares_list[3]);
                         SLogo.BackgroundImage = Properties.Resources.yamira_logo;
                         SInfo.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_t_yamira"));
+                        SInfoDetail.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_d_yamira"));
                         break;
                 }
                 //
