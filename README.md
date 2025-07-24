@@ -16,9 +16,9 @@ Every little bit helps—it keeps me motivated and gives me more time to improve
 
 [Click here](https://www.turkaysoftware.com/ts-wizard) for full specifications.
 
-<img width="1010" height="633" alt="TS Wizard UI - Dark" src="https://github.com/user-attachments/assets/0303b89e-c19c-4d15-b40d-694d74dcf711" />
+![TS Wizard UI - Dark](https://github.com/user-attachments/assets/0303b89e-c19c-4d15-b40d-694d74dcf711)
 
-<img width="1010" height="633" alt="TS Wizard UI - Light" src="https://github.com/user-attachments/assets/9de3f8a3-b9e1-4562-9b8c-1d5548dd80a3" />
+![TS Wizard UI - Dark](https://github.com/user-attachments/assets/9de3f8a3-b9e1-4562-9b8c-1d5548dd80a3)
 
 # Download TS Wizard
 
