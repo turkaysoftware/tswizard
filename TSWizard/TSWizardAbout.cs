@@ -18,6 +18,8 @@ namespace TSWizard{
             //
             PanelHeader.Parent = ImageAbout;
             CloseAboutBtn.Parent = PanelHeader;
+            //
+            TSImageRenderer(CloseAboutBtn, Properties.Resources.ts_close, 20);
         }
         // DRAGGING VARIABLES
         // ======================================================================================================
@@ -72,19 +74,25 @@ namespace TSWizard{
                 foreach (Control ui_buttons in PanelTxt.Controls){
                     if (ui_buttons is Button about_button){
                         about_button.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIFEColor5");
-                        about_button.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "MainAccentColor");
-                        about_button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "MainAccentColor");
-                        about_button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "MainAccentColor");
-                        about_button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "MainAccentColorHover");
+                        about_button.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "AccentColor");
+                        about_button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "AccentColor");
+                        about_button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "AccentColor");
+                        about_button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "AccentColorHover");
                     }
                 }
+                //
+                TSImageRenderer(About_WebsiteBtn, TS_Wizard.theme == 1 ? Properties.Resources.ct_website_light : Properties.Resources.ct_website_dark, 15, ContentAlignment.MiddleRight);
+                TSImageRenderer(About_XBtn, TS_Wizard.theme == 1 ? Properties.Resources.ct_x_light : Properties.Resources.ct_x_dark, 15, ContentAlignment.MiddleRight);
+                TSImageRenderer(About_InstagramBtn, TS_Wizard.theme == 1 ? Properties.Resources.ct_instagram_light : Properties.Resources.ct_instagram_dark, 15, ContentAlignment.MiddleRight);
+                TSImageRenderer(About_GitHubBtn, TS_Wizard.theme == 1 ? Properties.Resources.ct_github_light : Properties.Resources.ct_github_dark, 15, ContentAlignment.MiddleRight);
+                TSImageRenderer(About_YouTube, TS_Wizard.theme == 1 ? Properties.Resources.ct_youtube_light : Properties.Resources.ct_youtube_dark, 12, ContentAlignment.MiddleRight);
                 //
                 AboutTable.BackgroundColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "DataGridBGColor");
                 AboutTable.GridColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "DataGridColor");
                 AboutTable.DefaultCellStyle.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "DataGridBGColor");
                 AboutTable.DefaultCellStyle.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "DataGridFEColor");
                 AboutTable.AlternatingRowsDefaultCellStyle.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "DataGridAlternatingColor");
-                AboutTable.ColumnHeadersDefaultCellStyle.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "MainAccentColor");
+                AboutTable.ColumnHeadersDefaultCellStyle.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "AccentColor");
                 AboutTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "DataGridSelectionBGColor");
                 AboutTable.ColumnHeadersDefaultCellStyle.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIFEColor5");
                 AboutTable.DefaultCellStyle.SelectionBackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "DataGridSelectionBGColor");
@@ -92,16 +100,17 @@ namespace TSWizard{
                 //
                 CloseAboutBtn.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "TSBT_CloseBG");
                 CloseAboutBtn.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "TSBT_CloseBG");
-                CloseAboutBtn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "TSBT_CloseBG");
-                CloseAboutBtn.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "TSBT_LabelColor1");
+                CloseAboutBtn.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "TSBT_CloseBGHover");
+                CloseAboutBtn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "TSBT_CloseBGHover");
                 // ======================================================================================================
                 // TEXTS
                 TSGetLangs software_lang = new TSGetLangs(TS_Wizard.lang_path);
                 Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_title")), Application.ProductName);
-                About_WebsiteBtn.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_website_page"));
-                About_XBtn.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_twitter_page"));
-                About_InstagramBtn.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_instagram_page"));
-                About_GitHubBtn.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_github_page"));
+                About_WebsiteBtn.Text = " " + TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_website_page"));
+                About_XBtn.Text = " " + TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_twitter_page"));
+                About_InstagramBtn.Text = " " + TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_instagram_page"));
+                About_GitHubBtn.Text = " " + TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_github_page"));
+                About_YouTube.Text = " " + TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_youtube_page"));
                 //
                 AboutTable.Columns[0].HeaderText = TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_lang_name"));
                 AboutTable.Columns[1].HeaderText = TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_lang_translator"));
@@ -136,6 +145,13 @@ namespace TSWizard{
         private void About_GitHubBtn_Click(object sender, EventArgs e){
             try{
                 Process.Start(new ProcessStartInfo(TS_LinkSystem.github_link){ UseShellExecute = true });
+            }catch (Exception){ }
+        }
+        // YOUTUBE LINK
+        // ======================================================================================================
+        private void About_YouTube_Click(object sender, EventArgs e){
+            try{
+                Process.Start(new ProcessStartInfo(TS_LinkSystem.youtube_link){ UseShellExecute = true });
             }catch (Exception){ }
         }
         // FORM DRAGGING SYSTEM

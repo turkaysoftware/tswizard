@@ -43,7 +43,7 @@ namespace TSWizard{
         public static int theme, ts_active_software;
         public static string[] ts_softwares_list = { "Astel", "Glow", "Vimera", "Yamira" };
         public static string __astel_version = null, __glow_version = null, __vimera_version = null, __yamira_version = null;
-        // LOCAL VARIABLES | 0 = Astel / 1 = Glow / 2 = Vimera / 3 = Yamira
+        // LOCAL VARIABLES | 0 = Astel / 1 = Glow / 2 = Vimera / 3 = Yamira / 4 = ?
         // ======================================================================================================
         static string ts_softwares_root_path = "ts_softwares";
         static string[] subfolders = { "ts_astel", "ts_glow", "ts_vimera", "ts_yamira" };
@@ -69,13 +69,17 @@ namespace TSWizard{
             public HeaderMenuColors() : base(new HeaderColors()){ }
             protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e){ e.ArrowColor = header_colors[1]; base.OnRenderArrow(e); }
             protected override void OnRenderItemCheck(ToolStripItemImageRenderEventArgs e){
-                // e.Graphics.FillRectangle(new SolidBrush(header_colors[0]), e.ImageRectangle); // BG Color Check
-                using (Pen anti_alias_pen = new Pen(header_colors[2], 3)){
-                    Point p1 = new Point(e.ImageRectangle.Left + 3, e.ImageRectangle.Top + e.ImageRectangle.Height / 2);
-                    Point p2 = new Point(e.ImageRectangle.Left + 7, e.ImageRectangle.Bottom - 4);
-                    Point p3 = new Point(e.ImageRectangle.Right - 2, e.ImageRectangle.Top + 3);
-                    e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                    e.Graphics.DrawLines(anti_alias_pen, new Point[] { p1, p2, p3 });
+                Graphics g = e.Graphics;
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+                float dpiScale = g.DpiX / 96f;
+                // TICK BG
+                // using (SolidBrush bgBrush = new SolidBrush(header_colors[0])){ RectangleF bgRect = new RectangleF( e.ImageRectangle.Left, e.ImageRectangle.Top, e.ImageRectangle.Width,e.ImageRectangle.Height); g.FillRectangle(bgBrush, bgRect); }
+                using (Pen anti_alias_pen = new Pen(header_colors[2], 3 * dpiScale)){
+                    Rectangle rect = e.ImageRectangle;
+                    Point p1 = new Point((int)(rect.Left + 3 * dpiScale), (int)(rect.Top + rect.Height / 2));
+                    Point p2 = new Point((int)(rect.Left + 7 * dpiScale), (int)(rect.Bottom - 4 * dpiScale));
+                    Point p3 = new Point((int)(rect.Right - 2 * dpiScale), (int)(rect.Top + 3 * dpiScale));
+                    g.DrawLines(anti_alias_pen, new Point[] { p1, p2, p3 });
                 }
             }
         }
@@ -177,11 +181,11 @@ namespace TSWizard{
         // ======================================================================================================
         private void set_random_header_image(){
             Image[] header_images = new Image[]{
-                Properties.Resources.header_banner_1,
-                Properties.Resources.header_banner_2,
-                Properties.Resources.header_banner_3,
-                Properties.Resources.header_banner_4,
-                Properties.Resources.header_banner_5
+                Properties.Resources.mb_1,
+                Properties.Resources.mb_2,
+                Properties.Resources.mb_3,
+                Properties.Resources.mb_4,
+                Properties.Resources.mb_5
             };
             Random random_generate = new Random();
             HeaderBanner.BackgroundImage = header_images[random_generate.Next(header_images.Length)];
@@ -219,9 +223,9 @@ namespace TSWizard{
                 TSGetLangs software_lang = new TSGetLangs(lang_path);
                 try{
                     bool net_status = IsNetworkCheck();
-                    Image successImage = (theme == 1) ? Properties.Resources.m_network_success_light : Properties.Resources.m_network_success_dark;
-                    Image failImage = (theme == 1) ? Properties.Resources.m_network_failed_light : Properties.Resources.m_network_failed_dark;
-                    MLNetwork.Image = net_status ? successImage : failImage;
+                    Image successImage = (theme == 1) ? Properties.Resources.ct_success_light : Properties.Resources.ct_success_dark;
+                    Image failImage = (theme == 1) ? Properties.Resources.ct_failed_light : Properties.Resources.ct_failed_dark;
+                    TSImageRenderer(MLNetwork, net_status ? successImage : failImage, 0, ContentAlignment.MiddleCenter);
                     dynamic_net_status = net_status;
                     BottomText.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", net_status ? "s_active_internet" : "s_deactive_internet"));
                 }catch (Exception){ }
@@ -336,9 +340,9 @@ namespace TSWizard{
                     int __colorStatus = 0;
                     if (isUpdateAvailable)
                         __colorStatus = __installed_status ? 2 : 1;
-                        dynamic_button_colors(__software_mode, __colorStatus);
+                        dynamic_button_colors(__software_mode, __colorStatus, theme);
                     if (__colorStatus != 0)
-                        dynamic_button_colors(__software_mode, __colorStatus);
+                        dynamic_button_colors(__software_mode, __colorStatus, theme);
                     //
                     if (__installed_status){
                         switch (__software_mode){
@@ -397,7 +401,7 @@ namespace TSWizard{
             try{
                 string desktop_location = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
                 string shortcut_location = Path.Combine(desktop_location, ts_softwares_list[__s_mode] + ".lnk");
-                string hover_message = Application.CompanyName + " - " + Application.ProductName;
+                string hover_message = Application.ProductName + " - " + ts_softwares_list[__s_mode];
                 //
                 Type shell_type = Type.GetTypeFromProgID("WScript.Shell");
                 object shell_object = Activator.CreateInstance(shell_type);
@@ -618,7 +622,7 @@ namespace TSWizard{
                     statuses[__software_mode]();
                     wizardButtons[__software_mode].Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_launch"));
                     removeButtons[__software_mode].Enabled = true;
-                    dynamic_button_colors(__software_mode, 0);
+                    dynamic_button_colors(__software_mode, 0, theme);
                     sc_v_mode(__software_mode, true);
                 }
                 // Label/Text UI Elements
@@ -695,7 +699,7 @@ namespace TSWizard{
                     //
                     if (__software_mode >= 0 && __software_mode < soft_status.Length){
                         soft_status[__software_mode]();
-                        dynamic_button_colors(__software_mode, 1);
+                        dynamic_button_colors(__software_mode, 1, theme);
                         sc_v_mode(__software_mode, false);
                         Task __run_reload_module = Task.Run(() => { ts_w_start_module(false); });
                     }
@@ -739,71 +743,75 @@ namespace TSWizard{
                 }
                 //
                 if (theme == 1){
-                    settingsToolStripMenuItem.Image = Properties.Resources.m_settings_light;
-                    themeToolStripMenuItem.Image = Properties.Resources.m_themes_light;
-                    languageToolStripMenuItem.Image = Properties.Resources.m_language_light;
-                    initialViewToolStripMenuItem.Image = Properties.Resources.m_start_view_light;
-                    windowBehaviorToolStripMenuItem.Image = Properties.Resources.m_tab_mode_light;
-                    updateNotificationsToolStripMenuItem.Image = Properties.Resources.m_notifications_light;
-                    architectureModeToolStripMenuItem.Image = Properties.Resources.m_architecture_light;
-                    checkForUpdateToolStripMenuItem.Image = Properties.Resources.m_update_light;
-                    bmacToolStripMenuItem.Image = Properties.Resources.m_bmac_light;
-                    aboutToolStripMenuItem.Image = Properties.Resources.m_about_light;
+                    TSImageRenderer(settingsToolStripMenuItem, Properties.Resources.tm_settings_light, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(themeToolStripMenuItem, Properties.Resources.tm_theme_light, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(languageToolStripMenuItem, Properties.Resources.tm_language_light, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(initialViewToolStripMenuItem, Properties.Resources.tm_startup_light, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(windowBehaviorToolStripMenuItem, Properties.Resources.tm_behavior_light, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(updateNotificationsToolStripMenuItem, Properties.Resources.tm_notification_light, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(architectureModeToolStripMenuItem, Properties.Resources.tm_architecture_light, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(checkForUpdateToolStripMenuItem, Properties.Resources.tm_update_light, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(bmacToolStripMenuItem, Properties.Resources.tm_bmac_light, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(aboutToolStripMenuItem, Properties.Resources.tm_about_light, 0, ContentAlignment.MiddleRight);
                     //
-                    checkForSoftwareUpdateToolStripMenuItem.Image = Properties.Resources.m_s_check_update_light;
+                    TSImageRenderer(checkForSoftwareUpdateToolStripMenuItem, Properties.Resources.st_check_update_light, 0, ContentAlignment.MiddleRight);
                     //
-                    showAppToolStripMenuItem.Image = Properties.Resources.m_show_light;
-                    softwareUpdateCheckToolStripMenuItem.Image = Properties.Resources.m_s_check_update_light;
-                    exitToolStripMenuItem.Image = Properties.Resources.m_exit_light;
+                    TSImageRenderer(showAppToolStripMenuItem, Properties.Resources.st_show_light, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(softwareUpdateCheckToolStripMenuItem, Properties.Resources.st_check_update_light, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(exitToolStripMenuItem, Properties.Resources.st_stop_light, 0, ContentAlignment.MiddleRight);
                     //
-                    MPanelAstelShortcutBtn.Image = Properties.Resources.m_shortcut_light;
-                    MPanelGlowShortcutBtn.Image = Properties.Resources.m_shortcut_light;
-                    MPanelVimeraShortcutBtn.Image = Properties.Resources.m_shortcut_light;
-                    MPanelYamiraShortcutBtn.Image = Properties.Resources.m_shortcut_light;
+                    TSImageRenderer(MPanelAstelShortcutBtn, Properties.Resources.ct_shortcut_light, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MPanelGlowShortcutBtn, Properties.Resources.ct_shortcut_light, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MPanelVimeraShortcutBtn, Properties.Resources.ct_shortcut_light, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MPanelYamiraShortcutBtn, Properties.Resources.ct_shortcut_light, 0, ContentAlignment.MiddleCenter);
                     //
-                    MLWeb.Image = Properties.Resources.m_web_light;
-                    MLX.Image = Properties.Resources.m_x_light;
-                    MLInstagram.Image = Properties.Resources.m_instagram_light;
-                    MLGitHub.Image = Properties.Resources.m_github_light;
+                    TSImageRenderer(MPanelAstelRemoveBtn, Properties.Resources.ct_delete_light, 15, ContentAlignment.MiddleLeft);
+                    TSImageRenderer(MPanelGlowRemoveBtn, Properties.Resources.ct_delete_light, 15, ContentAlignment.MiddleLeft);
+                    TSImageRenderer(MPanelVimeraRemoveBtn, Properties.Resources.ct_delete_light, 15, ContentAlignment.MiddleLeft);
+                    TSImageRenderer(MPanelYamiraRemoveBtn, Properties.Resources.ct_delete_light, 15, ContentAlignment.MiddleLeft);
                     //
-                    if (dynamic_net_status){
-                        MLNetwork.Image = Properties.Resources.m_network_success_light;
-                    }else if (!dynamic_net_status){
-                        MLNetwork.Image = Properties.Resources.m_network_failed_light;
-                    }
+                    TSImageRenderer(MLWeb, Properties.Resources.ctb_website_light, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MLX, Properties.Resources.ctb_x_light, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MLInstagram, Properties.Resources.ctb_instagram_light, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MLGitHub, Properties.Resources.ctb_github_light, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MLYouTube, Properties.Resources.ctb_youtube_light, 0, ContentAlignment.MiddleCenter);
+                    //
+                    TSImageRenderer(MLNetwork, dynamic_net_status ? Properties.Resources.ct_success_light : Properties.Resources.ct_failed_light, 0, ContentAlignment.MiddleCenter);
                 }else if (theme == 0){
-                    settingsToolStripMenuItem.Image = Properties.Resources.m_settings_dark;
-                    themeToolStripMenuItem.Image = Properties.Resources.m_themes_dark;
-                    languageToolStripMenuItem.Image = Properties.Resources.m_language_dark;
-                    initialViewToolStripMenuItem.Image = Properties.Resources.m_start_view_dark;
-                    windowBehaviorToolStripMenuItem.Image = Properties.Resources.m_tab_mode_dark;
-                    updateNotificationsToolStripMenuItem.Image = Properties.Resources.m_notifications_dark;
-                    architectureModeToolStripMenuItem.Image = Properties.Resources.m_architecture_dark;
-                    checkForUpdateToolStripMenuItem.Image = Properties.Resources.m_update_dark;
-                    bmacToolStripMenuItem.Image = Properties.Resources.m_bmac_dark;
-                    aboutToolStripMenuItem.Image = Properties.Resources.m_about_dark;
+                    TSImageRenderer(settingsToolStripMenuItem, Properties.Resources.tm_settings_dark, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(themeToolStripMenuItem, Properties.Resources.tm_theme_dark, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(languageToolStripMenuItem, Properties.Resources.tm_language_dark, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(initialViewToolStripMenuItem, Properties.Resources.tm_startup_dark, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(windowBehaviorToolStripMenuItem, Properties.Resources.tm_behavior_dark, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(updateNotificationsToolStripMenuItem, Properties.Resources.tm_notification_dark, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(architectureModeToolStripMenuItem, Properties.Resources.tm_architecture_dark, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(checkForUpdateToolStripMenuItem, Properties.Resources.tm_update_dark, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(bmacToolStripMenuItem, Properties.Resources.tm_bmac_dark, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(aboutToolStripMenuItem, Properties.Resources.tm_about_dark, 0, ContentAlignment.MiddleRight);
                     //
-                    checkForSoftwareUpdateToolStripMenuItem.Image = Properties.Resources.m_s_check_update_dark;
+                    TSImageRenderer(checkForSoftwareUpdateToolStripMenuItem, Properties.Resources.st_check_update_dark, 0, ContentAlignment.MiddleRight);
                     //
-                    showAppToolStripMenuItem.Image = Properties.Resources.m_show_dark;
-                    softwareUpdateCheckToolStripMenuItem.Image = Properties.Resources.m_s_check_update_dark;
-                    exitToolStripMenuItem.Image = Properties.Resources.m_exit_dark;
+                    TSImageRenderer(showAppToolStripMenuItem, Properties.Resources.st_show_dark, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(softwareUpdateCheckToolStripMenuItem, Properties.Resources.st_check_update_dark, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(exitToolStripMenuItem, Properties.Resources.st_stop_dark, 0, ContentAlignment.MiddleRight);
                     //
-                    MPanelAstelShortcutBtn.Image = Properties.Resources.m_shortcut_dark;
-                    MPanelGlowShortcutBtn.Image = Properties.Resources.m_shortcut_dark;
-                    MPanelVimeraShortcutBtn.Image = Properties.Resources.m_shortcut_dark;
-                    MPanelYamiraShortcutBtn.Image = Properties.Resources.m_shortcut_dark;
+                    TSImageRenderer(MPanelAstelShortcutBtn, Properties.Resources.ct_shortcut_dark, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MPanelGlowShortcutBtn, Properties.Resources.ct_shortcut_dark, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MPanelVimeraShortcutBtn, Properties.Resources.ct_shortcut_dark, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MPanelYamiraShortcutBtn, Properties.Resources.ct_shortcut_dark, 0, ContentAlignment.MiddleCenter);
                     //
-                    MLWeb.Image = Properties.Resources.m_web_dark;
-                    MLX.Image = Properties.Resources.m_x_dark;
-                    MLInstagram.Image = Properties.Resources.m_instagram_dark;
-                    MLGitHub.Image = Properties.Resources.m_github_dark;
+                    TSImageRenderer(MPanelAstelRemoveBtn, Properties.Resources.ct_delete_dark, 15, ContentAlignment.MiddleLeft);
+                    TSImageRenderer(MPanelGlowRemoveBtn, Properties.Resources.ct_delete_dark, 15, ContentAlignment.MiddleLeft);
+                    TSImageRenderer(MPanelVimeraRemoveBtn, Properties.Resources.ct_delete_dark, 15, ContentAlignment.MiddleLeft);
+                    TSImageRenderer(MPanelYamiraRemoveBtn, Properties.Resources.ct_delete_dark, 15, ContentAlignment.MiddleLeft);
                     //
-                    if (dynamic_net_status){
-                        MLNetwork.Image = Properties.Resources.m_network_success_dark;
-                    }else if (!dynamic_net_status){
-                        MLNetwork.Image = Properties.Resources.m_network_failed_dark;
-                    }
+                    TSImageRenderer(MLWeb, Properties.Resources.ctb_website_dark, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MLX, Properties.Resources.ctb_x_dark, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MLInstagram, Properties.Resources.ctb_instagram_dark, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MLGitHub, Properties.Resources.ctb_github_dark, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MLYouTube, Properties.Resources.ctb_youtube_dark, 0, ContentAlignment.MiddleCenter);
+                    //
+                    TSImageRenderer(MLNetwork, dynamic_net_status ? Properties.Resources.ct_success_dark : Properties.Resources.ct_failed_dark, 0, ContentAlignment.MiddleCenter);
                 }
                 // TOOLTIP
                 MainToolTip.ForeColor = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor");
@@ -922,15 +930,20 @@ namespace TSWizard{
                 MPanelVimeraLinkText.ActiveLinkColor = TS_ThemeEngine.ColorMode(theme, "VimeraFEHover");
                 MPanelYamiraLinkText.ActiveLinkColor = TS_ThemeEngine.ColorMode(theme, "YamiraFEHover");
                 //
-                MPanelAstelShortcutBtn.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
-                MPanelGlowShortcutBtn.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
-                MPanelVimeraShortcutBtn.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
-                MPanelYamiraShortcutBtn.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
+                MPanelAstelSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
+                MPanelGlowSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
+                MPanelVimeraSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
+                MPanelYamiraSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
                 //
                 MPanelAstelWizardBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
                 MPanelGlowWizardBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
                 MPanelVimeraWizardBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
                 MPanelYamiraWizardBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
+                //
+                dynamic_button_colors(0, (__astel_i_status == 0) ? 1 : (__astel_u_status ? 2 : 0) , theme);
+                dynamic_button_colors(1, (__glow_i_status == 0) ? 1 : (__glow_u_status ? 2 : 0), theme);
+                dynamic_button_colors(2, (__vimera_i_status == 0) ? 1 : (__vimera_u_status ? 2 : 0), theme);
+                dynamic_button_colors(3, (__yamira_i_status == 0) ? 1 : (__yamira_u_status ? 2 : 0), theme);
                 // BUTTON REMOVE
                 // ===========================================
                 MPanelAstelRemoveBtn.BackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBG");
@@ -962,11 +975,12 @@ namespace TSWizard{
                 BottomPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
                 BottomText.ForeColor = TS_ThemeEngine.ColorMode(theme, "UIFEColor2");
                 //
-                MLNetwork.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
-                MLGitHub.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
-                MLWeb.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
-                MLX.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
-                MLInstagram.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
+                MLPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
+                MFLP1.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
+                MFLP2.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
+                MFLP3.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
+                MFLP4.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
+                MFLP5.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
                 // OTHER PAGE DYNAMIC UI
                 software_other_page_preloader();
                 // SAVE CURRENT THEME
@@ -979,14 +993,18 @@ namespace TSWizard{
         }
         // DYNAMIC BUTTON COLORS
         // ======================================================================================================
-        private void dynamic_button_colors(int __button_mode, int __button_status){
+        private void dynamic_button_colors(int __button_mode, int __button_status, int __image_mode){
+            TSGetLangs software_lang = new TSGetLangs(lang_path);
             Button selectedButton = null;
-            string baseColorKey = "BtnLaunchBG";
-            string hoverColorKey = "BtnLaunchBGHover";
-            // -1  = Default | Launch
+            string baseColorKey = null;
+            string hoverColorKey = null;
+            string baseText = null;
+            Image statusImage = null;
             if (__button_mode == -1 || __button_status == -1){
                 baseColorKey = "BtnLaunchBG";
                 hoverColorKey = "BtnLaunchBGHover";
+                statusImage = Convert.ToBoolean(theme) ? Properties.Resources.ct_download_light : Properties.Resources.ct_download_dark;
+                baseText = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_download"));
             }else{
                 switch (__button_mode){
                     case 0:
@@ -1006,37 +1024,43 @@ namespace TSWizard{
                     case 0:
                         baseColorKey = "BtnLaunchBG";
                         hoverColorKey = "BtnLaunchBGHover";
+                        baseText = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_launch"));
+                        statusImage = Convert.ToBoolean(theme) ? Properties.Resources.ct_start_light : Properties.Resources.ct_start_dark;
                         break;
                     case 1:
                         baseColorKey = "BtnDownloadBG";
                         hoverColorKey = "BtnDownloadBGHover";
+                        baseText = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_download"));
+                        statusImage = Convert.ToBoolean(theme) ? Properties.Resources.ct_download_light : Properties.Resources.ct_download_dark;
                         break;
                     case 2:
                         baseColorKey = "BtnUpdateBG";
                         hoverColorKey = "BtnUpdateBGHover";
+                        baseText = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_update"));
+                        statusImage = Convert.ToBoolean(theme) ? Properties.Resources.ct_update_light : Properties.Resources.ct_update_dark;
                         break;
                 }
             }
-            // If -1 = All Buttons
+            var baseColor = TS_ThemeEngine.ColorMode(theme, baseColorKey);
+            var hoverColor = TS_ThemeEngine.ColorMode(theme, hoverColorKey);
             if (__button_mode == -1){
-                // Tüm butonları listele
                 var buttons = new Button[] { MPanelAstelWizardBtn, MPanelGlowWizardBtn, MPanelVimeraWizardBtn, MPanelYamiraWizardBtn };
-                var baseColor = TS_ThemeEngine.ColorMode(theme, baseColorKey);
-                var hoverColor = TS_ThemeEngine.ColorMode(theme, hoverColorKey);
                 foreach (var btn in buttons){
                     btn.BackColor = baseColor;
                     btn.FlatAppearance.BorderColor = baseColor;
                     btn.FlatAppearance.MouseOverBackColor = hoverColor;
                     btn.FlatAppearance.MouseDownBackColor = hoverColor;
+                    btn.Image = statusImage;
+                    TSImageRenderer(btn, statusImage, 15, ContentAlignment.MiddleLeft);
+                    btn.Text = baseText + " ";
                 }
             }else if (selectedButton != null){
-                var baseColor = TS_ThemeEngine.ColorMode(theme, baseColorKey);
-                var hoverColor = TS_ThemeEngine.ColorMode(theme, hoverColorKey);
-                //
                 selectedButton.BackColor = baseColor;
                 selectedButton.FlatAppearance.BorderColor = baseColor;
                 selectedButton.FlatAppearance.MouseOverBackColor = hoverColor;
                 selectedButton.FlatAppearance.MouseDownBackColor = hoverColor;
+                TSImageRenderer(selectedButton, statusImage, 15, ContentAlignment.MiddleLeft);
+                selectedButton.Text = baseText + " ";
             }
         }
         // MODULES PAGE DYNAMIC UI
@@ -1160,20 +1184,26 @@ namespace TSWizard{
                 MPanelVimeraLinkText.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_d_text"));
                 MPanelYamiraLinkText.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_d_text"));
                 //
-                MPanelAstelRemoveBtn.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_delete"));
-                MPanelGlowRemoveBtn.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_delete"));
-                MPanelVimeraRemoveBtn.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_delete"));
-                MPanelYamiraRemoveBtn.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_delete"));
+                MPanelAstelRemoveBtn.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_delete")) + " ";
+                MPanelGlowRemoveBtn.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_delete")) + " ";
+                MPanelVimeraRemoveBtn.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_delete")) + " ";
+                MPanelYamiraRemoveBtn.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_delete")) + " ";
                 //
                 MainToolTip.SetToolTip(MPanelAstelShortcutBtn, TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_sc_text")));
                 MainToolTip.SetToolTip(MPanelGlowShortcutBtn, TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_sc_text")));
                 MainToolTip.SetToolTip(MPanelVimeraShortcutBtn, TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_sc_text")));
                 MainToolTip.SetToolTip(MPanelYamiraShortcutBtn, TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_sc_text")));
                 //
+                dynamic_button_colors(0, (__astel_i_status == 0) ? 1 : (__astel_u_status ? 2 : 0), theme);
+                dynamic_button_colors(1, (__glow_i_status == 0) ? 1 : (__glow_u_status ? 2 : 0), theme);
+                dynamic_button_colors(2, (__vimera_i_status == 0) ? 1 : (__vimera_u_status ? 2 : 0), theme);
+                dynamic_button_colors(3, (__yamira_i_status == 0) ? 1 : (__yamira_u_status ? 2 : 0), theme);
+                //
                 MainToolTip.SetToolTip(MLWeb, TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_website_page")));
                 MainToolTip.SetToolTip(MLX, TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_twitter_page")));
                 MainToolTip.SetToolTip(MLInstagram, TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_instagram_page")));
                 MainToolTip.SetToolTip(MLGitHub, TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_github_page")));
+                MainToolTip.SetToolTip(MLYouTube, TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_youtube_page")));
                 // OTHER PAGE DYNAMIC UI
                 software_other_page_preloader();
             }catch (Exception){ }
@@ -1315,7 +1345,7 @@ namespace TSWizard{
                     string client_version = TS_VersionEngine.TS_SofwareVersion(2, Program.ts_version_mode).Trim();
                     int client_num_version = Convert.ToInt32(client_version.Replace(".", string.Empty));
                     //
-                    string[] version_content = webClient.DownloadString(TS_LinkSystem.github_link_lt).Split('=');
+                    string[] version_content = webClient.DownloadString(TS_LinkSystem.github_link_lv).Split('=');
                     string last_version = version_content[1].Trim();
                     int last_num_version = Convert.ToInt32(last_version.Replace(".", string.Empty));
                     //
@@ -1414,9 +1444,9 @@ namespace TSWizard{
                 Process.Start(new ProcessStartInfo(TS_LinkSystem.website_link){ UseShellExecute = true });
             }catch (Exception){ }
         }
-        private void MLGitHub_Click(object sender, EventArgs e){
+        private void MLX_Click(object sender, EventArgs e){
             try{
-                Process.Start(new ProcessStartInfo(TS_LinkSystem.twitter_x_link){ UseShellExecute = true });
+                Process.Start(new ProcessStartInfo(TS_LinkSystem.github_link){ UseShellExecute = true });
             }catch (Exception){ }
         }
         private void MLInstagram_Click(object sender, EventArgs e){
@@ -1424,9 +1454,14 @@ namespace TSWizard{
                 Process.Start(new ProcessStartInfo(TS_LinkSystem.instagram_link){ UseShellExecute = true });
             }catch (Exception){ }
         }
-        private void MLX_Click(object sender, EventArgs e){
+        private void MLGitHub_Click(object sender, EventArgs e){
             try{
-                Process.Start(new ProcessStartInfo(TS_LinkSystem.github_link){ UseShellExecute = true });
+                Process.Start(new ProcessStartInfo(TS_LinkSystem.twitter_x_link){ UseShellExecute = true });
+            }catch (Exception){ }
+        }
+        private void MLYouTube_Click(object sender, EventArgs e){
+            try{
+                Process.Start(new ProcessStartInfo(TS_LinkSystem.youtube_link){ UseShellExecute = true });
             }catch (Exception){ }
         }
         // CONTEXT MENU MODES

@@ -58,7 +58,7 @@
       <longPathAware xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">true</longPathAware>
     </windowsSettings>
   </application>
-  
+ 
 
   <!-- Windows genel denetimler ve iletişim kutuları için temaları etkinleştir (Windows XP ve sonrası) -->
   

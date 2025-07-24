@@ -31,6 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TS_SoftwareDetails));
             this.BackPanel = new System.Windows.Forms.Panel();
+            this.TLinkWebSitePanel = new System.Windows.Forms.Panel();
+            this.TLinkWebSite = new System.Windows.Forms.PictureBox();
+            this.TLinkGitHubPanel = new System.Windows.Forms.Panel();
+            this.TLinkGitHub = new System.Windows.Forms.PictureBox();
+            this.TLinkXPanel = new System.Windows.Forms.Panel();
+            this.TLinkX = new System.Windows.Forms.PictureBox();
+            this.TLinkYouTubePanel = new System.Windows.Forms.Panel();
+            this.TLinkYouTube = new System.Windows.Forms.PictureBox();
+            this.TLinkInstagramPanel = new System.Windows.Forms.Panel();
+            this.TLinkInstagram = new System.Windows.Forms.PictureBox();
+            this.SInfo = new System.Windows.Forms.Label();
             this.SInfoDetail = new System.Windows.Forms.Label();
             this.InPanel = new System.Windows.Forms.Panel();
             this.SPanel11 = new System.Windows.Forms.Panel();
@@ -68,15 +79,20 @@
             this.SPanel1 = new System.Windows.Forms.Panel();
             this.LDeveloper_V = new System.Windows.Forms.Label();
             this.LDeveloper = new System.Windows.Forms.Label();
-            this.TLinkInstagram = new System.Windows.Forms.PictureBox();
-            this.TLinkGitHub = new System.Windows.Forms.PictureBox();
-            this.TLinkWebSite = new System.Windows.Forms.PictureBox();
-            this.TLinkX = new System.Windows.Forms.PictureBox();
-            this.SInfo = new System.Windows.Forms.Label();
             this.SName = new System.Windows.Forms.Label();
             this.SLogo = new System.Windows.Forms.PictureBox();
             this.MainToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.BackPanel.SuspendLayout();
+            this.TLinkWebSitePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TLinkWebSite)).BeginInit();
+            this.TLinkGitHubPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TLinkGitHub)).BeginInit();
+            this.TLinkXPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TLinkX)).BeginInit();
+            this.TLinkYouTubePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TLinkYouTube)).BeginInit();
+            this.TLinkInstagramPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TLinkInstagram)).BeginInit();
             this.InPanel.SuspendLayout();
             this.SPanel11.SuspendLayout();
             this.SPanel10.SuspendLayout();
@@ -89,22 +105,19 @@
             this.SPanel3.SuspendLayout();
             this.SPanel2.SuspendLayout();
             this.SPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TLinkInstagram)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TLinkGitHub)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TLinkWebSite)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TLinkX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // BackPanel
             // 
+            this.BackPanel.Controls.Add(this.TLinkWebSitePanel);
+            this.BackPanel.Controls.Add(this.TLinkGitHubPanel);
+            this.BackPanel.Controls.Add(this.TLinkXPanel);
+            this.BackPanel.Controls.Add(this.TLinkYouTubePanel);
+            this.BackPanel.Controls.Add(this.TLinkInstagramPanel);
             this.BackPanel.Controls.Add(this.SInfo);
             this.BackPanel.Controls.Add(this.SInfoDetail);
             this.BackPanel.Controls.Add(this.InPanel);
-            this.BackPanel.Controls.Add(this.TLinkInstagram);
-            this.BackPanel.Controls.Add(this.TLinkGitHub);
-            this.BackPanel.Controls.Add(this.TLinkWebSite);
-            this.BackPanel.Controls.Add(this.TLinkX);
             this.BackPanel.Controls.Add(this.SName);
             this.BackPanel.Controls.Add(this.SLogo);
             this.BackPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -113,6 +126,138 @@
             this.BackPanel.Padding = new System.Windows.Forms.Padding(10);
             this.BackPanel.Size = new System.Drawing.Size(934, 561);
             this.BackPanel.TabIndex = 0;
+            // 
+            // TLinkWebSitePanel
+            // 
+            this.TLinkWebSitePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
+            this.TLinkWebSitePanel.Controls.Add(this.TLinkWebSite);
+            this.TLinkWebSitePanel.Location = new System.Drawing.Point(816, 13);
+            this.TLinkWebSitePanel.Name = "TLinkWebSitePanel";
+            this.TLinkWebSitePanel.Padding = new System.Windows.Forms.Padding(7);
+            this.TLinkWebSitePanel.Size = new System.Drawing.Size(32, 32);
+            this.TLinkWebSitePanel.TabIndex = 3;
+            // 
+            // TLinkWebSite
+            // 
+            this.TLinkWebSite.BackColor = System.Drawing.Color.Transparent;
+            this.TLinkWebSite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TLinkWebSite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TLinkWebSite.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TLinkWebSite.Location = new System.Drawing.Point(7, 7);
+            this.TLinkWebSite.Name = "TLinkWebSite";
+            this.TLinkWebSite.Size = new System.Drawing.Size(18, 18);
+            this.TLinkWebSite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.TLinkWebSite.TabIndex = 7;
+            this.TLinkWebSite.TabStop = false;
+            this.TLinkWebSite.Click += new System.EventHandler(this.TLinkWebSite_Click);
+            // 
+            // TLinkGitHubPanel
+            // 
+            this.TLinkGitHubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
+            this.TLinkGitHubPanel.Controls.Add(this.TLinkGitHub);
+            this.TLinkGitHubPanel.Location = new System.Drawing.Point(854, 51);
+            this.TLinkGitHubPanel.Name = "TLinkGitHubPanel";
+            this.TLinkGitHubPanel.Padding = new System.Windows.Forms.Padding(7);
+            this.TLinkGitHubPanel.Size = new System.Drawing.Size(32, 32);
+            this.TLinkGitHubPanel.TabIndex = 6;
+            // 
+            // TLinkGitHub
+            // 
+            this.TLinkGitHub.BackColor = System.Drawing.Color.Transparent;
+            this.TLinkGitHub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TLinkGitHub.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TLinkGitHub.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TLinkGitHub.Location = new System.Drawing.Point(7, 7);
+            this.TLinkGitHub.Name = "TLinkGitHub";
+            this.TLinkGitHub.Size = new System.Drawing.Size(18, 18);
+            this.TLinkGitHub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.TLinkGitHub.TabIndex = 8;
+            this.TLinkGitHub.TabStop = false;
+            this.TLinkGitHub.Click += new System.EventHandler(this.TLinkGitHub_Click);
+            // 
+            // TLinkXPanel
+            // 
+            this.TLinkXPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
+            this.TLinkXPanel.Controls.Add(this.TLinkX);
+            this.TLinkXPanel.Location = new System.Drawing.Point(854, 13);
+            this.TLinkXPanel.Name = "TLinkXPanel";
+            this.TLinkXPanel.Padding = new System.Windows.Forms.Padding(7);
+            this.TLinkXPanel.Size = new System.Drawing.Size(32, 32);
+            this.TLinkXPanel.TabIndex = 4;
+            // 
+            // TLinkX
+            // 
+            this.TLinkX.BackColor = System.Drawing.Color.Transparent;
+            this.TLinkX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TLinkX.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TLinkX.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TLinkX.Location = new System.Drawing.Point(7, 7);
+            this.TLinkX.Name = "TLinkX";
+            this.TLinkX.Size = new System.Drawing.Size(18, 18);
+            this.TLinkX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.TLinkX.TabIndex = 6;
+            this.TLinkX.TabStop = false;
+            this.TLinkX.Click += new System.EventHandler(this.TLinkX_Click);
+            // 
+            // TLinkYouTubePanel
+            // 
+            this.TLinkYouTubePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
+            this.TLinkYouTubePanel.Controls.Add(this.TLinkYouTube);
+            this.TLinkYouTubePanel.Location = new System.Drawing.Point(892, 51);
+            this.TLinkYouTubePanel.Name = "TLinkYouTubePanel";
+            this.TLinkYouTubePanel.Padding = new System.Windows.Forms.Padding(7);
+            this.TLinkYouTubePanel.Size = new System.Drawing.Size(32, 32);
+            this.TLinkYouTubePanel.TabIndex = 7;
+            // 
+            // TLinkYouTube
+            // 
+            this.TLinkYouTube.BackColor = System.Drawing.Color.Transparent;
+            this.TLinkYouTube.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TLinkYouTube.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TLinkYouTube.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TLinkYouTube.Location = new System.Drawing.Point(7, 7);
+            this.TLinkYouTube.Name = "TLinkYouTube";
+            this.TLinkYouTube.Size = new System.Drawing.Size(18, 18);
+            this.TLinkYouTube.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.TLinkYouTube.TabIndex = 12;
+            this.TLinkYouTube.TabStop = false;
+            this.TLinkYouTube.Click += new System.EventHandler(this.TLinkYouTube_Click);
+            // 
+            // TLinkInstagramPanel
+            // 
+            this.TLinkInstagramPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
+            this.TLinkInstagramPanel.Controls.Add(this.TLinkInstagram);
+            this.TLinkInstagramPanel.Location = new System.Drawing.Point(892, 13);
+            this.TLinkInstagramPanel.Name = "TLinkInstagramPanel";
+            this.TLinkInstagramPanel.Padding = new System.Windows.Forms.Padding(7);
+            this.TLinkInstagramPanel.Size = new System.Drawing.Size(32, 32);
+            this.TLinkInstagramPanel.TabIndex = 5;
+            // 
+            // TLinkInstagram
+            // 
+            this.TLinkInstagram.BackColor = System.Drawing.Color.Transparent;
+            this.TLinkInstagram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TLinkInstagram.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TLinkInstagram.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TLinkInstagram.Location = new System.Drawing.Point(7, 7);
+            this.TLinkInstagram.Name = "TLinkInstagram";
+            this.TLinkInstagram.Size = new System.Drawing.Size(18, 18);
+            this.TLinkInstagram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.TLinkInstagram.TabIndex = 9;
+            this.TLinkInstagram.TabStop = false;
+            this.TLinkInstagram.Click += new System.EventHandler(this.TLinkInstagram_Click);
+            // 
+            // SInfo
+            // 
+            this.SInfo.AutoSize = true;
+            this.SInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.SInfo.ForeColor = System.Drawing.Color.White;
+            this.SInfo.Location = new System.Drawing.Point(100, 36);
+            this.SInfo.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
+            this.SInfo.Name = "SInfo";
+            this.SInfo.Size = new System.Drawing.Size(88, 19);
+            this.SInfo.TabIndex = 1;
+            this.SInfo.Text = "N/A Yazılımı";
             // 
             // SInfoDetail
             // 
@@ -145,7 +290,7 @@
             this.InPanel.Name = "InPanel";
             this.InPanel.Padding = new System.Windows.Forms.Padding(3);
             this.InPanel.Size = new System.Drawing.Size(914, 430);
-            this.InPanel.TabIndex = 3;
+            this.InPanel.TabIndex = 8;
             // 
             // SPanel11
             // 
@@ -593,70 +738,6 @@
             this.LDeveloper.TabIndex = 0;
             this.LDeveloper.Text = "N/A Features";
             // 
-            // TLinkInstagram
-            // 
-            this.TLinkInstagram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
-            this.TLinkInstagram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.TLinkInstagram.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TLinkInstagram.Location = new System.Drawing.Point(854, 51);
-            this.TLinkInstagram.Name = "TLinkInstagram";
-            this.TLinkInstagram.Size = new System.Drawing.Size(32, 32);
-            this.TLinkInstagram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.TLinkInstagram.TabIndex = 9;
-            this.TLinkInstagram.TabStop = false;
-            this.TLinkInstagram.Click += new System.EventHandler(this.TLinkInstagram_Click);
-            // 
-            // TLinkGitHub
-            // 
-            this.TLinkGitHub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
-            this.TLinkGitHub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.TLinkGitHub.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TLinkGitHub.Location = new System.Drawing.Point(892, 51);
-            this.TLinkGitHub.Name = "TLinkGitHub";
-            this.TLinkGitHub.Size = new System.Drawing.Size(32, 32);
-            this.TLinkGitHub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.TLinkGitHub.TabIndex = 8;
-            this.TLinkGitHub.TabStop = false;
-            this.TLinkGitHub.Click += new System.EventHandler(this.TLinkGitHub_Click);
-            // 
-            // TLinkWebSite
-            // 
-            this.TLinkWebSite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
-            this.TLinkWebSite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.TLinkWebSite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TLinkWebSite.Location = new System.Drawing.Point(854, 13);
-            this.TLinkWebSite.Name = "TLinkWebSite";
-            this.TLinkWebSite.Size = new System.Drawing.Size(32, 32);
-            this.TLinkWebSite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.TLinkWebSite.TabIndex = 7;
-            this.TLinkWebSite.TabStop = false;
-            this.TLinkWebSite.Click += new System.EventHandler(this.TLinkWebSite_Click);
-            // 
-            // TLinkX
-            // 
-            this.TLinkX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
-            this.TLinkX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.TLinkX.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TLinkX.Location = new System.Drawing.Point(892, 13);
-            this.TLinkX.Name = "TLinkX";
-            this.TLinkX.Size = new System.Drawing.Size(32, 32);
-            this.TLinkX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.TLinkX.TabIndex = 6;
-            this.TLinkX.TabStop = false;
-            this.TLinkX.Click += new System.EventHandler(this.TLinkX_Click);
-            // 
-            // SInfo
-            // 
-            this.SInfo.AutoSize = true;
-            this.SInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.SInfo.ForeColor = System.Drawing.Color.White;
-            this.SInfo.Location = new System.Drawing.Point(100, 36);
-            this.SInfo.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
-            this.SInfo.Name = "SInfo";
-            this.SInfo.Size = new System.Drawing.Size(88, 19);
-            this.SInfo.TabIndex = 1;
-            this.SInfo.Text = "N/A Yazılımı";
-            // 
             // SName
             // 
             this.SName.AutoSize = true;
@@ -705,6 +786,16 @@
             this.Load += new System.EventHandler(this.TS_SoftwareDetails_Load);
             this.BackPanel.ResumeLayout(false);
             this.BackPanel.PerformLayout();
+            this.TLinkWebSitePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TLinkWebSite)).EndInit();
+            this.TLinkGitHubPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TLinkGitHub)).EndInit();
+            this.TLinkXPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TLinkX)).EndInit();
+            this.TLinkYouTubePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TLinkYouTube)).EndInit();
+            this.TLinkInstagramPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TLinkInstagram)).EndInit();
             this.InPanel.ResumeLayout(false);
             this.SPanel11.ResumeLayout(false);
             this.SPanel11.PerformLayout();
@@ -728,10 +819,6 @@
             this.SPanel2.PerformLayout();
             this.SPanel1.ResumeLayout(false);
             this.SPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TLinkInstagram)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TLinkGitHub)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TLinkWebSite)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TLinkX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SLogo)).EndInit();
             this.ResumeLayout(false);
 
@@ -784,5 +871,11 @@
         private System.Windows.Forms.Label LDeveloper;
         private System.Windows.Forms.ToolTip MainToolTip;
         private System.Windows.Forms.Label SInfoDetail;
+        private System.Windows.Forms.Panel TLinkWebSitePanel;
+        private System.Windows.Forms.Panel TLinkGitHubPanel;
+        private System.Windows.Forms.Panel TLinkXPanel;
+        private System.Windows.Forms.Panel TLinkYouTubePanel;
+        private System.Windows.Forms.Panel TLinkInstagramPanel;
+        private System.Windows.Forms.PictureBox TLinkYouTube;
     }
 }

@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>25.08.0.%2a</ApplicationVersion>
+    <ApplicationVersion>25.09.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -87,11 +87,12 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <ApplicationIcon>TSWizardLogo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -196,56 +197,77 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TSWizardLogo.ico" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_bmac_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_bmac_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_start_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_start_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_update_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_download_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_delete_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_update_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_download_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_delete_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\ts_material\ts_close.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_update_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_theme_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_startup_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_settings_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_notification_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_language_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_bmac_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_behavior_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_architecture_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_about_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\st_stop_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\st_show_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\st_check_update_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ctb_youtube_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ctb_x_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ctb_website_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ctb_instagram_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ctb_github_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_youtube_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_x_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_website_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_success_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_shortcut_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_instagram_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_github_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_failed_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_update_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_theme_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_startup_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_settings_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_notification_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_language_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_bmac_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_behavior_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_architecture_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_about_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\st_stop_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\st_show_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\st_check_update_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ctb_youtube_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ctb_x_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ctb_website_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ctb_instagram_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ctb_github_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_youtube_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_x_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_website_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_success_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_shortcut_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_instagram_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_github_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_failed_dark.png" />
+    <None Include="tswizard_images\ts_preloader\ts_preloader_release.jpg" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_5.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_4.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_3.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_2.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_1.png" />
     <None Include="tswizard_images\tswizard_interface\software_banner\yamira_banner.png" />
     <None Include="tswizard_images\tswizard_interface\software_banner\vimera_banner.png" />
     <None Include="tswizard_images\tswizard_interface\software_banner\glow_banner.png" />
     <None Include="tswizard_images\tswizard_interface\software_banner\astel_banner.png" />
-    <None Include="tswizard_images\tswizard_interface\main_banner\header_banner_5.png" />
-    <None Include="tswizard_images\tswizard_interface\main_banner\header_banner_4.png" />
-    <None Include="tswizard_images\tswizard_interface\main_banner\header_banner_3.png" />
-    <None Include="tswizard_images\tswizard_interface\main_banner\header_banner_2.png" />
-    <None Include="tswizard_images\tswizard_interface\main_banner\header_banner_1.png" />
-    <None Include="tswizard_images\ts_preloader\ts_preloader_release.jpg" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_shortcut_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_shortcut_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_start_view_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_architecture_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_start_view_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_architecture_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_tab_mode_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_tab_mode_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_x_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_web_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_update_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_themes_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_show_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_settings_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_s_check_update_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_notifications_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_network_success_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_network_failed_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_language_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_instagram_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_github_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_exit_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\dark_theme\m_about_dark.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_x_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_web_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_update_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_themes_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_show_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_settings_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_s_check_update_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_notifications_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_network_success_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_network_failed_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_language_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_instagram_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_github_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_exit_light.png" />
-    <None Include="tswizard_images\tswizard_interface\ui_logos\light_theme\m_about_light.png" />
     <None Include="tswizard_images\tswizard_interface\software_logo\yamira_logo.png" />
     <None Include="tswizard_images\tswizard_interface\software_logo\vimera_logo.png" />
     <None Include="tswizard_images\tswizard_interface\software_logo\glow_logo.png" />

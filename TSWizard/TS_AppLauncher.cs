@@ -24,10 +24,10 @@ namespace TSWizard{
                 foreach (Control ui_buttons in BackPanel.Controls){
                     if (ui_buttons is Button launcher_btn){
                         launcher_btn.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIFEColor5");
-                        launcher_btn.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "MainAccentColor");
-                        launcher_btn.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "MainAccentColor");
-                        launcher_btn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "MainAccentColor");
-                        launcher_btn.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "MainAccentColorHover");
+                        launcher_btn.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "AccentColor");
+                        launcher_btn.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "AccentColor");
+                        launcher_btn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "AccentColor");
+                        launcher_btn.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "AccentColorHover");
                     }
                 }
                 //

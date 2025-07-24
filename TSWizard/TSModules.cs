@@ -1,26 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Net;
-using System.Text;
-using System.Drawing;
-using System.Windows.Forms;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Windows.Forms;
 
 namespace TSWizard{
     internal class TSModules{
         // LINK SYSTEM
         // ======================================================================================================
         public class TS_LinkSystem{
-            public static string
+            public const string
+            // Main Control Links
+            github_link_lv      = "https://raw.githubusercontent.com/turkaysoftware/tswizard/main/TSWizard/SoftwareVersion.txt",
+            github_link_lr      = "https://github.com/turkaysoftware/tswizard/releases/latest",
+            // Social Links
             website_link        = "https://www.turkaysoftware.com",
             twitter_x_link      = "https://x.com/turkaysoftware",
             instagram_link      = "https://www.instagram.com/erayturkayy/",
             github_link         = "https://github.com/turkaysoftware",
-            //
-            github_link_lt      = "https://raw.githubusercontent.com/turkaysoftware/tswizard/main/TSWizard/SoftwareVersion.txt",
-            github_link_lr      = "https://github.com/turkaysoftware/tswizard/releases/latest",
-            //
+            youtube_link        = "https://www.youtube.com/@turkaysoftware",
+            // Other Links
             ts_bmac             = "https://buymeacoffee.com/turkaysoftware";
         }
         // VERSIONS
@@ -60,7 +64,11 @@ namespace TSWizard{
                 { 9, new KeyValuePair<MessageBoxButtons, MessageBoxIcon>(MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) }  // Yes/No/Cancel ve Soru
             };
             public static DialogResult TS_MessageBox(Form m_form, int m_mode, string m_message, string m_title = ""){
-                m_form.BringToFront();
+                if (m_form.InvokeRequired){
+                    m_form.Invoke((Action)(() => BringFormToFront(m_form)));
+                }else{
+                    BringFormToFront(m_form);
+                }
                 //
                 string m_box_title = string.IsNullOrEmpty(m_title) ? Application.ProductName : m_title;
                 //
@@ -74,6 +82,12 @@ namespace TSWizard{
                 }
                 //
                 return MessageBox.Show(m_form, m_message, m_box_title, m_button, m_icon);
+            }
+            private static void BringFormToFront(Form m_form){
+                if (m_form.WindowState == FormWindowState.Minimized)
+                    m_form.WindowState = FormWindowState.Normal;
+                m_form.BringToFront();
+                m_form.Activate();
             }
         }
         // TS SOFTWARE COPYRIGHT DATE
@@ -136,27 +150,28 @@ namespace TSWizard{
                 // TS PRELOADER
                 { "TSBT_BGColor", Color.FromArgb(236, 242, 248) },
                 { "TSBT_BGColor2", Color.White },
-                { "TSBT_AccentColor", Color.FromArgb(194, 110, 10) },
+                { "TSBT_AccentColor", Color.FromArgb(155, 85, 0) },
                 { "TSBT_LabelColor1", Color.FromArgb(51, 51, 51) },
                 { "TSBT_LabelColor2", Color.FromArgb(100, 100, 100) },
-                { "TSBT_CloseBG", Color.FromArgb(200, 255, 255, 255) },
+                { "TSBT_CloseBG", Color.FromArgb(25, 255, 255, 255) },
+                { "TSBT_CloseBGHover", Color.FromArgb(50, 255, 255, 255) },
                 // HEADER MENU COLOR MODE
                 { "HeaderBGColor", Color.FromArgb(236, 242, 248) },
                 { "HeaderFEColor", Color.FromArgb(51, 51, 51) },
                 { "HeaderBGColorMain", Color.White },
                 { "HeaderFEColorMain", Color.FromArgb(51, 51, 51) },
-                { "HeaderColorAccent", Color.FromArgb(194, 110, 10) },
+                { "HeaderColorAccent", Color.FromArgb(155, 85, 0) },
                 // UI COLOR
                 { "UIBGColor1", Color.FromArgb(236, 242, 248) },
                 { "UIBGColor2", Color.White },
                 { "UIFEColor1", Color.FromArgb(100, 100, 100) },
                 { "UIFEColor2", Color.FromArgb(51, 51, 51) },
-                { "UIFEColor3", Color.FromArgb(194, 110, 10) },
-                { "UIFEColor4", Color.FromArgb(210, 120, 13) },
+                { "UIFEColor3", Color.FromArgb(155, 85, 0) },
+                { "UIFEColor4", Color.FromArgb(173, 95, 0) },
                 { "UIFEColor5", Color.White },
                 //
-                { "MainAccentColor", Color.FromArgb(194, 110, 10) },
-                { "MainAccentColorHover", Color.FromArgb(210, 120, 13) },
+                { "AccentColor", Color.FromArgb(155, 85, 0) },
+                { "AccentColorHover", Color.FromArgb(173, 95, 0) },
                 //
                 { "DataGridBGColor", Color.White },
                 { "DataGridFEColor", Color.FromArgb(51, 51, 51) },
@@ -166,25 +181,24 @@ namespace TSWizard{
                 { "DataGridSelectionBGColor", Color.White },
                 { "DataGridSelectionFEColor", Color.White },
                 // SOFTWARE COLORS
-                { "AstelFE", Color.FromArgb(14, 76, 56) },
-                { "AstelFEHover", Color.FromArgb(18, 94, 70) },
+                { "AstelFE", Color.FromArgb(28, 122, 25) },
+                { "AstelFEHover", Color.FromArgb(33, 136, 29) },
                 { "GlowFE", Color.FromArgb(54, 95, 146) },
-                { "GlowFEHover", Color.FromArgb(67, 116, 177) },
-                { "VimeraFE", Color.FromArgb(105, 81, 147) },
-                { "VimeraFEHover", Color.FromArgb(120, 93, 167) },
-                { "YamiraFE", Color.FromArgb(114, 19, 42) },
-                { "YamiraFEHover", Color.FromArgb(136, 24, 52) },
+                { "GlowFEHover", Color.FromArgb(63, 109, 165) },
+                { "VimeraFE", Color.FromArgb(126, 27, 156) },
+                { "VimeraFEHover", Color.FromArgb(168, 38, 207) },
+                { "YamiraFE", Color.FromArgb(207, 24, 0) },
+                { "YamiraFEHover", Color.FromArgb(226, 38, 13) },
                 // DYNAMIC BUTTON COLOR
-                { "BtnLaunchBG", Color.FromArgb(47, 98, 131) },
-                { "BtnLaunchBGHover", Color.FromArgb(53, 110, 147) },
-                { "BtnUpdateBG", Color.FromArgb(120, 12, 222) },
-                { "BtnUpdateBGHover", Color.FromArgb(132, 15, 241) },
-                { "BtnDownloadBG", Color.FromArgb(25, 126, 45) },
-                { "BtnDownloadBGHover", Color.FromArgb(30, 147, 53) },
-                { "BtnDeleteBG", Color.FromArgb(153, 28, 58) },
-                { "BtnDeleteBGHover", Color.FromArgb(176, 34, 68) },
+                { "BtnLaunchBG", Color.FromArgb(54, 95, 146) },
+                { "BtnLaunchBGHover", Color.FromArgb(63, 109, 165) },
+                { "BtnUpdateBG", Color.FromArgb(126, 27, 156) },
+                { "BtnUpdateBGHover", Color.FromArgb(168, 38, 207) },
+                { "BtnDownloadBG", Color.FromArgb(28, 122, 25) },
+                { "BtnDownloadBGHover", Color.FromArgb(33, 136, 29) },
+                { "BtnDeleteBG", Color.FromArgb(207, 24, 0) },
+                { "BtnDeleteBGHover", Color.FromArgb(226, 38, 13) },
                 { "BtnFEColor1", Color.WhiteSmoke },
-                { "BtnFEColor2", Color.FromArgb(25, 31, 42) }
             };
             // DARK THEME COLORS
             // ====================================
@@ -195,7 +209,8 @@ namespace TSWizard{
                 { "TSBT_AccentColor", Color.FromArgb(245, 136, 6) },
                 { "TSBT_LabelColor1", Color.WhiteSmoke },
                 { "TSBT_LabelColor2", Color.FromArgb(176, 184, 196) },
-                { "TSBT_CloseBG", Color.FromArgb(210, 25, 31, 42) },
+                { "TSBT_CloseBG", Color.FromArgb(75, 25, 31, 42) },
+                { "TSBT_CloseBGHover", Color.FromArgb(100, 25, 31, 42) },
                 // HEADER MENU COLOR MODE
                 { "HeaderBGColor", Color.FromArgb(21, 23, 32) },
                 { "HeaderFEColor", Color.WhiteSmoke },
@@ -208,11 +223,11 @@ namespace TSWizard{
                 { "UIFEColor1", Color.FromArgb(176, 184, 196) },
                 { "UIFEColor2", Color.WhiteSmoke },
                 { "UIFEColor3", Color.FromArgb(245, 136, 6) },
-                { "UIFEColor4", Color.FromArgb(255, 158, 41) },
+                { "UIFEColor4", Color.FromArgb(255, 151, 23) },
                 { "UIFEColor5", Color.FromArgb(21, 23, 32) },
                 //
-                { "MainAccentColor", Color.FromArgb(245, 136, 6) },
-                { "MainAccentColorHover", Color.FromArgb(255, 158, 41) },
+                { "AccentColor", Color.FromArgb(245, 136, 6) },
+                { "AccentColorHover", Color.FromArgb(255, 151, 23) },
                 //
                 { "DataGridBGColor", Color.FromArgb(25, 31, 42) },
                 { "DataGridFEColor", Color.WhiteSmoke },
@@ -222,25 +237,24 @@ namespace TSWizard{
                 { "DataGridSelectionBGColor", Color.FromArgb(25, 31, 42) },
                 { "DataGridSelectionFEColor", Color.WhiteSmoke },
                 // SOFTWARE COLORS
-                { "AstelFE", Color.FromArgb(35, 180, 64) },
-                { "AstelFEHover", Color.FromArgb(38, 201, 71) },
-                { "GlowFE", Color.FromArgb(84, 179, 241) },
-                { "GlowFEHover", Color.FromArgb(109, 196, 253) },
-                { "VimeraFE", Color.FromArgb(173, 134, 237) },
-                { "VimeraFEHover", Color.FromArgb(194, 156, 255) },
-                { "YamiraFE", Color.FromArgb(241, 43, 91) },
-                { "YamiraFEHover", Color.FromArgb(252, 62, 108) },
+                { "AstelFE", Color.FromArgb(38, 187, 33) },
+                { "AstelFEHover", Color.FromArgb(43, 206, 38) },
+                { "GlowFE", Color.FromArgb(88, 153, 233) },
+                { "GlowFEHover", Color.FromArgb(93, 165, 253) },
+                { "VimeraFE", Color.FromArgb(229, 33, 255) },
+                { "VimeraFEHover", Color.FromArgb(234, 77, 255) },
+                { "YamiraFE", Color.FromArgb(255, 51, 51) },
+                { "YamiraFEHover", Color.FromArgb(253, 69, 69) },
                 // DYNAMIC BUTTON COLOR
-                { "BtnLaunchBG", Color.FromArgb(47, 98, 131) },
-                { "BtnLaunchBGHover", Color.FromArgb(53, 110, 147) },
-                { "BtnUpdateBG", Color.FromArgb(120, 12, 222) },
-                { "BtnUpdateBGHover", Color.FromArgb(132, 15, 241) },
-                { "BtnDownloadBG", Color.FromArgb(25, 126, 45) },
-                { "BtnDownloadBGHover", Color.FromArgb(30, 147, 53) },
-                { "BtnDeleteBG", Color.FromArgb(153, 28, 58) },
-                { "BtnDeleteBGHover", Color.FromArgb(176, 34, 68) },
-                { "BtnFEColor1", Color.WhiteSmoke },
-                { "BtnFEColor2", Color.FromArgb(25, 31, 42) }
+                { "BtnLaunchBG", Color.FromArgb(88, 153, 233) },
+                { "BtnLaunchBGHover", Color.FromArgb(93, 165, 253) },
+                { "BtnUpdateBG", Color.FromArgb(229, 33, 255) },
+                { "BtnUpdateBGHover", Color.FromArgb(234, 77, 255)  },
+                { "BtnDownloadBG", Color.FromArgb(38, 187, 33) },
+                { "BtnDownloadBGHover", Color.FromArgb(43, 206, 38) },
+                { "BtnDeleteBG", Color.FromArgb(255, 51, 51) },
+                { "BtnDeleteBGHover", Color.FromArgb(253, 69, 69)},
+                { "BtnFEColor1", Color.FromArgb(21, 23, 32) },
             };
             // THEME SWITCHER
             // ====================================
@@ -252,6 +266,56 @@ namespace TSWizard{
                 }
                 return Color.Transparent;
             }
+        }
+        // DPI SENSITIVE DYNAMIC IMAGE RENDERER
+        // ======================================================================================================
+        public static void TSImageRenderer(object baseTarget, Image sourceImage, int basePadding, ContentAlignment imageAlign = ContentAlignment.MiddleCenter){
+            if (sourceImage == null || baseTarget == null) return;
+            const int minImageSize = 16;
+            try{
+                int calculatedSize;
+                Image previousImage = null;
+                Image ResizeImage(Image targetImg, int targetSize){
+                    Bitmap resizedEngine = new Bitmap(targetSize, targetSize, PixelFormat.Format32bppArgb);
+                    using (Graphics renderGraphics = Graphics.FromImage(resizedEngine)){
+                        renderGraphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                        renderGraphics.SmoothingMode = SmoothingMode.AntiAlias;
+                        renderGraphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                        renderGraphics.CompositingQuality = CompositingQuality.HighQuality;
+                        renderGraphics.DrawImage(targetImg, 0, 0, targetSize, targetSize);
+                    }
+                    return resizedEngine;
+                }
+                if (baseTarget is Control targetControl){
+                    float dpi = targetControl.DeviceDpi > 0 ? targetControl.DeviceDpi : 96f;
+                    float dpiScaleFactor = dpi / 96f;
+                    int paddingWithScale = (int)Math.Round(basePadding * dpiScaleFactor);
+                    //
+                    calculatedSize = targetControl.Height - paddingWithScale;
+                    if (calculatedSize <= 0) { calculatedSize = minImageSize; }
+                    Image resizedImage = ResizeImage(sourceImage, calculatedSize);
+                    if (targetControl is Button buttonMode){
+                        previousImage = buttonMode.Image;
+                        buttonMode.Image = resizedImage;
+                        buttonMode.ImageAlign = imageAlign;
+                    }else if (targetControl is PictureBox pictureBoxMode){
+                        previousImage = pictureBoxMode.Image;
+                        pictureBoxMode.Image = resizedImage;
+                        pictureBoxMode.SizeMode = PictureBoxSizeMode.Zoom;
+                    }else{
+                        resizedImage.Dispose();
+                    }
+                }else if (baseTarget is ToolStripItem toolStripItemMode){
+                    calculatedSize = toolStripItemMode.Height - basePadding;
+                    if (calculatedSize <= 0) { calculatedSize = minImageSize; }
+                    Image resizedImage = ResizeImage(sourceImage, calculatedSize);
+                    previousImage = toolStripItemMode.Image;
+                    toolStripItemMode.Image = resizedImage;
+                }else{
+                    return;
+                }
+                if (previousImage != null && previousImage != sourceImage) { previousImage.Dispose(); }
+            }catch (Exception){ }
         }
         // DYNAMIC SIZE COUNT ALGORITHM
         // ======================================================================================================
@@ -289,9 +353,10 @@ namespace TSWizard{
         // ======================================================================================================
         [DllImport("DwmApi")]
         public static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
-        // DPI AWARE
+        // DPI AWARE V2
         // ======================================================================================================
         [DllImport("user32.dll")]
-        public static extern bool SetProcessDPIAware();
+        public static extern bool SetProcessDpiAwarenessContext(IntPtr dpiFlag);
+
     }
 }

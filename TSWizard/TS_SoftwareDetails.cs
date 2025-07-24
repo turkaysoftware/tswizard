@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 //
 using static TSWizard.TSModules;
+using System.Drawing;
 
 namespace TSWizard{
     public partial class TS_SoftwareDetails : Form{
@@ -33,17 +34,12 @@ namespace TSWizard{
                     DwmSetWindowAttribute(Handle, 20, new[]{ TS_Wizard.theme == 1 ? 0 : 1 }, 4);
                 }
                 //
-                if (TS_Wizard.theme == 1){
-                    TLinkWebSite.Image = Properties.Resources.m_web_light;
-                    TLinkX.Image = Properties.Resources.m_x_light;
-                    TLinkInstagram.Image = Properties.Resources.m_instagram_light;
-                    TLinkGitHub.Image = Properties.Resources.m_github_light;
-                }else if (TS_Wizard.theme == 0){
-                    TLinkWebSite.Image = Properties.Resources.m_web_dark;
-                    TLinkX.Image = Properties.Resources.m_x_dark;
-                    TLinkInstagram.Image = Properties.Resources.m_instagram_dark;
-                    TLinkGitHub.Image = Properties.Resources.m_github_dark;
-                }
+                bool isLight = TS_Wizard.theme == 1;
+                TSImageRenderer(TLinkWebSite, isLight ? Properties.Resources.ctb_website_light : Properties.Resources.ctb_website_dark, 0, ContentAlignment.MiddleCenter);
+                TSImageRenderer(TLinkX, isLight ? Properties.Resources.ctb_x_light : Properties.Resources.ctb_x_dark, 0, ContentAlignment.MiddleCenter);
+                TSImageRenderer(TLinkInstagram, isLight ? Properties.Resources.ctb_instagram_light : Properties.Resources.ctb_instagram_dark, 0, ContentAlignment.MiddleCenter);
+                TSImageRenderer(TLinkGitHub, isLight ? Properties.Resources.ctb_github_light : Properties.Resources.ctb_github_dark, 0, ContentAlignment.MiddleCenter);
+                TSImageRenderer(TLinkYouTube, isLight ? Properties.Resources.ctb_youtube_light : Properties.Resources.ctb_youtube_dark, 0, ContentAlignment.MiddleCenter);
             }catch (Exception){ }
             //
             BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor2");
@@ -51,10 +47,11 @@ namespace TSWizard{
             MainToolTip.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "HeaderFEColor");
             MainToolTip.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "HeaderBGColor");
             // HEAD
-            TLinkWebSite.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
-            TLinkX.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
-            TLinkInstagram.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
-            TLinkGitHub.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
+            TLinkWebSitePanel.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
+            TLinkXPanel.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
+            TLinkInstagramPanel.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
+            TLinkGitHubPanel.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
+            TLinkYouTubePanel.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
             SInfo.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIFEColor3");
             SInfoDetail.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIFEColor2");
             // CONTENT
@@ -108,25 +105,25 @@ namespace TSWizard{
                 switch (s_mode){
                     case 0:
                         Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_title")), Application.ProductName, TS_Wizard.ts_softwares_list[0]);
-                        SLogo.BackgroundImage = Properties.Resources.astel_logo;
+                        TSImageRenderer(SLogo, Properties.Resources.astel_logo, 0, ContentAlignment.MiddleCenter);
                         SInfo.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_t_astel"));
                         SInfoDetail.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_d_astel"));
                         break;
                     case 1:
                         Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_title")), Application.ProductName, TS_Wizard.ts_softwares_list[1]);
-                        SLogo.BackgroundImage = Properties.Resources.glow_logo;
+                        TSImageRenderer(SLogo, Properties.Resources.glow_logo, 0, ContentAlignment.MiddleCenter);
                         SInfo.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_t_glow"));
                         SInfoDetail.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_d_glow"));
                         break;
                     case 2:
                         Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_title")), Application.ProductName, TS_Wizard.ts_softwares_list[2]);
-                        SLogo.BackgroundImage = Properties.Resources.vimera_logo;
+                        TSImageRenderer(SLogo, Properties.Resources.vimera_logo, 0, ContentAlignment.MiddleCenter);
                         SInfo.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_t_vimera"));
                         SInfoDetail.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_d_vimera"));
                         break;
                     case 3:
                         Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_title")), Application.ProductName, TS_Wizard.ts_softwares_list[3]);
-                        SLogo.BackgroundImage = Properties.Resources.yamira_logo;
+                        TSImageRenderer(SLogo, Properties.Resources.yamira_logo, 0, ContentAlignment.MiddleCenter);
                         SInfo.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_t_yamira"));
                         SInfoDetail.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_d_yamira"));
                         break;
@@ -162,6 +159,7 @@ namespace TSWizard{
                 MainToolTip.SetToolTip(TLinkX, TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_twitter_page")));
                 MainToolTip.SetToolTip(TLinkInstagram, TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_instagram_page")));
                 MainToolTip.SetToolTip(TLinkGitHub, TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_github_page")));
+                MainToolTip.SetToolTip(TLinkYouTube, TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_youtube_page")));
                 //
                 _rotater_link_github = selectedSoftware._git_link;
                 _rotater_link_pn = selectedSoftware._pn_link;
@@ -249,6 +247,11 @@ namespace TSWizard{
         private void TLinkGitHub_Click(object sender, EventArgs e){
             try{
                 Process.Start(new ProcessStartInfo(TS_LinkSystem.github_link){ UseShellExecute = true });
+            }catch (Exception){ }
+        }
+        private void TLinkYouTube_Click(object sender, EventArgs e){
+            try{
+                Process.Start(new ProcessStartInfo(TS_LinkSystem.youtube_link){ UseShellExecute = true });
             }catch (Exception){ }
         }
     }

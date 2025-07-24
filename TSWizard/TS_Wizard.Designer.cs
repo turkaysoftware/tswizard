@@ -35,50 +35,35 @@
             this.MPanelYamira = new System.Windows.Forms.Panel();
             this.MPanelYamiraWizardBtn = new System.Windows.Forms.Button();
             this.MPanelYamiraLinkPanel = new System.Windows.Forms.Panel();
-            this.MPanelYamiraShortcutBtn = new System.Windows.Forms.PictureBox();
             this.MPanelYamiraLinkText = new System.Windows.Forms.LinkLabel();
             this.MPanelYamiraRemoveBtn = new System.Windows.Forms.Button();
             this.MPanelYamiraInText = new System.Windows.Forms.Label();
             this.MPanelYamiraHeadText = new System.Windows.Forms.Label();
-            this.MPanelYamiraImage = new System.Windows.Forms.PictureBox();
             this.MPanelVimera = new System.Windows.Forms.Panel();
             this.MPanelVimeraWizardBtn = new System.Windows.Forms.Button();
             this.MPanelVimeraLinkPanel = new System.Windows.Forms.Panel();
-            this.MPanelVimeraShortcutBtn = new System.Windows.Forms.PictureBox();
             this.MPanelVimeraLinkText = new System.Windows.Forms.LinkLabel();
             this.MPanelVimeraRemoveBtn = new System.Windows.Forms.Button();
             this.MPanelVimeraInText = new System.Windows.Forms.Label();
             this.MPanelVimeraHeadText = new System.Windows.Forms.Label();
-            this.MPanelVimeraImage = new System.Windows.Forms.PictureBox();
             this.MPanelGlow = new System.Windows.Forms.Panel();
             this.MPanelGlowWizardBtn = new System.Windows.Forms.Button();
             this.MPanelGlowLinkPanel = new System.Windows.Forms.Panel();
-            this.MPanelGlowShortcutBtn = new System.Windows.Forms.PictureBox();
             this.MPanelGlowLinkText = new System.Windows.Forms.LinkLabel();
             this.MPanelGlowRemoveBtn = new System.Windows.Forms.Button();
             this.MPanelGlowInText = new System.Windows.Forms.Label();
             this.MPanelGlowHeadText = new System.Windows.Forms.Label();
-            this.MPanelGlowImage = new System.Windows.Forms.PictureBox();
             this.MPanelAstel = new System.Windows.Forms.Panel();
             this.MPanelAstelWizardBtn = new System.Windows.Forms.Button();
             this.MPanelAstelLinkPanel = new System.Windows.Forms.Panel();
-            this.MPanelAstelShortcutBtn = new System.Windows.Forms.PictureBox();
             this.MPanelAstelLinkText = new System.Windows.Forms.LinkLabel();
             this.MPanelAstelRemoveBtn = new System.Windows.Forms.Button();
             this.MPanelAstelInText = new System.Windows.Forms.Label();
             this.MPanelAstelHeadText = new System.Windows.Forms.Label();
-            this.MPanelAstelImage = new System.Windows.Forms.PictureBox();
             this.BottomPanel = new System.Windows.Forms.Panel();
             this.BottomText = new System.Windows.Forms.Label();
-            this.MNetPanel = new System.Windows.Forms.Panel();
-            this.MLNetwork = new System.Windows.Forms.PictureBox();
             this.MFLP = new System.Windows.Forms.FlowLayoutPanel();
-            this.MLX = new System.Windows.Forms.PictureBox();
-            this.MLInstagram = new System.Windows.Forms.PictureBox();
-            this.MLGitHub = new System.Windows.Forms.PictureBox();
-            this.MLWeb = new System.Windows.Forms.PictureBox();
             this.HeaderText = new System.Windows.Forms.Label();
-            this.HeaderBanner = new System.Windows.Forms.PictureBox();
             this.HeaderMenu = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,6 +87,7 @@
             this.manualArchitectureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForSoftwareUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bmacToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.NotifyMode = new System.Windows.Forms.NotifyIcon(this.components);
@@ -109,36 +95,72 @@
             this.showAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.softwareUpdateCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bmacToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MFLP5 = new System.Windows.Forms.Panel();
+            this.MFLP4 = new System.Windows.Forms.Panel();
+            this.MFLP3 = new System.Windows.Forms.Panel();
+            this.MFLP2 = new System.Windows.Forms.Panel();
+            this.MFLP1 = new System.Windows.Forms.Panel();
+            this.MLFLP = new System.Windows.Forms.FlowLayoutPanel();
+            this.MLPanel = new System.Windows.Forms.Panel();
+            this.MPanelAstelSCPanel = new System.Windows.Forms.Panel();
+            this.MPanelGlowSCPanel = new System.Windows.Forms.Panel();
+            this.MPanelVimeraSCPanel = new System.Windows.Forms.Panel();
+            this.MPanelYamiraSCPanel = new System.Windows.Forms.Panel();
+            this.MPanelYamiraShortcutBtn = new System.Windows.Forms.PictureBox();
+            this.MPanelYamiraImage = new System.Windows.Forms.PictureBox();
+            this.MPanelVimeraShortcutBtn = new System.Windows.Forms.PictureBox();
+            this.MPanelVimeraImage = new System.Windows.Forms.PictureBox();
+            this.MPanelGlowShortcutBtn = new System.Windows.Forms.PictureBox();
+            this.MPanelGlowImage = new System.Windows.Forms.PictureBox();
+            this.MPanelAstelShortcutBtn = new System.Windows.Forms.PictureBox();
+            this.MPanelAstelImage = new System.Windows.Forms.PictureBox();
+            this.MLNetwork = new System.Windows.Forms.PictureBox();
+            this.MLYouTube = new System.Windows.Forms.PictureBox();
+            this.MLGitHub = new System.Windows.Forms.PictureBox();
+            this.MLInstagram = new System.Windows.Forms.PictureBox();
+            this.MLX = new System.Windows.Forms.PictureBox();
+            this.MLWeb = new System.Windows.Forms.PictureBox();
+            this.HeaderBanner = new System.Windows.Forms.PictureBox();
             this.BackPanel.SuspendLayout();
             this.InTLP.SuspendLayout();
             this.MPanelYamira.SuspendLayout();
             this.MPanelYamiraLinkPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelYamiraShortcutBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelYamiraImage)).BeginInit();
             this.MPanelVimera.SuspendLayout();
             this.MPanelVimeraLinkPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelVimeraShortcutBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelVimeraImage)).BeginInit();
             this.MPanelGlow.SuspendLayout();
             this.MPanelGlowLinkPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelGlowShortcutBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelGlowImage)).BeginInit();
             this.MPanelAstel.SuspendLayout();
             this.MPanelAstelLinkPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelAstelShortcutBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelAstelImage)).BeginInit();
             this.BottomPanel.SuspendLayout();
-            this.MNetPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MLNetwork)).BeginInit();
             this.MFLP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MLX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MLInstagram)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MLGitHub)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MLWeb)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HeaderBanner)).BeginInit();
             this.HeaderMenu.SuspendLayout();
             this.NotifyMenu.SuspendLayout();
+            this.MFLP5.SuspendLayout();
+            this.MFLP4.SuspendLayout();
+            this.MFLP3.SuspendLayout();
+            this.MFLP2.SuspendLayout();
+            this.MFLP1.SuspendLayout();
+            this.MLFLP.SuspendLayout();
+            this.MLPanel.SuspendLayout();
+            this.MPanelAstelSCPanel.SuspendLayout();
+            this.MPanelGlowSCPanel.SuspendLayout();
+            this.MPanelVimeraSCPanel.SuspendLayout();
+            this.MPanelYamiraSCPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelYamiraShortcutBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelYamiraImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelVimeraShortcutBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelVimeraImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelGlowShortcutBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelGlowImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelAstelShortcutBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelAstelImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MLNetwork)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MLYouTube)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MLGitHub)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MLInstagram)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MLX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MLWeb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeaderBanner)).BeginInit();
             this.SuspendLayout();
             // 
             // BackPanel
@@ -200,18 +222,21 @@
             this.MPanelYamiraWizardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MPanelYamiraWizardBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.MPanelYamiraWizardBtn.ForeColor = System.Drawing.Color.White;
+            this.MPanelYamiraWizardBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MPanelYamiraWizardBtn.Location = new System.Drawing.Point(5, 284);
             this.MPanelYamiraWizardBtn.Name = "MPanelYamiraWizardBtn";
             this.MPanelYamiraWizardBtn.Size = new System.Drawing.Size(231, 33);
             this.MPanelYamiraWizardBtn.TabIndex = 3;
             this.MPanelYamiraWizardBtn.Text = "-";
+            this.MPanelYamiraWizardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MPanelYamiraWizardBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.MPanelYamiraWizardBtn.UseVisualStyleBackColor = false;
             this.MPanelYamiraWizardBtn.Click += new System.EventHandler(this.MPanelYamiraWizardBtn_Click);
             // 
             // MPanelYamiraLinkPanel
             // 
             this.MPanelYamiraLinkPanel.BackColor = System.Drawing.Color.Transparent;
-            this.MPanelYamiraLinkPanel.Controls.Add(this.MPanelYamiraShortcutBtn);
+            this.MPanelYamiraLinkPanel.Controls.Add(this.MPanelYamiraSCPanel);
             this.MPanelYamiraLinkPanel.Controls.Add(this.MPanelYamiraLinkText);
             this.MPanelYamiraLinkPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.MPanelYamiraLinkPanel.Location = new System.Drawing.Point(5, 246);
@@ -219,21 +244,6 @@
             this.MPanelYamiraLinkPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.MPanelYamiraLinkPanel.Size = new System.Drawing.Size(231, 38);
             this.MPanelYamiraLinkPanel.TabIndex = 2;
-            // 
-            // MPanelYamiraShortcutBtn
-            // 
-            this.MPanelYamiraShortcutBtn.BackColor = System.Drawing.Color.Transparent;
-            this.MPanelYamiraShortcutBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MPanelYamiraShortcutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MPanelYamiraShortcutBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MPanelYamiraShortcutBtn.Enabled = false;
-            this.MPanelYamiraShortcutBtn.Location = new System.Drawing.Point(201, 0);
-            this.MPanelYamiraShortcutBtn.Name = "MPanelYamiraShortcutBtn";
-            this.MPanelYamiraShortcutBtn.Size = new System.Drawing.Size(30, 30);
-            this.MPanelYamiraShortcutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MPanelYamiraShortcutBtn.TabIndex = 4;
-            this.MPanelYamiraShortcutBtn.TabStop = false;
-            this.MPanelYamiraShortcutBtn.Click += new System.EventHandler(this.MPanelYamiraShortcutBtn_Click);
             // 
             // MPanelYamiraLinkText
             // 
@@ -245,7 +255,7 @@
             this.MPanelYamiraLinkText.LinkColor = System.Drawing.Color.Red;
             this.MPanelYamiraLinkText.Location = new System.Drawing.Point(0, 0);
             this.MPanelYamiraLinkText.Name = "MPanelYamiraLinkText";
-            this.MPanelYamiraLinkText.Size = new System.Drawing.Size(175, 30);
+            this.MPanelYamiraLinkText.Size = new System.Drawing.Size(195, 30);
             this.MPanelYamiraLinkText.TabIndex = 0;
             this.MPanelYamiraLinkText.TabStop = true;
             this.MPanelYamiraLinkText.Text = "N/A DETAILS";
@@ -262,11 +272,14 @@
             this.MPanelYamiraRemoveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MPanelYamiraRemoveBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.MPanelYamiraRemoveBtn.ForeColor = System.Drawing.Color.White;
+            this.MPanelYamiraRemoveBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MPanelYamiraRemoveBtn.Location = new System.Drawing.Point(5, 322);
             this.MPanelYamiraRemoveBtn.Name = "MPanelYamiraRemoveBtn";
             this.MPanelYamiraRemoveBtn.Size = new System.Drawing.Size(231, 33);
             this.MPanelYamiraRemoveBtn.TabIndex = 4;
             this.MPanelYamiraRemoveBtn.Text = "-";
+            this.MPanelYamiraRemoveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MPanelYamiraRemoveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.MPanelYamiraRemoveBtn.UseVisualStyleBackColor = false;
             this.MPanelYamiraRemoveBtn.Click += new System.EventHandler(this.MPanelYamiraRemoveBtn_Click);
             // 
@@ -294,18 +307,6 @@
             this.MPanelYamiraHeadText.Text = "N/A Software";
             this.MPanelYamiraHeadText.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // MPanelYamiraImage
-            // 
-            this.MPanelYamiraImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
-            this.MPanelYamiraImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.MPanelYamiraImage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MPanelYamiraImage.Location = new System.Drawing.Point(5, 5);
-            this.MPanelYamiraImage.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.MPanelYamiraImage.Name = "MPanelYamiraImage";
-            this.MPanelYamiraImage.Size = new System.Drawing.Size(231, 125);
-            this.MPanelYamiraImage.TabIndex = 1;
-            this.MPanelYamiraImage.TabStop = false;
-            // 
             // MPanelVimera
             // 
             this.MPanelVimera.BackColor = System.Drawing.Color.Black;
@@ -331,18 +332,21 @@
             this.MPanelVimeraWizardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MPanelVimeraWizardBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.MPanelVimeraWizardBtn.ForeColor = System.Drawing.Color.White;
+            this.MPanelVimeraWizardBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MPanelVimeraWizardBtn.Location = new System.Drawing.Point(5, 284);
             this.MPanelVimeraWizardBtn.Name = "MPanelVimeraWizardBtn";
             this.MPanelVimeraWizardBtn.Size = new System.Drawing.Size(231, 33);
             this.MPanelVimeraWizardBtn.TabIndex = 3;
             this.MPanelVimeraWizardBtn.Text = "-";
+            this.MPanelVimeraWizardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MPanelVimeraWizardBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.MPanelVimeraWizardBtn.UseVisualStyleBackColor = false;
             this.MPanelVimeraWizardBtn.Click += new System.EventHandler(this.MPanelVimeraWizardBtn_Click);
             // 
             // MPanelVimeraLinkPanel
             // 
             this.MPanelVimeraLinkPanel.BackColor = System.Drawing.Color.Transparent;
-            this.MPanelVimeraLinkPanel.Controls.Add(this.MPanelVimeraShortcutBtn);
+            this.MPanelVimeraLinkPanel.Controls.Add(this.MPanelVimeraSCPanel);
             this.MPanelVimeraLinkPanel.Controls.Add(this.MPanelVimeraLinkText);
             this.MPanelVimeraLinkPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.MPanelVimeraLinkPanel.Location = new System.Drawing.Point(5, 246);
@@ -350,21 +354,6 @@
             this.MPanelVimeraLinkPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.MPanelVimeraLinkPanel.Size = new System.Drawing.Size(231, 38);
             this.MPanelVimeraLinkPanel.TabIndex = 2;
-            // 
-            // MPanelVimeraShortcutBtn
-            // 
-            this.MPanelVimeraShortcutBtn.BackColor = System.Drawing.Color.Transparent;
-            this.MPanelVimeraShortcutBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MPanelVimeraShortcutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MPanelVimeraShortcutBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MPanelVimeraShortcutBtn.Enabled = false;
-            this.MPanelVimeraShortcutBtn.Location = new System.Drawing.Point(201, 0);
-            this.MPanelVimeraShortcutBtn.Name = "MPanelVimeraShortcutBtn";
-            this.MPanelVimeraShortcutBtn.Size = new System.Drawing.Size(30, 30);
-            this.MPanelVimeraShortcutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MPanelVimeraShortcutBtn.TabIndex = 4;
-            this.MPanelVimeraShortcutBtn.TabStop = false;
-            this.MPanelVimeraShortcutBtn.Click += new System.EventHandler(this.MPanelVimeraShortcutBtn_Click);
             // 
             // MPanelVimeraLinkText
             // 
@@ -376,7 +365,7 @@
             this.MPanelVimeraLinkText.LinkColor = System.Drawing.Color.Violet;
             this.MPanelVimeraLinkText.Location = new System.Drawing.Point(0, 0);
             this.MPanelVimeraLinkText.Name = "MPanelVimeraLinkText";
-            this.MPanelVimeraLinkText.Size = new System.Drawing.Size(175, 30);
+            this.MPanelVimeraLinkText.Size = new System.Drawing.Size(195, 30);
             this.MPanelVimeraLinkText.TabIndex = 0;
             this.MPanelVimeraLinkText.TabStop = true;
             this.MPanelVimeraLinkText.Text = "N/A DETAILS";
@@ -393,11 +382,14 @@
             this.MPanelVimeraRemoveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MPanelVimeraRemoveBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.MPanelVimeraRemoveBtn.ForeColor = System.Drawing.Color.White;
+            this.MPanelVimeraRemoveBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MPanelVimeraRemoveBtn.Location = new System.Drawing.Point(5, 322);
             this.MPanelVimeraRemoveBtn.Name = "MPanelVimeraRemoveBtn";
             this.MPanelVimeraRemoveBtn.Size = new System.Drawing.Size(231, 33);
             this.MPanelVimeraRemoveBtn.TabIndex = 4;
             this.MPanelVimeraRemoveBtn.Text = "-";
+            this.MPanelVimeraRemoveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MPanelVimeraRemoveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.MPanelVimeraRemoveBtn.UseVisualStyleBackColor = false;
             this.MPanelVimeraRemoveBtn.Click += new System.EventHandler(this.MPanelVimeraRemoveBtn_Click);
             // 
@@ -425,18 +417,6 @@
             this.MPanelVimeraHeadText.Text = "N/A Software";
             this.MPanelVimeraHeadText.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // MPanelVimeraImage
-            // 
-            this.MPanelVimeraImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
-            this.MPanelVimeraImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.MPanelVimeraImage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MPanelVimeraImage.Location = new System.Drawing.Point(5, 5);
-            this.MPanelVimeraImage.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.MPanelVimeraImage.Name = "MPanelVimeraImage";
-            this.MPanelVimeraImage.Size = new System.Drawing.Size(231, 125);
-            this.MPanelVimeraImage.TabIndex = 1;
-            this.MPanelVimeraImage.TabStop = false;
-            // 
             // MPanelGlow
             // 
             this.MPanelGlow.BackColor = System.Drawing.Color.Black;
@@ -462,18 +442,21 @@
             this.MPanelGlowWizardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MPanelGlowWizardBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.MPanelGlowWizardBtn.ForeColor = System.Drawing.Color.White;
+            this.MPanelGlowWizardBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MPanelGlowWizardBtn.Location = new System.Drawing.Point(5, 284);
             this.MPanelGlowWizardBtn.Name = "MPanelGlowWizardBtn";
             this.MPanelGlowWizardBtn.Size = new System.Drawing.Size(231, 33);
             this.MPanelGlowWizardBtn.TabIndex = 3;
             this.MPanelGlowWizardBtn.Text = "-";
+            this.MPanelGlowWizardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MPanelGlowWizardBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.MPanelGlowWizardBtn.UseVisualStyleBackColor = false;
             this.MPanelGlowWizardBtn.Click += new System.EventHandler(this.MPanelGlowWizardBtn_Click);
             // 
             // MPanelGlowLinkPanel
             // 
             this.MPanelGlowLinkPanel.BackColor = System.Drawing.Color.Transparent;
-            this.MPanelGlowLinkPanel.Controls.Add(this.MPanelGlowShortcutBtn);
+            this.MPanelGlowLinkPanel.Controls.Add(this.MPanelGlowSCPanel);
             this.MPanelGlowLinkPanel.Controls.Add(this.MPanelGlowLinkText);
             this.MPanelGlowLinkPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.MPanelGlowLinkPanel.Location = new System.Drawing.Point(5, 246);
@@ -481,21 +464,6 @@
             this.MPanelGlowLinkPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.MPanelGlowLinkPanel.Size = new System.Drawing.Size(231, 38);
             this.MPanelGlowLinkPanel.TabIndex = 2;
-            // 
-            // MPanelGlowShortcutBtn
-            // 
-            this.MPanelGlowShortcutBtn.BackColor = System.Drawing.Color.Transparent;
-            this.MPanelGlowShortcutBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MPanelGlowShortcutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MPanelGlowShortcutBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MPanelGlowShortcutBtn.Enabled = false;
-            this.MPanelGlowShortcutBtn.Location = new System.Drawing.Point(201, 0);
-            this.MPanelGlowShortcutBtn.Name = "MPanelGlowShortcutBtn";
-            this.MPanelGlowShortcutBtn.Size = new System.Drawing.Size(30, 30);
-            this.MPanelGlowShortcutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MPanelGlowShortcutBtn.TabIndex = 4;
-            this.MPanelGlowShortcutBtn.TabStop = false;
-            this.MPanelGlowShortcutBtn.Click += new System.EventHandler(this.MPanelGlowShortcutBtn_Click);
             // 
             // MPanelGlowLinkText
             // 
@@ -507,7 +475,7 @@
             this.MPanelGlowLinkText.LinkColor = System.Drawing.Color.DeepSkyBlue;
             this.MPanelGlowLinkText.Location = new System.Drawing.Point(0, 0);
             this.MPanelGlowLinkText.Name = "MPanelGlowLinkText";
-            this.MPanelGlowLinkText.Size = new System.Drawing.Size(175, 30);
+            this.MPanelGlowLinkText.Size = new System.Drawing.Size(195, 30);
             this.MPanelGlowLinkText.TabIndex = 0;
             this.MPanelGlowLinkText.TabStop = true;
             this.MPanelGlowLinkText.Text = "N/A DETAILS";
@@ -524,11 +492,14 @@
             this.MPanelGlowRemoveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MPanelGlowRemoveBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.MPanelGlowRemoveBtn.ForeColor = System.Drawing.Color.White;
+            this.MPanelGlowRemoveBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MPanelGlowRemoveBtn.Location = new System.Drawing.Point(5, 322);
             this.MPanelGlowRemoveBtn.Name = "MPanelGlowRemoveBtn";
             this.MPanelGlowRemoveBtn.Size = new System.Drawing.Size(231, 33);
             this.MPanelGlowRemoveBtn.TabIndex = 4;
             this.MPanelGlowRemoveBtn.Text = "-";
+            this.MPanelGlowRemoveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MPanelGlowRemoveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.MPanelGlowRemoveBtn.UseVisualStyleBackColor = false;
             this.MPanelGlowRemoveBtn.Click += new System.EventHandler(this.MPanelGlowRemoveBtn_Click);
             // 
@@ -556,18 +527,6 @@
             this.MPanelGlowHeadText.Text = "N/A Software";
             this.MPanelGlowHeadText.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // MPanelGlowImage
-            // 
-            this.MPanelGlowImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
-            this.MPanelGlowImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.MPanelGlowImage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MPanelGlowImage.Location = new System.Drawing.Point(5, 5);
-            this.MPanelGlowImage.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.MPanelGlowImage.Name = "MPanelGlowImage";
-            this.MPanelGlowImage.Size = new System.Drawing.Size(231, 125);
-            this.MPanelGlowImage.TabIndex = 1;
-            this.MPanelGlowImage.TabStop = false;
-            // 
             // MPanelAstel
             // 
             this.MPanelAstel.BackColor = System.Drawing.Color.Black;
@@ -593,18 +552,21 @@
             this.MPanelAstelWizardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MPanelAstelWizardBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.MPanelAstelWizardBtn.ForeColor = System.Drawing.Color.White;
+            this.MPanelAstelWizardBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MPanelAstelWizardBtn.Location = new System.Drawing.Point(5, 284);
             this.MPanelAstelWizardBtn.Name = "MPanelAstelWizardBtn";
             this.MPanelAstelWizardBtn.Size = new System.Drawing.Size(231, 33);
             this.MPanelAstelWizardBtn.TabIndex = 3;
             this.MPanelAstelWizardBtn.Text = "-";
+            this.MPanelAstelWizardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MPanelAstelWizardBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.MPanelAstelWizardBtn.UseVisualStyleBackColor = false;
             this.MPanelAstelWizardBtn.Click += new System.EventHandler(this.MPanelAstelWizardBtn_Click);
             // 
             // MPanelAstelLinkPanel
             // 
             this.MPanelAstelLinkPanel.BackColor = System.Drawing.Color.Transparent;
-            this.MPanelAstelLinkPanel.Controls.Add(this.MPanelAstelShortcutBtn);
+            this.MPanelAstelLinkPanel.Controls.Add(this.MPanelAstelSCPanel);
             this.MPanelAstelLinkPanel.Controls.Add(this.MPanelAstelLinkText);
             this.MPanelAstelLinkPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.MPanelAstelLinkPanel.Location = new System.Drawing.Point(5, 246);
@@ -612,21 +574,6 @@
             this.MPanelAstelLinkPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.MPanelAstelLinkPanel.Size = new System.Drawing.Size(231, 38);
             this.MPanelAstelLinkPanel.TabIndex = 2;
-            // 
-            // MPanelAstelShortcutBtn
-            // 
-            this.MPanelAstelShortcutBtn.BackColor = System.Drawing.Color.Transparent;
-            this.MPanelAstelShortcutBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MPanelAstelShortcutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MPanelAstelShortcutBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MPanelAstelShortcutBtn.Enabled = false;
-            this.MPanelAstelShortcutBtn.Location = new System.Drawing.Point(201, 0);
-            this.MPanelAstelShortcutBtn.Name = "MPanelAstelShortcutBtn";
-            this.MPanelAstelShortcutBtn.Size = new System.Drawing.Size(30, 30);
-            this.MPanelAstelShortcutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MPanelAstelShortcutBtn.TabIndex = 3;
-            this.MPanelAstelShortcutBtn.TabStop = false;
-            this.MPanelAstelShortcutBtn.Click += new System.EventHandler(this.MPanelAstelShortcutBtn_Click);
             // 
             // MPanelAstelLinkText
             // 
@@ -638,7 +585,7 @@
             this.MPanelAstelLinkText.LinkColor = System.Drawing.Color.Lime;
             this.MPanelAstelLinkText.Location = new System.Drawing.Point(0, 0);
             this.MPanelAstelLinkText.Name = "MPanelAstelLinkText";
-            this.MPanelAstelLinkText.Size = new System.Drawing.Size(175, 30);
+            this.MPanelAstelLinkText.Size = new System.Drawing.Size(195, 30);
             this.MPanelAstelLinkText.TabIndex = 0;
             this.MPanelAstelLinkText.TabStop = true;
             this.MPanelAstelLinkText.Text = "N/A DETAILS";
@@ -655,11 +602,14 @@
             this.MPanelAstelRemoveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MPanelAstelRemoveBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.MPanelAstelRemoveBtn.ForeColor = System.Drawing.Color.White;
+            this.MPanelAstelRemoveBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MPanelAstelRemoveBtn.Location = new System.Drawing.Point(5, 322);
             this.MPanelAstelRemoveBtn.Name = "MPanelAstelRemoveBtn";
             this.MPanelAstelRemoveBtn.Size = new System.Drawing.Size(231, 33);
             this.MPanelAstelRemoveBtn.TabIndex = 4;
             this.MPanelAstelRemoveBtn.Text = "-";
+            this.MPanelAstelRemoveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MPanelAstelRemoveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.MPanelAstelRemoveBtn.UseVisualStyleBackColor = false;
             this.MPanelAstelRemoveBtn.Click += new System.EventHandler(this.MPanelAstelRemoveBtn_Click);
             // 
@@ -688,23 +638,11 @@
             this.MPanelAstelHeadText.Text = "N/A Software";
             this.MPanelAstelHeadText.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // MPanelAstelImage
-            // 
-            this.MPanelAstelImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
-            this.MPanelAstelImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.MPanelAstelImage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MPanelAstelImage.Location = new System.Drawing.Point(5, 5);
-            this.MPanelAstelImage.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.MPanelAstelImage.Name = "MPanelAstelImage";
-            this.MPanelAstelImage.Size = new System.Drawing.Size(231, 125);
-            this.MPanelAstelImage.TabIndex = 0;
-            this.MPanelAstelImage.TabStop = false;
-            // 
             // BottomPanel
             // 
             this.BottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
             this.BottomPanel.Controls.Add(this.BottomText);
-            this.BottomPanel.Controls.Add(this.MNetPanel);
+            this.BottomPanel.Controls.Add(this.MLFLP);
             this.BottomPanel.Controls.Add(this.MFLP);
             this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BottomPanel.Location = new System.Drawing.Point(10, 532);
@@ -721,97 +659,24 @@
             this.BottomText.ForeColor = System.Drawing.Color.White;
             this.BottomText.Location = new System.Drawing.Point(35, 0);
             this.BottomText.Name = "BottomText";
-            this.BottomText.Size = new System.Drawing.Size(698, 35);
+            this.BottomText.Size = new System.Drawing.Size(782, 35);
             this.BottomText.TabIndex = 1;
             this.BottomText.Text = "Server N/A";
             this.BottomText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // MNetPanel
-            // 
-            this.MNetPanel.AutoSize = true;
-            this.MNetPanel.Controls.Add(this.MLNetwork);
-            this.MNetPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MNetPanel.Location = new System.Drawing.Point(0, 0);
-            this.MNetPanel.Name = "MNetPanel";
-            this.MNetPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.MNetPanel.Size = new System.Drawing.Size(35, 35);
-            this.MNetPanel.TabIndex = 0;
-            // 
-            // MLNetwork
-            // 
-            this.MLNetwork.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MLNetwork.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MLNetwork.Location = new System.Drawing.Point(3, 3);
-            this.MLNetwork.Name = "MLNetwork";
-            this.MLNetwork.Size = new System.Drawing.Size(29, 29);
-            this.MLNetwork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MLNetwork.TabIndex = 2;
-            this.MLNetwork.TabStop = false;
-            // 
             // MFLP
             // 
-            this.MFLP.Controls.Add(this.MLX);
-            this.MFLP.Controls.Add(this.MLInstagram);
-            this.MFLP.Controls.Add(this.MLGitHub);
-            this.MFLP.Controls.Add(this.MLWeb);
+            this.MFLP.Controls.Add(this.MFLP5);
+            this.MFLP.Controls.Add(this.MFLP4);
+            this.MFLP.Controls.Add(this.MFLP3);
+            this.MFLP.Controls.Add(this.MFLP2);
+            this.MFLP.Controls.Add(this.MFLP1);
             this.MFLP.Dock = System.Windows.Forms.DockStyle.Right;
             this.MFLP.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.MFLP.Location = new System.Drawing.Point(795, 0);
+            this.MFLP.Location = new System.Drawing.Point(823, 0);
             this.MFLP.Name = "MFLP";
-            this.MFLP.Size = new System.Drawing.Size(193, 35);
+            this.MFLP.Size = new System.Drawing.Size(165, 35);
             this.MFLP.TabIndex = 2;
-            // 
-            // MLX
-            // 
-            this.MLX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MLX.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MLX.Location = new System.Drawing.Point(161, 3);
-            this.MLX.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.MLX.Name = "MLX";
-            this.MLX.Size = new System.Drawing.Size(29, 29);
-            this.MLX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MLX.TabIndex = 8;
-            this.MLX.TabStop = false;
-            this.MLX.Click += new System.EventHandler(this.MLX_Click);
-            // 
-            // MLInstagram
-            // 
-            this.MLInstagram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MLInstagram.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MLInstagram.Location = new System.Drawing.Point(129, 3);
-            this.MLInstagram.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.MLInstagram.Name = "MLInstagram";
-            this.MLInstagram.Size = new System.Drawing.Size(29, 29);
-            this.MLInstagram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MLInstagram.TabIndex = 7;
-            this.MLInstagram.TabStop = false;
-            this.MLInstagram.Click += new System.EventHandler(this.MLInstagram_Click);
-            // 
-            // MLGitHub
-            // 
-            this.MLGitHub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MLGitHub.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MLGitHub.Location = new System.Drawing.Point(97, 3);
-            this.MLGitHub.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.MLGitHub.Name = "MLGitHub";
-            this.MLGitHub.Size = new System.Drawing.Size(29, 29);
-            this.MLGitHub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MLGitHub.TabIndex = 6;
-            this.MLGitHub.TabStop = false;
-            this.MLGitHub.Click += new System.EventHandler(this.MLGitHub_Click);
-            // 
-            // MLWeb
-            // 
-            this.MLWeb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MLWeb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MLWeb.Location = new System.Drawing.Point(65, 3);
-            this.MLWeb.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.MLWeb.Name = "MLWeb";
-            this.MLWeb.Size = new System.Drawing.Size(29, 29);
-            this.MLWeb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MLWeb.TabIndex = 9;
-            this.MLWeb.TabStop = false;
-            this.MLWeb.Click += new System.EventHandler(this.MLWeb_Click);
             // 
             // HeaderText
             // 
@@ -824,18 +689,6 @@
             this.HeaderText.TabIndex = 0;
             this.HeaderText.Text = "TW Wizard, N/A";
             this.HeaderText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // HeaderBanner
-            // 
-            this.HeaderBanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
-            this.HeaderBanner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.HeaderBanner.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HeaderBanner.Location = new System.Drawing.Point(10, 10);
-            this.HeaderBanner.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.HeaderBanner.Name = "HeaderBanner";
-            this.HeaderBanner.Size = new System.Drawing.Size(988, 85);
-            this.HeaderBanner.TabIndex = 0;
-            this.HeaderBanner.TabStop = false;
             // 
             // HeaderMenu
             // 
@@ -1039,6 +892,16 @@
             this.checkForSoftwareUpdateToolStripMenuItem.Text = "check for software update";
             this.checkForSoftwareUpdateToolStripMenuItem.Click += new System.EventHandler(this.checkForSoftwareUpdateToolStripMenuItem_Click);
             // 
+            // bmacToolStripMenuItem
+            // 
+            this.bmacToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bmacToolStripMenuItem.Name = "bmacToolStripMenuItem";
+            this.bmacToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.D)));
+            this.bmacToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.bmacToolStripMenuItem.Text = "Bmac";
+            this.bmacToolStripMenuItem.Click += new System.EventHandler(this.bmacToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1093,15 +956,320 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // bmacToolStripMenuItem
+            // MFLP5
             // 
-            this.bmacToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bmacToolStripMenuItem.Name = "bmacToolStripMenuItem";
-            this.bmacToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.D)));
-            this.bmacToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.bmacToolStripMenuItem.Text = "Bmac";
-            this.bmacToolStripMenuItem.Click += new System.EventHandler(this.bmacToolStripMenuItem_Click);
+            this.MFLP5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MFLP5.Controls.Add(this.MLYouTube);
+            this.MFLP5.Location = new System.Drawing.Point(135, 3);
+            this.MFLP5.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
+            this.MFLP5.Name = "MFLP5";
+            this.MFLP5.Padding = new System.Windows.Forms.Padding(5);
+            this.MFLP5.Size = new System.Drawing.Size(29, 29);
+            this.MFLP5.TabIndex = 11;
+            // 
+            // MFLP4
+            // 
+            this.MFLP4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.MFLP4.Controls.Add(this.MLGitHub);
+            this.MFLP4.Location = new System.Drawing.Point(104, 3);
+            this.MFLP4.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
+            this.MFLP4.Name = "MFLP4";
+            this.MFLP4.Padding = new System.Windows.Forms.Padding(5);
+            this.MFLP4.Size = new System.Drawing.Size(29, 29);
+            this.MFLP4.TabIndex = 12;
+            // 
+            // MFLP3
+            // 
+            this.MFLP3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.MFLP3.Controls.Add(this.MLInstagram);
+            this.MFLP3.Location = new System.Drawing.Point(73, 3);
+            this.MFLP3.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
+            this.MFLP3.Name = "MFLP3";
+            this.MFLP3.Padding = new System.Windows.Forms.Padding(5);
+            this.MFLP3.Size = new System.Drawing.Size(29, 29);
+            this.MFLP3.TabIndex = 13;
+            // 
+            // MFLP2
+            // 
+            this.MFLP2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.MFLP2.Controls.Add(this.MLX);
+            this.MFLP2.Location = new System.Drawing.Point(42, 3);
+            this.MFLP2.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
+            this.MFLP2.Name = "MFLP2";
+            this.MFLP2.Padding = new System.Windows.Forms.Padding(5);
+            this.MFLP2.Size = new System.Drawing.Size(29, 29);
+            this.MFLP2.TabIndex = 14;
+            // 
+            // MFLP1
+            // 
+            this.MFLP1.BackColor = System.Drawing.Color.White;
+            this.MFLP1.Controls.Add(this.MLWeb);
+            this.MFLP1.Location = new System.Drawing.Point(11, 3);
+            this.MFLP1.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
+            this.MFLP1.Name = "MFLP1";
+            this.MFLP1.Padding = new System.Windows.Forms.Padding(5);
+            this.MFLP1.Size = new System.Drawing.Size(29, 29);
+            this.MFLP1.TabIndex = 15;
+            // 
+            // MLFLP
+            // 
+            this.MLFLP.AutoSize = true;
+            this.MLFLP.Controls.Add(this.MLPanel);
+            this.MLFLP.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MLFLP.Location = new System.Drawing.Point(0, 0);
+            this.MLFLP.Name = "MLFLP";
+            this.MLFLP.Size = new System.Drawing.Size(35, 35);
+            this.MLFLP.TabIndex = 3;
+            // 
+            // MLPanel
+            // 
+            this.MLPanel.Controls.Add(this.MLNetwork);
+            this.MLPanel.Location = new System.Drawing.Point(3, 3);
+            this.MLPanel.Name = "MLPanel";
+            this.MLPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.MLPanel.Size = new System.Drawing.Size(29, 29);
+            this.MLPanel.TabIndex = 0;
+            // 
+            // MPanelAstelSCPanel
+            // 
+            this.MPanelAstelSCPanel.Controls.Add(this.MPanelAstelShortcutBtn);
+            this.MPanelAstelSCPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MPanelAstelSCPanel.Location = new System.Drawing.Point(201, 0);
+            this.MPanelAstelSCPanel.Name = "MPanelAstelSCPanel";
+            this.MPanelAstelSCPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.MPanelAstelSCPanel.Size = new System.Drawing.Size(30, 30);
+            this.MPanelAstelSCPanel.TabIndex = 1;
+            // 
+            // MPanelGlowSCPanel
+            // 
+            this.MPanelGlowSCPanel.Controls.Add(this.MPanelGlowShortcutBtn);
+            this.MPanelGlowSCPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MPanelGlowSCPanel.Location = new System.Drawing.Point(201, 0);
+            this.MPanelGlowSCPanel.Name = "MPanelGlowSCPanel";
+            this.MPanelGlowSCPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.MPanelGlowSCPanel.Size = new System.Drawing.Size(30, 30);
+            this.MPanelGlowSCPanel.TabIndex = 1;
+            // 
+            // MPanelVimeraSCPanel
+            // 
+            this.MPanelVimeraSCPanel.Controls.Add(this.MPanelVimeraShortcutBtn);
+            this.MPanelVimeraSCPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MPanelVimeraSCPanel.Location = new System.Drawing.Point(201, 0);
+            this.MPanelVimeraSCPanel.Name = "MPanelVimeraSCPanel";
+            this.MPanelVimeraSCPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.MPanelVimeraSCPanel.Size = new System.Drawing.Size(30, 30);
+            this.MPanelVimeraSCPanel.TabIndex = 1;
+            // 
+            // MPanelYamiraSCPanel
+            // 
+            this.MPanelYamiraSCPanel.Controls.Add(this.MPanelYamiraShortcutBtn);
+            this.MPanelYamiraSCPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MPanelYamiraSCPanel.Location = new System.Drawing.Point(201, 0);
+            this.MPanelYamiraSCPanel.Name = "MPanelYamiraSCPanel";
+            this.MPanelYamiraSCPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.MPanelYamiraSCPanel.Size = new System.Drawing.Size(30, 30);
+            this.MPanelYamiraSCPanel.TabIndex = 1;
+            // 
+            // MPanelYamiraShortcutBtn
+            // 
+            this.MPanelYamiraShortcutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.MPanelYamiraShortcutBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MPanelYamiraShortcutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MPanelYamiraShortcutBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MPanelYamiraShortcutBtn.Enabled = false;
+            this.MPanelYamiraShortcutBtn.Location = new System.Drawing.Point(5, 5);
+            this.MPanelYamiraShortcutBtn.Name = "MPanelYamiraShortcutBtn";
+            this.MPanelYamiraShortcutBtn.Size = new System.Drawing.Size(20, 20);
+            this.MPanelYamiraShortcutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.MPanelYamiraShortcutBtn.TabIndex = 4;
+            this.MPanelYamiraShortcutBtn.TabStop = false;
+            this.MPanelYamiraShortcutBtn.Click += new System.EventHandler(this.MPanelYamiraShortcutBtn_Click);
+            // 
+            // MPanelYamiraImage
+            // 
+            this.MPanelYamiraImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
+            this.MPanelYamiraImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MPanelYamiraImage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MPanelYamiraImage.Location = new System.Drawing.Point(5, 5);
+            this.MPanelYamiraImage.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.MPanelYamiraImage.Name = "MPanelYamiraImage";
+            this.MPanelYamiraImage.Size = new System.Drawing.Size(231, 125);
+            this.MPanelYamiraImage.TabIndex = 1;
+            this.MPanelYamiraImage.TabStop = false;
+            // 
+            // MPanelVimeraShortcutBtn
+            // 
+            this.MPanelVimeraShortcutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.MPanelVimeraShortcutBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MPanelVimeraShortcutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MPanelVimeraShortcutBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MPanelVimeraShortcutBtn.Enabled = false;
+            this.MPanelVimeraShortcutBtn.Location = new System.Drawing.Point(5, 5);
+            this.MPanelVimeraShortcutBtn.Name = "MPanelVimeraShortcutBtn";
+            this.MPanelVimeraShortcutBtn.Size = new System.Drawing.Size(20, 20);
+            this.MPanelVimeraShortcutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.MPanelVimeraShortcutBtn.TabIndex = 4;
+            this.MPanelVimeraShortcutBtn.TabStop = false;
+            this.MPanelVimeraShortcutBtn.Click += new System.EventHandler(this.MPanelVimeraShortcutBtn_Click);
+            // 
+            // MPanelVimeraImage
+            // 
+            this.MPanelVimeraImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
+            this.MPanelVimeraImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MPanelVimeraImage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MPanelVimeraImage.Location = new System.Drawing.Point(5, 5);
+            this.MPanelVimeraImage.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.MPanelVimeraImage.Name = "MPanelVimeraImage";
+            this.MPanelVimeraImage.Size = new System.Drawing.Size(231, 125);
+            this.MPanelVimeraImage.TabIndex = 1;
+            this.MPanelVimeraImage.TabStop = false;
+            // 
+            // MPanelGlowShortcutBtn
+            // 
+            this.MPanelGlowShortcutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.MPanelGlowShortcutBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MPanelGlowShortcutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MPanelGlowShortcutBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MPanelGlowShortcutBtn.Enabled = false;
+            this.MPanelGlowShortcutBtn.Location = new System.Drawing.Point(5, 5);
+            this.MPanelGlowShortcutBtn.Name = "MPanelGlowShortcutBtn";
+            this.MPanelGlowShortcutBtn.Size = new System.Drawing.Size(20, 20);
+            this.MPanelGlowShortcutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.MPanelGlowShortcutBtn.TabIndex = 4;
+            this.MPanelGlowShortcutBtn.TabStop = false;
+            this.MPanelGlowShortcutBtn.Click += new System.EventHandler(this.MPanelGlowShortcutBtn_Click);
+            // 
+            // MPanelGlowImage
+            // 
+            this.MPanelGlowImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
+            this.MPanelGlowImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MPanelGlowImage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MPanelGlowImage.Location = new System.Drawing.Point(5, 5);
+            this.MPanelGlowImage.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.MPanelGlowImage.Name = "MPanelGlowImage";
+            this.MPanelGlowImage.Size = new System.Drawing.Size(231, 125);
+            this.MPanelGlowImage.TabIndex = 1;
+            this.MPanelGlowImage.TabStop = false;
+            // 
+            // MPanelAstelShortcutBtn
+            // 
+            this.MPanelAstelShortcutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.MPanelAstelShortcutBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MPanelAstelShortcutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MPanelAstelShortcutBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MPanelAstelShortcutBtn.Enabled = false;
+            this.MPanelAstelShortcutBtn.Location = new System.Drawing.Point(5, 5);
+            this.MPanelAstelShortcutBtn.Name = "MPanelAstelShortcutBtn";
+            this.MPanelAstelShortcutBtn.Size = new System.Drawing.Size(20, 20);
+            this.MPanelAstelShortcutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.MPanelAstelShortcutBtn.TabIndex = 3;
+            this.MPanelAstelShortcutBtn.TabStop = false;
+            this.MPanelAstelShortcutBtn.Click += new System.EventHandler(this.MPanelAstelShortcutBtn_Click);
+            // 
+            // MPanelAstelImage
+            // 
+            this.MPanelAstelImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
+            this.MPanelAstelImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MPanelAstelImage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MPanelAstelImage.Location = new System.Drawing.Point(5, 5);
+            this.MPanelAstelImage.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.MPanelAstelImage.Name = "MPanelAstelImage";
+            this.MPanelAstelImage.Size = new System.Drawing.Size(231, 125);
+            this.MPanelAstelImage.TabIndex = 0;
+            this.MPanelAstelImage.TabStop = false;
+            // 
+            // MLNetwork
+            // 
+            this.MLNetwork.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MLNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MLNetwork.Location = new System.Drawing.Point(5, 5);
+            this.MLNetwork.Name = "MLNetwork";
+            this.MLNetwork.Size = new System.Drawing.Size(19, 19);
+            this.MLNetwork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.MLNetwork.TabIndex = 5;
+            this.MLNetwork.TabStop = false;
+            // 
+            // MLYouTube
+            // 
+            this.MLYouTube.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MLYouTube.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MLYouTube.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MLYouTube.Location = new System.Drawing.Point(5, 5);
+            this.MLYouTube.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.MLYouTube.Name = "MLYouTube";
+            this.MLYouTube.Size = new System.Drawing.Size(19, 19);
+            this.MLYouTube.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.MLYouTube.TabIndex = 11;
+            this.MLYouTube.TabStop = false;
+            this.MLYouTube.Click += new System.EventHandler(this.MLYouTube_Click);
+            // 
+            // MLGitHub
+            // 
+            this.MLGitHub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MLGitHub.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MLGitHub.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MLGitHub.Location = new System.Drawing.Point(5, 5);
+            this.MLGitHub.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.MLGitHub.Name = "MLGitHub";
+            this.MLGitHub.Size = new System.Drawing.Size(19, 19);
+            this.MLGitHub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.MLGitHub.TabIndex = 7;
+            this.MLGitHub.TabStop = false;
+            this.MLGitHub.Click += new System.EventHandler(this.MLGitHub_Click);
+            // 
+            // MLInstagram
+            // 
+            this.MLInstagram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MLInstagram.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MLInstagram.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MLInstagram.Location = new System.Drawing.Point(5, 5);
+            this.MLInstagram.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.MLInstagram.Name = "MLInstagram";
+            this.MLInstagram.Size = new System.Drawing.Size(19, 19);
+            this.MLInstagram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.MLInstagram.TabIndex = 8;
+            this.MLInstagram.TabStop = false;
+            this.MLInstagram.Click += new System.EventHandler(this.MLInstagram_Click);
+            // 
+            // MLX
+            // 
+            this.MLX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MLX.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MLX.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MLX.Location = new System.Drawing.Point(5, 5);
+            this.MLX.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.MLX.Name = "MLX";
+            this.MLX.Size = new System.Drawing.Size(19, 19);
+            this.MLX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.MLX.TabIndex = 9;
+            this.MLX.TabStop = false;
+            this.MLX.Click += new System.EventHandler(this.MLX_Click);
+            // 
+            // MLWeb
+            // 
+            this.MLWeb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MLWeb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MLWeb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MLWeb.Location = new System.Drawing.Point(5, 5);
+            this.MLWeb.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.MLWeb.Name = "MLWeb";
+            this.MLWeb.Size = new System.Drawing.Size(19, 19);
+            this.MLWeb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.MLWeb.TabIndex = 10;
+            this.MLWeb.TabStop = false;
+            this.MLWeb.Click += new System.EventHandler(this.MLWeb_Click);
+            // 
+            // HeaderBanner
+            // 
+            this.HeaderBanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
+            this.HeaderBanner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.HeaderBanner.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HeaderBanner.Location = new System.Drawing.Point(10, 10);
+            this.HeaderBanner.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.HeaderBanner.Name = "HeaderBanner";
+            this.HeaderBanner.Size = new System.Drawing.Size(988, 85);
+            this.HeaderBanner.TabIndex = 0;
+            this.HeaderBanner.TabStop = false;
             // 
             // TS_Wizard
             // 
@@ -1124,33 +1292,44 @@
             this.InTLP.ResumeLayout(false);
             this.MPanelYamira.ResumeLayout(false);
             this.MPanelYamiraLinkPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelYamiraShortcutBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelYamiraImage)).EndInit();
             this.MPanelVimera.ResumeLayout(false);
             this.MPanelVimeraLinkPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelVimeraShortcutBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelVimeraImage)).EndInit();
             this.MPanelGlow.ResumeLayout(false);
             this.MPanelGlowLinkPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelGlowShortcutBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelGlowImage)).EndInit();
             this.MPanelAstel.ResumeLayout(false);
             this.MPanelAstelLinkPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelAstelShortcutBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MPanelAstelImage)).EndInit();
             this.BottomPanel.ResumeLayout(false);
             this.BottomPanel.PerformLayout();
-            this.MNetPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MLNetwork)).EndInit();
             this.MFLP.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MLX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MLInstagram)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MLGitHub)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MLWeb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HeaderBanner)).EndInit();
             this.HeaderMenu.ResumeLayout(false);
             this.HeaderMenu.PerformLayout();
             this.NotifyMenu.ResumeLayout(false);
+            this.MFLP5.ResumeLayout(false);
+            this.MFLP4.ResumeLayout(false);
+            this.MFLP3.ResumeLayout(false);
+            this.MFLP2.ResumeLayout(false);
+            this.MFLP1.ResumeLayout(false);
+            this.MLFLP.ResumeLayout(false);
+            this.MLPanel.ResumeLayout(false);
+            this.MPanelAstelSCPanel.ResumeLayout(false);
+            this.MPanelGlowSCPanel.ResumeLayout(false);
+            this.MPanelVimeraSCPanel.ResumeLayout(false);
+            this.MPanelYamiraSCPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelYamiraShortcutBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelYamiraImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelVimeraShortcutBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelVimeraImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelGlowShortcutBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelGlowImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelAstelShortcutBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MPanelAstelImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MLNetwork)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MLYouTube)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MLGitHub)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MLInstagram)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MLX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MLWeb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeaderBanner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1202,10 +1381,6 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolTip MainToolTip;
         private System.Windows.Forms.FlowLayoutPanel MFLP;
-        private System.Windows.Forms.PictureBox MLWeb;
-        private System.Windows.Forms.PictureBox MLX;
-        private System.Windows.Forms.PictureBox MLInstagram;
-        private System.Windows.Forms.PictureBox MLGitHub;
         private System.Windows.Forms.TableLayoutPanel InTLP;
         private System.Windows.Forms.NotifyIcon NotifyMode;
         private System.Windows.Forms.ContextMenuStrip NotifyMenu;
@@ -1215,8 +1390,6 @@
         private System.Windows.Forms.ToolStripMenuItem showAppToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem softwareUpdateCheckToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Panel MNetPanel;
-        private System.Windows.Forms.PictureBox MLNetwork;
         private System.Windows.Forms.ToolStripMenuItem windowBehaviorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iconStatusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeSoftwareToolStripMenuItem;
@@ -1237,6 +1410,23 @@
         private System.Windows.Forms.PictureBox MPanelGlowShortcutBtn;
         private System.Windows.Forms.LinkLabel MPanelGlowLinkText;
         private System.Windows.Forms.ToolStripMenuItem bmacToolStripMenuItem;
+        private System.Windows.Forms.Panel MFLP5;
+        private System.Windows.Forms.Panel MFLP4;
+        private System.Windows.Forms.Panel MFLP3;
+        private System.Windows.Forms.Panel MFLP2;
+        private System.Windows.Forms.Panel MFLP1;
+        private System.Windows.Forms.PictureBox MLWeb;
+        private System.Windows.Forms.PictureBox MLYouTube;
+        private System.Windows.Forms.PictureBox MLGitHub;
+        private System.Windows.Forms.PictureBox MLInstagram;
+        private System.Windows.Forms.PictureBox MLX;
+        private System.Windows.Forms.FlowLayoutPanel MLFLP;
+        private System.Windows.Forms.Panel MLPanel;
+        private System.Windows.Forms.PictureBox MLNetwork;
+        private System.Windows.Forms.Panel MPanelAstelSCPanel;
+        private System.Windows.Forms.Panel MPanelYamiraSCPanel;
+        private System.Windows.Forms.Panel MPanelVimeraSCPanel;
+        private System.Windows.Forms.Panel MPanelGlowSCPanel;
     }
 }
 
