@@ -32,17 +32,17 @@ namespace TSWizard{
                 }
                 //
                 TSGetLangs software_lang = new TSGetLangs(TS_Wizard.lang_path);
-                Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareLauncher", "sl_title")), Application.ProductName);
-                HeaderLabel.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareLauncher", "sl_tag"));
-                BtnLauncherX64.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareLauncher", "sl_x64"));
-                BtnLauncherARM64.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareLauncher", "sl_arm64"));
+                Text = string.Format(software_lang.TSReadLangs("SoftwareLauncher", "sl_title"), Application.ProductName);
+                HeaderLabel.Text = software_lang.TSReadLangs("SoftwareLauncher", "sl_tag");
+                BtnLauncherX64.Text = software_lang.TSReadLangs("SoftwareLauncher", "sl_x64");
+                BtnLauncherARM64.Text = software_lang.TSReadLangs("SoftwareLauncher", "sl_arm64");
             }catch (Exception){ }
         }
         // STARTER
         // ======================================================================================================
-        private void BtnLauncherX64_Click(object sender, EventArgs e){ launcher_start(true); }
-        private void BtnLauncherARM64_Click(object sender, EventArgs e){ launcher_start(false); }
-        private void launcher_start(bool __s_mode){
+        private void BtnLauncherX64_Click(object sender, EventArgs e){ Launcher_start(true); }
+        private void BtnLauncherARM64_Click(object sender, EventArgs e){ Launcher_start(false); }
+        private void Launcher_start(bool __s_mode){
             string launch_app = TS_Wizard.software_launcher_mode;
             string launch_app_path = Path.GetDirectoryName(launch_app);
             //
@@ -51,10 +51,10 @@ namespace TSWizard{
             }
             //
             TSGetLangs software_lang = new TSGetLangs(TS_Wizard.lang_path);
-            if (!TS_Wizard.software_operation_controller(launch_app_path)){
+            if (!TS_Wizard.Software_operation_controller(launch_app_path)){
                 Process.Start(new ProcessStartInfo { FileName = launch_app, WorkingDirectory = Path.GetDirectoryName(launch_app) });
             }else{
-                TS_MessageBoxEngine.TS_MessageBox(this, 1, TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_currently_operational")));
+                TS_MessageBoxEngine.TS_MessageBox(this, 1, software_lang.TSReadLangs("TSWizardUI", "s_currently_operational"));
             }
         }
     }

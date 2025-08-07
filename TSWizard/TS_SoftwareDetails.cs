@@ -23,10 +23,10 @@ namespace TSWizard{
         private void MainToolTip_Draw(object sender, DrawToolTipEventArgs e){ e.DrawBackground(); e.DrawBorder(); e.DrawText(); }
         // LOAD
         // ======================================================================================================
-        private void TS_SoftwareDetails_Load(object sender, EventArgs e){ preload_software_info(); }
+        private void TS_SoftwareDetails_Load(object sender, EventArgs e){ Preload_software_info(); }
         // PRELOADER
         // ======================================================================================================
-        public void preload_software_info(){
+        public void Preload_software_info(){
             // COLOR SETTINGS
             try{
                 int set_attribute = TS_Wizard.theme == 1 ? 20 : 19;
@@ -52,7 +52,7 @@ namespace TSWizard{
             TLinkInstagramPanel.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
             TLinkGitHubPanel.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
             TLinkYouTubePanel.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
-            SInfo.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIFEColor3");
+            SInfo.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIFEColor2");
             SInfoDetail.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIFEColor2");
             // CONTENT
             InPanel.BackColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIBGColor1");
@@ -72,26 +72,32 @@ namespace TSWizard{
             //
             switch (TS_Wizard.ts_active_software){
                 case 0:
-                    load_software_info_ui(0, TS_Wizard.__astel_version);
+                    Load_software_info_ui(0, TS_Wizard.__astel_version);
                     break;
                 case 1:
-                    load_software_info_ui(1, TS_Wizard.__glow_version);
+                    Load_software_info_ui(1, TS_Wizard.__encryphix_version);
                     break;
                 case 2:
-                    load_software_info_ui(2, TS_Wizard.__vimera_version);
+                    Load_software_info_ui(2, TS_Wizard.__glow_version);
                     break;
                 case 3:
-                    load_software_info_ui(3, TS_Wizard.__yamira_version);
+                    Load_software_info_ui(3, TS_Wizard.__vcardix_version);
+                    break;
+                case 4:
+                    Load_software_info_ui(4, TS_Wizard.__vimera_version);
+                    break;
+                case 5:
+                    Load_software_info_ui(5, TS_Wizard.__yamira_version);
                     break;
             }
         }
         // PRELOADER UI
         // ======================================================================================================
-        private void load_software_info_ui(int s_mode, string s_version){
+        private void Load_software_info_ui(int s_mode, string s_version){
             try{
                 TSGetLangs software_lang = new TSGetLangs(TS_Wizard.lang_path);
                 //
-                LVersion_V.Text = s_version != null ? "v" + s_version : TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "s_u_no_version_info"));
+                LVersion_V.Text = s_version != null ? "v" + s_version : software_lang.TSReadLangs("SoftwareDetail", "s_u_no_version_info");
                 //
                 TS_SoftwareInfo ts_s_info = new TS_SoftwareInfo();
                 //
@@ -99,77 +105,89 @@ namespace TSWizard{
                     return;
                 //
                 TS_S_Detail selectedSoftware = ts_s_info.TSSoftwareList[s_mode];
-                text_title_color_ui(s_mode);
-                text_content_color_ui();
+                Text_title_color_ui(s_mode);
+                Text_content_color_ui();
                 //
                 switch (s_mode){
                     case 0:
-                        Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_title")), Application.ProductName, TS_Wizard.ts_softwares_list[0]);
+                        Text = string.Format(software_lang.TSReadLangs("SoftwareDetail", "sd_title"), Application.ProductName, TS_Wizard.ts_softwares_list[0]);
                         TSImageRenderer(SLogo, Properties.Resources.astel_logo, 0, ContentAlignment.MiddleCenter);
-                        SInfo.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_t_astel"));
-                        SInfoDetail.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_d_astel"));
+                        SInfo.Text = software_lang.TSReadLangs("TSWizardUI", "s_t_astel");
+                        SInfoDetail.Text = software_lang.TSReadLangs("TSWizardUI", "s_d_astel");
                         break;
                     case 1:
-                        Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_title")), Application.ProductName, TS_Wizard.ts_softwares_list[1]);
-                        TSImageRenderer(SLogo, Properties.Resources.glow_logo, 0, ContentAlignment.MiddleCenter);
-                        SInfo.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_t_glow"));
-                        SInfoDetail.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_d_glow"));
+                        Text = string.Format(software_lang.TSReadLangs("SoftwareDetail", "sd_title"), Application.ProductName, TS_Wizard.ts_softwares_list[1]);
+                        TSImageRenderer(SLogo, Properties.Resources.encryphix_logo, 0, ContentAlignment.MiddleCenter);
+                        SInfo.Text = software_lang.TSReadLangs("TSWizardUI", "s_t_encryphix");
+                        SInfoDetail.Text = software_lang.TSReadLangs("TSWizardUI", "s_d_encryphix");
                         break;
                     case 2:
-                        Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_title")), Application.ProductName, TS_Wizard.ts_softwares_list[2]);
-                        TSImageRenderer(SLogo, Properties.Resources.vimera_logo, 0, ContentAlignment.MiddleCenter);
-                        SInfo.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_t_vimera"));
-                        SInfoDetail.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_d_vimera"));
+                        Text = string.Format(software_lang.TSReadLangs("SoftwareDetail", "sd_title"), Application.ProductName, TS_Wizard.ts_softwares_list[2]);
+                        TSImageRenderer(SLogo, Properties.Resources.glow_logo, 0, ContentAlignment.MiddleCenter);
+                        SInfo.Text = software_lang.TSReadLangs("TSWizardUI", "s_t_glow");
+                        SInfoDetail.Text = software_lang.TSReadLangs("TSWizardUI", "s_d_glow");
                         break;
                     case 3:
-                        Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_title")), Application.ProductName, TS_Wizard.ts_softwares_list[3]);
+                        Text = string.Format(software_lang.TSReadLangs("SoftwareDetail", "sd_title"), Application.ProductName, TS_Wizard.ts_softwares_list[3]);
+                        TSImageRenderer(SLogo, Properties.Resources.vcardix_logo, 0, ContentAlignment.MiddleCenter);
+                        SInfo.Text = software_lang.TSReadLangs("TSWizardUI", "s_t_vcardix");
+                        SInfoDetail.Text = software_lang.TSReadLangs("TSWizardUI", "s_d_vcardix");
+                        break;
+                    case 4:
+                        Text = string.Format(software_lang.TSReadLangs("SoftwareDetail", "sd_title"), Application.ProductName, TS_Wizard.ts_softwares_list[4]);
+                        TSImageRenderer(SLogo, Properties.Resources.vimera_logo, 0, ContentAlignment.MiddleCenter);
+                        SInfo.Text = software_lang.TSReadLangs("TSWizardUI", "s_t_vimera");
+                        SInfoDetail.Text = software_lang.TSReadLangs("TSWizardUI", "s_d_vimera");
+                        break;
+                    case 5:
+                        Text = string.Format(software_lang.TSReadLangs("SoftwareDetail", "sd_title"), Application.ProductName, TS_Wizard.ts_softwares_list[5]);
                         TSImageRenderer(SLogo, Properties.Resources.yamira_logo, 0, ContentAlignment.MiddleCenter);
-                        SInfo.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_t_yamira"));
-                        SInfoDetail.Text = TS_String_Encoder(software_lang.TSReadLangs("TSWizardUI", "s_d_yamira"));
+                        SInfo.Text = software_lang.TSReadLangs("TSWizardUI", "s_t_yamira");
+                        SInfoDetail.Text = software_lang.TSReadLangs("TSWizardUI", "s_d_yamira");
                         break;
                 }
                 //
-                LDeveloper.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_developer"));
-                LCopyright.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_copyright"));
-                LVersion.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_version"));
-                LPlatform.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_platform"));
-                LArch.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_architectural"));
-                LSuppLanguage.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_sup_language"));
-                LSuppThemes.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_supp_themes"));
-                LCodeTypeLicense.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_c_and_license_type"));
-                LDependence.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_dependence"));
-                LSystemReq.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_system_req"));
-                LLink.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_links")); ;
+                LDeveloper.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_developer");
+                LCopyright.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_copyright");
+                LVersion.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_version");
+                LPlatform.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_platform");
+                LArch.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_architectural");
+                LSuppLanguage.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_sup_language");
+                LSuppThemes.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_supp_themes");
+                LCodeTypeLicense.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_c_and_license_type");
+                LDependence.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_dependence");
+                LSystemReq.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_system_req");
+                LLink.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_links"); ;
                 //
-                LDeveloper_V.Text = selectedSoftware._developer;
-                LCopyright_V.Text = selectedSoftware._copyright;
-                LPlatform_V.Text = selectedSoftware._platform;
-                LArch_V.Text = selectedSoftware._architectural;
-                LSuppLanguage_V.Text = selectedSoftware._s_language;
-                LSuppThemes_V.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_theme_light")) + ", " + TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_theme_dark"));
-                LCodeTypeLicense_V.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_c_type_and_license"));
-                LDependence_V.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_dependence_independent"));
-                LSystemReq_V.Text = TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_system_req_os")) + selectedSoftware._s_req;
+                LDeveloper_V.Text = selectedSoftware.Developer;
+                LCopyright_V.Text = selectedSoftware.Copyright;
+                LPlatform_V.Text = selectedSoftware.Platform;
+                LArch_V.Text = selectedSoftware.Architectural;
+                LSuppLanguage_V.Text = selectedSoftware.Language;
+                LSuppThemes_V.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_theme_light") + ", " + software_lang.TSReadLangs("SoftwareDetail", "sd_theme_dark");
+                LCodeTypeLicense_V.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_c_type_and_license");
+                LDependence_V.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_dependence_independent");
+                LSystemReq_V.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_system_req_os") + selectedSoftware.Req;
                 //
-                BSLinkGitHub.Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_github")), TS_Wizard.ts_softwares_list[TS_Wizard.ts_active_software]);
-                BSLinkPN.Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_pn")), TS_Wizard.ts_softwares_list[TS_Wizard.ts_active_software]);
-                BSLinkTS.Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareDetail", "sd_ts_website")), Application.CompanyName);
+                BSLinkGitHub.Text = string.Format(software_lang.TSReadLangs("SoftwareDetail", "sd_github"), TS_Wizard.ts_softwares_list[TS_Wizard.ts_active_software]);
+                BSLinkPN.Text = string.Format(software_lang.TSReadLangs("SoftwareDetail", "sd_pn"), TS_Wizard.ts_softwares_list[TS_Wizard.ts_active_software]);
+                BSLinkTS.Text = string.Format(software_lang.TSReadLangs("SoftwareDetail", "sd_ts_website"), Application.CompanyName);
                 //
-                MainToolTip.SetToolTip(TLinkWebSite, TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_website_page")));
-                MainToolTip.SetToolTip(TLinkX, TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_twitter_page")));
-                MainToolTip.SetToolTip(TLinkInstagram, TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_instagram_page")));
-                MainToolTip.SetToolTip(TLinkGitHub, TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_github_page")));
-                MainToolTip.SetToolTip(TLinkYouTube, TS_String_Encoder(software_lang.TSReadLangs("SoftwareAbout", "sa_youtube_page")));
+                MainToolTip.SetToolTip(TLinkWebSite, software_lang.TSReadLangs("SoftwareAbout", "sa_website_page"));
+                MainToolTip.SetToolTip(TLinkX, software_lang.TSReadLangs("SoftwareAbout", "sa_twitter_page"));
+                MainToolTip.SetToolTip(TLinkInstagram, software_lang.TSReadLangs("SoftwareAbout", "sa_instagram_page"));
+                MainToolTip.SetToolTip(TLinkGitHub, software_lang.TSReadLangs("SoftwareAbout", "sa_github_page"));
+                MainToolTip.SetToolTip(TLinkYouTube, software_lang.TSReadLangs("SoftwareAbout", "sa_youtube_page"));
                 //
-                _rotater_link_github = selectedSoftware._git_link;
-                _rotater_link_pn = selectedSoftware._pn_link;
-                _rotater_link_ts_website = selectedSoftware._ts_website;
+                _rotater_link_github = selectedSoftware.Git_link;
+                _rotater_link_pn = selectedSoftware.Pn_link;
+                _rotater_link_ts_website = selectedSoftware.Ts_website;
             }catch (Exception){ }
         }
         // DYNAMIC COLOR UI TITLE
         // ======================================================================================================
-        private void text_title_color_ui(int s_mode){
-            string[] colorModes = { "AstelFE", "GlowFE", "VimeraFE", "YamiraFE" };
+        private void Text_title_color_ui(int s_mode){
+            string[] colorModes = { "AstelFE", "EncryphixFE", "GlowFE", "VCardixFE", "VimeraFE", "YamiraFE" };
             //
             if (s_mode < 0 || s_mode >= colorModes.Length)
                 return;
@@ -198,7 +216,7 @@ namespace TSWizard{
         }
         // DYNAMIC COLOR UI CONTENT
         // ======================================================================================================
-        private void text_content_color_ui(){
+        private void Text_content_color_ui(){
             LDeveloper_V.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIFEColor2");
             LCopyright_V.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIFEColor2");
             LVersion_V.ForeColor = TS_ThemeEngine.ColorMode(TS_Wizard.theme, "UIFEColor2");

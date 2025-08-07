@@ -57,14 +57,14 @@ namespace TSWizard{
                 TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format("{0} is software that works with an active internet connection.{1}Please check your internet connection and try again.{2}Shutting down...", Application.ProductName, "\n\n", "\n\n"));
                 Application.Exit();
             }else{
-                software_preloader();
-                software_set_launch();
+                Software_preloader();
+                Software_set_launch();
                 //
                 if (Program.ts_pre_debug_mode == true){
                     LabelLoader.Text = "Loading - 50%";
                     PanelLoaderFE.Width = (int)(PanelLoaderBG.Width * 0.5);
                 }else{
-                    Task.Run(() => load_animation(), Program.TS_TokenEngine.Token);
+                    Task.Run(() => Load_animation(), Program.TS_TokenEngine.Token);
                 }
             }
         }
@@ -77,22 +77,22 @@ namespace TSWizard{
         |   1 = Light Theme   |  TSModules.cs         |  1 = Full Screen        |  1 = On
         |   ------------------------------------------------------------------------------------------
         */
-        private void software_preloader(){
+        private void Software_preloader(){
             try{
                 // CHECK LANGS FOLDER
                 if (!Directory.Exists(ts_lf)){
-                    software_prelaoder_alert(0);
+                    Software_prelaoder_alert(0);
                     return;
                 }
                 // CHECK LANGS FILE
                 var lang_files = Directory.GetFiles(ts_lf, "*.ini");
                 if (lang_files.Length == 0){
-                    software_prelaoder_alert(1);
+                    Software_prelaoder_alert(1);
                     return;
                 }
                 // CHECK ENGLISH LANG FILE
                 if (!File.Exists(ts_lang_en)){
-                    software_prelaoder_alert(2);
+                    Software_prelaoder_alert(2);
                     return;
                 }
                 // CHECK SETTINGS FILE
@@ -134,7 +134,7 @@ namespace TSWizard{
         }
         // PRELOAD ALERT
         // ======================================================================================================
-        private void software_prelaoder_alert(int pre_mode){
+        private void Software_prelaoder_alert(int pre_mode){
             string set_message = string.Empty;
             switch (pre_mode){
                 case 0:
@@ -150,7 +150,6 @@ namespace TSWizard{
             if (!string.IsNullOrEmpty(set_message)){
                 DialogResult open_last_release = TS_MessageBoxEngine.TS_MessageBox(this, 7, set_message);
                 if (open_last_release == DialogResult.Yes){
-                    TS_LinkSystem TS_LinkSystem = new TS_LinkSystem();
                     Process.Start(new ProcessStartInfo(TS_LinkSystem.github_link_lr) { UseShellExecute = true });
                 }else{
                     Application.Exit();
@@ -164,7 +163,7 @@ namespace TSWizard{
         }
         // BOOTSTRAPPER PRELOADER
         // ======================================================================================================
-        public void software_set_launch(){
+        public void Software_set_launch(){
             try{
                 TSSettingsSave software_read_settings = new TSSettingsSave(ts_sf);
                 //
@@ -194,7 +193,7 @@ namespace TSWizard{
                     { "tr", ts_lang_tr },
                 };
                 //
-                string lang_mode = TS_String_Encoder(software_read_settings.TSReadSettings(ts_settings_container, "LanguageStatus")) ?? "en";
+                string lang_mode = software_read_settings.TSReadSettings(ts_settings_container, "LanguageStatus") ?? "en";
                 string lang_file;
                 bool isFileExist = languageFiles.ContainsKey(lang_mode) && File.Exists(languageFiles[lang_mode]);
                 //
@@ -213,8 +212,8 @@ namespace TSWizard{
                 }catch (Exception){ }
                 //
                 TSGetLangs software_lang = new TSGetLangs(lang_file);
-                Text = string.Format(TS_String_Encoder(software_lang.TSReadLangs("TSPreloader", "tsbt_title")), Application.CompanyName);
-                load_text = TS_String_Encoder(software_lang.TSReadLangs("TSPreloader", "tsbt_load"));
+                Text = string.Format(software_lang.TSReadLangs("TSPreloader", "tsbt_title"), Application.CompanyName);
+                load_text = software_lang.TSReadLangs("TSPreloader", "tsbt_load");
             }catch (Exception){ }
         }
         // PROGRESS BAR & PROGRESS TEXT PROCESS
@@ -229,7 +228,7 @@ namespace TSWizard{
         }
         // LOAD ANIMATION
         // ======================================================================================================
-        private async Task load_animation(){
+        private async Task Load_animation(){
             int progress_interval = 0;
             int progress_increment = 2;
             int progress_delay = 5;

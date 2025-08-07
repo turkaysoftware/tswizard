@@ -423,6 +423,26 @@ namespace TSWizard.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap encryphix_banner {
+            get {
+                object obj = ResourceManager.GetObject("encryphix_banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap encryphix_logo {
+            get {
+                object obj = ResourceManager.GetObject("encryphix_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap glow_banner {
             get {
                 object obj = ResourceManager.GetObject("glow_banner", resourceCulture);
@@ -486,6 +506,26 @@ namespace TSWizard.Properties {
         internal static System.Drawing.Bitmap mb_5 {
             get {
                 object obj = ResourceManager.GetObject("mb_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap mb_6 {
+            get {
+                object obj = ResourceManager.GetObject("mb_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap mb_7 {
+            get {
+                object obj = ResourceManager.GetObject("mb_7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -766,6 +806,26 @@ namespace TSWizard.Properties {
         internal static System.Drawing.Bitmap ts_preloader_release {
             get {
                 object obj = ResourceManager.GetObject("ts_preloader_release", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap vcardix_banner {
+            get {
+                object obj = ResourceManager.GetObject("vcardix_banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap vcardix_logo {
+            get {
+                object obj = ResourceManager.GetObject("vcardix_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

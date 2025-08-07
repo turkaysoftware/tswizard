@@ -197,6 +197,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TSWizardLogo.ico" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_7.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_6.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_5.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_4.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_3.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_2.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_1.png" />
+    <None Include="tswizard_images\tswizard_interface\software_banner\glow_banner.png" />
+    <None Include="tswizard_images\tswizard_interface\software_logo\glow_logo.png" />
+    <None Include="tswizard_images\tswizard_interface\software_logo\vcardix_logo.png" />
+    <None Include="tswizard_images\tswizard_interface\software_banner\vcardix_banner.png" />
+    <None Include="tswizard_images\tswizard_interface\software_banner\yamira_banner.png" />
+    <None Include="tswizard_images\tswizard_interface\software_banner\vimera_banner.png" />
+    <None Include="tswizard_images\tswizard_interface\software_banner\encryphix_banner.png" />
+    <None Include="tswizard_images\tswizard_interface\software_banner\astel_banner.png" />
+    <None Include="tswizard_images\tswizard_interface\software_logo\encryphix_logo.png" />
     <None Include="tswizard_images\tswizard_ui\theme_dark\ct_start_dark.png" />
     <None Include="tswizard_images\tswizard_ui\theme_light\ct_start_light.png" />
     <None Include="tswizard_images\tswizard_ui\theme_light\ct_update_light.png" />
@@ -259,18 +275,8 @@
     <None Include="tswizard_images\tswizard_ui\theme_dark\ct_github_dark.png" />
     <None Include="tswizard_images\tswizard_ui\theme_dark\ct_failed_dark.png" />
     <None Include="tswizard_images\ts_preloader\ts_preloader_release.jpg" />
-    <None Include="tswizard_images\tswizard_interface\main_banner\mb_5.png" />
-    <None Include="tswizard_images\tswizard_interface\main_banner\mb_4.png" />
-    <None Include="tswizard_images\tswizard_interface\main_banner\mb_3.png" />
-    <None Include="tswizard_images\tswizard_interface\main_banner\mb_2.png" />
-    <None Include="tswizard_images\tswizard_interface\main_banner\mb_1.png" />
-    <None Include="tswizard_images\tswizard_interface\software_banner\yamira_banner.png" />
-    <None Include="tswizard_images\tswizard_interface\software_banner\vimera_banner.png" />
-    <None Include="tswizard_images\tswizard_interface\software_banner\glow_banner.png" />
-    <None Include="tswizard_images\tswizard_interface\software_banner\astel_banner.png" />
     <None Include="tswizard_images\tswizard_interface\software_logo\yamira_logo.png" />
     <None Include="tswizard_images\tswizard_interface\software_logo\vimera_logo.png" />
-    <None Include="tswizard_images\tswizard_interface\software_logo\glow_logo.png" />
     <None Include="tswizard_images\tswizard_interface\software_logo\astel_logo.png" />
   </ItemGroup>
   <ItemGroup />

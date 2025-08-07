@@ -13,8 +13,9 @@ namespace TSWizard{
         // GLOBAL TS CANCEL TOKEN
         public static CancellationTokenSource TS_TokenEngine;
         // ======================================================================================================
-        // TS PRELOADER DEBUG MODE
+        // TS PRELOADER DEBUG MODE & TEST FIX BANNER
         public static bool ts_pre_debug_mode = false;
+        public static bool ts_pre_image_mode = true;
         // ======================================================================================================
         // VERSION MODE
         public static int ts_version_mode = 0;
