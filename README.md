@@ -96,5 +96,3 @@ With these instructions, you can download and use the correct version of TS Wiza
 | -- | :--: |
 | **Check Update** | F11 |
 | **About** | F12 |
-| **TS Wizard** | CTRL + Shift + S |
-| **Buy Me a Coffee** | CTRL + Shift + D |
