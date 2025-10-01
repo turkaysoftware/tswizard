@@ -15,9 +15,9 @@
 
 [Click here](https://www.turkaysoftware.com/ts-wizard) for full specifications.
 
-<img width="1010" height="633" alt="TS Wizard - Dark" src="https://github.com/user-attachments/assets/ea0f9b17-8c68-4a9a-af68-a5d8c6b534e6" />
+<img width="1010" height="633" alt="TS Wizard - Dark" src="https://github.com/user-attachments/assets/eec23974-3d0f-4b3d-9f38-7a3d317bdf20" />
 
-<img width="1010" height="633" alt="TS Wizard - Light" src="https://github.com/user-attachments/assets/8345ad0b-ea6d-456a-a116-f2969a10ac73" />
+<img width="1010" height="633" alt="TS Wizard - Light" src="https://github.com/user-attachments/assets/66da42c1-efce-44fd-bdd6-350917cb8e81" />
 
 # Download TS Wizard
 
@@ -81,12 +81,13 @@ With these instructions, you can download and use the correct version of TS Wiza
 | -- | :--: |
 | **Theme:** Light | F1 |
 | **Theme:** Dark | F2 |
-| **Start:** Windowed | F3 |
-| **Start:** Full Screen | F4 |
-| **Window Behavior:** Minimize to Icon | F5 |
-| **Window Behavior:** Turn Off Software | F6 |
-| **Update Notifications:** On | F7 |
-| **Update Notifications:** Off | F8 |
+| **Theme:** System | F3 |
+| **Start:** Windowed | F4 |
+| **Start:** Full Screen | F5 |
+| **Window Behavior:** Minimize to Icon | F6 |
+| **Window Behavior:** Turn Off Software | F7 |
+| **Update Notifications:** On | F8 |
+| **Update Notifications:** Off | F9 |
 | **Architecture Mode:** x64 (**64 Bit CPU**) | CTRL + 1 |
 | **Architecture Mode:** ARM64 (**ARM CPU**) | CTRL + 2 |
 | **Architecture Mode:** Manual Selection | CTRL + 3 |
