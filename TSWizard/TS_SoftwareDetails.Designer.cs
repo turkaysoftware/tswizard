@@ -719,9 +719,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(950, 600);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "TS_SoftwareDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TS Wizard - Yazılım Detayları / Glow";

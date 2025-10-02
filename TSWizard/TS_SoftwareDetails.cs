@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Reflection;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 //
 using static TSWizard.TSModules;
-using System.Drawing;
 
 namespace TSWizard{
     public partial class TS_SoftwareDetails : Form{
@@ -29,9 +29,6 @@ namespace TSWizard{
         public void Preload_software_info(){
             // COLOR SETTINGS
             try{
-                //
-                TSSetWindowTheme(Handle, TSWizardMain.theme);
-                //
                 bool isLight = TSWizardMain.theme == 1;
                 TSImageRenderer(TLinkWebSite, isLight ? Properties.Resources.ctb_website_light : Properties.Resources.ctb_website_dark, 0, ContentAlignment.MiddleCenter);
                 TSImageRenderer(TLinkGitHub, isLight ? Properties.Resources.ctb_github_light : Properties.Resources.ctb_github_dark, 0, ContentAlignment.MiddleCenter);

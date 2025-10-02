@@ -12,8 +12,6 @@ namespace TSWizard{
         // ======================================================================================================
         private void TS_AppLauncher_Load(object sender, EventArgs e){
             try{
-                TSSetWindowTheme(Handle, TSWizardMain.theme);
-                //
                 BackColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIBGColor2");
                 HeaderLabel.BackColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIBGColor1");
                 HeaderLabel.ForeColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIFEColor2");

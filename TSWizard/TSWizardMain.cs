@@ -7,6 +7,7 @@
 // GitHub: https://github.com/turkaysoftware/tswizard
 // ======================================================================================================
 
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -42,6 +43,9 @@ namespace TSWizard{
             // LANGUAGE SET EVENTS
             englishToolStripMenuItem.Click += LanguageToolStripMenuItem_Click;
             turkishToolStripMenuItem.Click += LanguageToolStripMenuItem_Click;
+            //
+            TSThemeModeHelper.InitializeGlobalTheme();
+            SystemEvents.UserPreferenceChanged += (s, e) => TSUseSystemTheme();
         }
         // GLOBAL VARIABLES
         // ======================================================================================================
@@ -66,7 +70,7 @@ namespace TSWizard{
             "https://raw.githubusercontent.com/turkaysoftware/yamira/main/Yamira/SoftwareVersion.txt"           // Yamira
         };
         //
-        int __astel_i_status = 0, __encryphix_i_status = 0, __glow_i_status = 0, __vcardix_i_status = 0, __vimera_i_status = 0, __yamira_i_status = 0, startup_status, behavior_mode_status, update_notifications_status, architecture_mode_status;
+        int __astel_i_status = 0, __encryphix_i_status = 0, __glow_i_status = 0, __vcardix_i_status = 0, __vimera_i_status = 0, __yamira_i_status = 0, startup_status, behavior_mode_status, update_notifications_status, architecture_mode_status, themeSystem;
         bool __astel_u_status = false, __encryphix_u_status = false, __glow_u_status = false, __vcardix_u_status = false, __vimera_u_status = false, __yamira_u_status = false, dynamic_net_status, loop_status = true, exit_mode = false;
         readonly List<string> sUpdateNotList = new List<string>();
         // ======================================================================================================
@@ -119,10 +123,12 @@ namespace TSWizard{
             // ======================================================================================================
             TSSettingsSave software_read_settings = new TSSettingsSave(ts_sf);
             //
-            int theme_mode = int.TryParse(software_read_settings.TSReadSettings(ts_settings_container, "ThemeStatus"), out int the_status) ? the_status : 1;
-            Theme_engine(theme_mode);
+            int theme_mode = int.TryParse(software_read_settings.TSReadSettings(ts_settings_container, "ThemeStatus"), out int the_status) && (the_status == 0 || the_status == 1 || the_status == 2) ? the_status : 1;
+            if (theme_mode == 2) { themeSystem = 2; Theme_engine(GetSystemTheme(2)); } else Theme_engine(theme_mode);
             darkThemeToolStripMenuItem.Checked = theme_mode == 0;
             lightThemeToolStripMenuItem.Checked = theme_mode == 1;
+            systemThemeToolStripMenuItem.Checked = theme_mode == 2;
+            //
             string lang_mode = software_read_settings.TSReadSettings(ts_settings_container, "LanguageStatus");
             var languageFiles = new Dictionary<string, (object langResource, ToolStripMenuItem menuItem, bool fileExists)>{
                 { "en", (ts_lang_en, englishToolStripMenuItem, File.Exists(ts_lang_en)) },
@@ -765,26 +771,40 @@ namespace TSWizard{
         }
         // THEME MODE
         // ======================================================================================================
+        private ToolStripMenuItem selected_theme = null;
         private void Select_theme_active(object target_theme){
-            ToolStripMenuItem selected_theme = null;
+            if (target_theme == null)
+                return;
+            ToolStripMenuItem clicked_theme = (ToolStripMenuItem)target_theme;
+            if (selected_theme == clicked_theme)
+                return;
             Select_theme_deactive();
-            if (target_theme != null){
-                if (selected_theme != (ToolStripMenuItem)target_theme){
-                    selected_theme = (ToolStripMenuItem)target_theme;
-                    selected_theme.Checked = true;
-                }
-            }
+            selected_theme = clicked_theme;
+            selected_theme.Checked = true;
         }
         private void Select_theme_deactive(){
-            foreach (ToolStripMenuItem disabled_theme in themeToolStripMenuItem.DropDownItems){
-                disabled_theme.Checked = false;
+            foreach (ToolStripMenuItem theme in themeToolStripMenuItem.DropDownItems){
+                theme.Checked = false;
             }
         }
+        // THEME SWAP
+        // ======================================================================================================
+        private void SystemThemeToolStripMenuItem_Click(object sender, EventArgs e){
+            themeSystem = 2; Theme_engine(GetSystemTheme(2)); SaveTheme(2); Select_theme_active(sender);
+        }
         private void LightThemeToolStripMenuItem_Click(object sender, EventArgs e){
-            if (theme != 1){ Theme_engine(1); Select_theme_active(sender); }
+            themeSystem = 0; Theme_engine(1); SaveTheme(1); Select_theme_active(sender);
         }
         private void DarkThemeToolStripMenuItem_Click(object sender, EventArgs e){
-            if (theme != 0){ Theme_engine(0); Select_theme_active(sender); }
+            themeSystem = 0; Theme_engine(0); SaveTheme(0); Select_theme_active(sender);
+        }
+        private void TSUseSystemTheme(){ if (themeSystem == 2) Theme_engine(GetSystemTheme(2)); }
+        private void SaveTheme(int ts){
+            // SAVE CURRENT THEME
+            try{
+                TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
+                software_setting_save.TSWriteSettings(ts_settings_container, "ThemeStatus", Convert.ToString(ts));
+            }catch (Exception){ }
         }
         // THEME ENGINE
         // ======================================================================================================
@@ -792,7 +812,7 @@ namespace TSWizard{
             try{
                 theme = ts;
                 //
-                TSSetWindowTheme(Handle, theme);
+                TSThemeModeHelper.SetThemeMode(ts == 0);
                 //
                 if (theme == 1){
                     TSImageRenderer(settingsToolStripMenuItem, Properties.Resources.tm_settings_light, 0, ContentAlignment.MiddleRight);
@@ -1001,12 +1021,6 @@ namespace TSWizard{
                 MFLP3.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
                 // OTHER PAGE DYNAMIC UI
                 Software_other_page_preloader();
-                // SAVE CURRENT THEME
-                // ===========================================
-                try{
-                    TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
-                    software_setting_save.TSWriteSettings(ts_settings_container, "ThemeStatus", Convert.ToString(ts));
-                }catch (Exception){ }
             }catch (Exception){ }
         }
         private void SetMenuStripColors(MenuStrip menuStrip, Color bgColor, Color fgColor){
@@ -1188,6 +1202,7 @@ namespace TSWizard{
                 themeToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderMenu", "header_menu_theme");
                 lightThemeToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderThemes", "theme_light");
                 darkThemeToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderThemes", "theme_dark");
+                systemThemeToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderThemes", "theme_system");
                 // LANGS
                 languageToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderMenu", "header_menu_language");
                 englishToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderLangs", "lang_en");
