@@ -2,12 +2,13 @@
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 //
 using static TSWizard.TSModules;
 
 namespace TSWizard{
     public partial class TS_AppLauncher : Form{
-        public TS_AppLauncher(){ InitializeComponent(); CheckForIllegalCrossThreadCalls = false;}
+        public TS_AppLauncher(){ InitializeComponent(); }
         // LOAD
         // ======================================================================================================
         private void TS_AppLauncher_Load(object sender, EventArgs e){
@@ -35,8 +36,8 @@ namespace TSWizard{
         }
         // STARTER
         // ======================================================================================================
-        private void BtnLauncherX64_Click(object sender, EventArgs e){ Launcher_start(true); }
-        private void BtnLauncherARM64_Click(object sender, EventArgs e){ Launcher_start(false); }
+        private void BtnLauncherX64_Click(object sender, EventArgs e){ Task.Run(() => Launcher_start(true)); }
+        private void BtnLauncherARM64_Click(object sender, EventArgs e){ Task.Run(() => Launcher_start(false)); }
         private void Launcher_start(bool __s_mode){
             string launch_app = TSWizardMain.software_launcher_mode;
             string launch_app_path = Path.GetDirectoryName(launch_app);

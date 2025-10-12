@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>25.12.0.%2a</ApplicationVersion>
+    <ApplicationVersion>25.13.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -203,13 +203,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TSWizardLogo.ico" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_donate_mc_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_donate_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_donate_mc_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_donate_dark.png" />
+    <None Include="tswizard_images\ts_preloader\ts_preloader.jpg" />
     <None Include="tswizard_images\tswizard_interface\main_banner\mb_6.png" />
     <None Include="tswizard_images\tswizard_interface\software_logo\vimera_logo.png" />
     <None Include="tswizard_images\tswizard_interface\software_banner\vimera_banner.png" />
-    <None Include="tswizard_images\tswizard_ui\theme_light\ct_bmac_mc_light.png" />
-    <None Include="tswizard_images\tswizard_ui\theme_light\ct_bmac_light.png" />
-    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_bmac_mc_dark.png" />
-    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_bmac_dark.png" />
     <None Include="tswizard_images\tswizard_interface\main_banner\mb_7.png" />
     <None Include="tswizard_images\tswizard_interface\main_banner\mb_5.png" />
     <None Include="tswizard_images\tswizard_interface\main_banner\mb_4.png" />
@@ -245,13 +246,9 @@
     <None Include="tswizard_images\tswizard_ui\theme_light\st_stop_light.png" />
     <None Include="tswizard_images\tswizard_ui\theme_light\st_show_light.png" />
     <None Include="tswizard_images\tswizard_ui\theme_light\st_check_update_light.png" />
-    <None Include="tswizard_images\tswizard_ui\theme_light\ctb_website_light.png" />
-    <None Include="tswizard_images\tswizard_ui\theme_light\ctb_github_light.png" />
     <None Include="tswizard_images\tswizard_ui\theme_light\ct_website_light.png" />
-    <None Include="tswizard_images\tswizard_ui\theme_light\ct_success_light.png" />
     <None Include="tswizard_images\tswizard_ui\theme_light\ct_shortcut_light.png" />
     <None Include="tswizard_images\tswizard_ui\theme_light\ct_github_light.png" />
-    <None Include="tswizard_images\tswizard_ui\theme_light\ct_failed_light.png" />
     <None Include="tswizard_images\tswizard_ui\theme_dark\tm_update_dark.png" />
     <None Include="tswizard_images\tswizard_ui\theme_dark\tm_theme_dark.png" />
     <None Include="tswizard_images\tswizard_ui\theme_dark\tm_startup_dark.png" />
@@ -264,14 +261,9 @@
     <None Include="tswizard_images\tswizard_ui\theme_dark\st_stop_dark.png" />
     <None Include="tswizard_images\tswizard_ui\theme_dark\st_show_dark.png" />
     <None Include="tswizard_images\tswizard_ui\theme_dark\st_check_update_dark.png" />
-    <None Include="tswizard_images\tswizard_ui\theme_dark\ctb_website_dark.png" />
-    <None Include="tswizard_images\tswizard_ui\theme_dark\ctb_github_dark.png" />
     <None Include="tswizard_images\tswizard_ui\theme_dark\ct_website_dark.png" />
-    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_success_dark.png" />
     <None Include="tswizard_images\tswizard_ui\theme_dark\ct_shortcut_dark.png" />
     <None Include="tswizard_images\tswizard_ui\theme_dark\ct_github_dark.png" />
-    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_failed_dark.png" />
-    <None Include="tswizard_images\ts_preloader\ts_preloader_release.jpg" />
     <None Include="tswizard_images\tswizard_interface\software_logo\yamira_logo.png" />
     <None Include="tswizard_images\tswizard_interface\software_logo\astel_logo.png" />
   </ItemGroup>

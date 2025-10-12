@@ -44,8 +44,8 @@
             this.BackPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BackPanel.Location = new System.Drawing.Point(0, 0);
             this.BackPanel.Name = "BackPanel";
-            this.BackPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.BackPanel.Size = new System.Drawing.Size(434, 161);
+            this.BackPanel.Padding = new System.Windows.Forms.Padding(10);
+            this.BackPanel.Size = new System.Drawing.Size(434, 156);
             this.BackPanel.TabIndex = 0;
             // 
             // BtnLauncherARM64
@@ -62,10 +62,10 @@
             this.BtnLauncherARM64.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnLauncherARM64.ForeColor = System.Drawing.Color.Black;
             this.BtnLauncherARM64.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnLauncherARM64.Location = new System.Drawing.Point(224, 82);
-            this.BtnLauncherARM64.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            this.BtnLauncherARM64.Location = new System.Drawing.Point(10, 106);
+            this.BtnLauncherARM64.Margin = new System.Windows.Forms.Padding(0);
             this.BtnLauncherARM64.Name = "BtnLauncherARM64";
-            this.BtnLauncherARM64.Size = new System.Drawing.Size(185, 35);
+            this.BtnLauncherARM64.Size = new System.Drawing.Size(414, 35);
             this.BtnLauncherARM64.TabIndex = 2;
             this.BtnLauncherARM64.Text = "ARM64 (ARM İşlemci)";
             this.BtnLauncherARM64.TextColor = System.Drawing.Color.Black;
@@ -87,10 +87,10 @@
             this.BtnLauncherX64.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnLauncherX64.ForeColor = System.Drawing.Color.Black;
             this.BtnLauncherX64.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnLauncherX64.Location = new System.Drawing.Point(25, 82);
-            this.BtnLauncherX64.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.BtnLauncherX64.Location = new System.Drawing.Point(10, 58);
+            this.BtnLauncherX64.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.BtnLauncherX64.Name = "BtnLauncherX64";
-            this.BtnLauncherX64.Size = new System.Drawing.Size(185, 35);
+            this.BtnLauncherX64.Size = new System.Drawing.Size(414, 35);
             this.BtnLauncherX64.TabIndex = 1;
             this.BtnLauncherX64.Text = "x64 (64 Bit)";
             this.BtnLauncherX64.TextColor = System.Drawing.Color.Black;
@@ -100,14 +100,14 @@
             // 
             // HeaderLabel
             // 
-            this.HeaderLabel.BackColor = System.Drawing.Color.Silver;
+            this.HeaderLabel.BackColor = System.Drawing.Color.Black;
             this.HeaderLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.HeaderLabel.ForeColor = System.Drawing.Color.Black;
-            this.HeaderLabel.Location = new System.Drawing.Point(5, 5);
-            this.HeaderLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.HeaderLabel.ForeColor = System.Drawing.Color.White;
+            this.HeaderLabel.Location = new System.Drawing.Point(10, 10);
+            this.HeaderLabel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.HeaderLabel.Name = "HeaderLabel";
-            this.HeaderLabel.Size = new System.Drawing.Size(424, 35);
+            this.HeaderLabel.Size = new System.Drawing.Size(414, 35);
             this.HeaderLabel.TabIndex = 0;
             this.HeaderLabel.Text = "Yazılım Mimarisi Seçiniz";
             this.HeaderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,7 +116,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(434, 161);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(434, 156);
             this.Controls.Add(this.BackPanel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

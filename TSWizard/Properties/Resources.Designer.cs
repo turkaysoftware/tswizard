@@ -83,46 +83,6 @@ namespace TSWizard.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap ct_bmac_dark {
-            get {
-                object obj = ResourceManager.GetObject("ct_bmac_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap ct_bmac_light {
-            get {
-                object obj = ResourceManager.GetObject("ct_bmac_light", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap ct_bmac_mc_dark {
-            get {
-                object obj = ResourceManager.GetObject("ct_bmac_mc_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap ct_bmac_mc_light {
-            get {
-                object obj = ResourceManager.GetObject("ct_bmac_mc_light", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
         internal static System.Drawing.Bitmap ct_delete_dark {
             get {
                 object obj = ResourceManager.GetObject("ct_delete_dark", resourceCulture);
@@ -156,26 +116,6 @@ namespace TSWizard.Properties {
         internal static System.Drawing.Bitmap ct_download_light {
             get {
                 object obj = ResourceManager.GetObject("ct_download_light", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap ct_failed_dark {
-            get {
-                object obj = ResourceManager.GetObject("ct_failed_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap ct_failed_light {
-            get {
-                object obj = ResourceManager.GetObject("ct_failed_light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,26 +183,6 @@ namespace TSWizard.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap ct_success_dark {
-            get {
-                object obj = ResourceManager.GetObject("ct_success_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap ct_success_light {
-            get {
-                object obj = ResourceManager.GetObject("ct_success_light", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
         internal static System.Drawing.Bitmap ct_update_dark {
             get {
                 object obj = ResourceManager.GetObject("ct_update_dark", resourceCulture);
@@ -296,46 +216,6 @@ namespace TSWizard.Properties {
         internal static System.Drawing.Bitmap ct_website_light {
             get {
                 object obj = ResourceManager.GetObject("ct_website_light", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap ctb_github_dark {
-            get {
-                object obj = ResourceManager.GetObject("ctb_github_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap ctb_github_light {
-            get {
-                object obj = ResourceManager.GetObject("ctb_github_light", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap ctb_website_dark {
-            get {
-                object obj = ResourceManager.GetObject("ctb_website_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap ctb_website_light {
-            get {
-                object obj = ResourceManager.GetObject("ctb_website_light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -573,6 +453,46 @@ namespace TSWizard.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap tm_donate_dark {
+            get {
+                object obj = ResourceManager.GetObject("tm_donate_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap tm_donate_light {
+            get {
+                object obj = ResourceManager.GetObject("tm_donate_light", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap tm_donate_mc_dark {
+            get {
+                object obj = ResourceManager.GetObject("tm_donate_mc_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap tm_donate_mc_light {
+            get {
+                object obj = ResourceManager.GetObject("tm_donate_mc_light", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap tm_language_dark {
             get {
                 object obj = ResourceManager.GetObject("tm_language_dark", resourceCulture);
@@ -703,9 +623,9 @@ namespace TSWizard.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap ts_preloader_release {
+        internal static System.Drawing.Bitmap ts_preloader {
             get {
-                object obj = ResourceManager.GetObject("ts_preloader_release", resourceCulture);
+                object obj = ResourceManager.GetObject("ts_preloader", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

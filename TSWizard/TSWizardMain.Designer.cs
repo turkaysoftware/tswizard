@@ -34,7 +34,6 @@
             this.InFLP = new System.Windows.Forms.FlowLayoutPanel();
             this.MPanelAstel = new System.Windows.Forms.Panel();
             this.MPanelAstelWizardBtn = new TSWizard.TSCustomButton();
-            this.MPanelAstelLinkPanel = new System.Windows.Forms.Panel();
             this.MPanelAstelSCPanel = new System.Windows.Forms.Panel();
             this.MPanelAstelShortcutBtn = new System.Windows.Forms.PictureBox();
             this.MPanelAstelLinkText = new System.Windows.Forms.LinkLabel();
@@ -92,18 +91,6 @@
             this.MPanelYamiraInText = new System.Windows.Forms.Label();
             this.MPanelYamiraHeadText = new System.Windows.Forms.Label();
             this.MPanelYamiraImage = new System.Windows.Forms.PictureBox();
-            this.BottomPanel = new System.Windows.Forms.Panel();
-            this.BottomText = new System.Windows.Forms.Label();
-            this.MLFLP = new System.Windows.Forms.FlowLayoutPanel();
-            this.MLPanel = new System.Windows.Forms.Panel();
-            this.MLNetwork = new System.Windows.Forms.PictureBox();
-            this.MFLP = new System.Windows.Forms.FlowLayoutPanel();
-            this.MFLP3 = new System.Windows.Forms.Panel();
-            this.MLBmac = new System.Windows.Forms.PictureBox();
-            this.MFLP2 = new System.Windows.Forms.Panel();
-            this.MLGitHub = new System.Windows.Forms.PictureBox();
-            this.MFLP1 = new System.Windows.Forms.Panel();
-            this.MLWeb = new System.Windows.Forms.PictureBox();
             this.HeaderText = new System.Windows.Forms.Label();
             this.HeaderBanner = new System.Windows.Forms.PictureBox();
             this.HeaderMenu = new System.Windows.Forms.MenuStrip();
@@ -111,6 +98,7 @@
             this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darkThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.systemThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turkishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,6 +117,7 @@
             this.manualArchitectureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForSoftwareUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.donateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.NotifyMode = new System.Windows.Forms.NotifyIcon(this.components);
@@ -136,11 +125,10 @@
             this.showAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.softwareUpdateCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.systemThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MPanelAstelLinkPanel = new System.Windows.Forms.Panel();
             this.BackPanel.SuspendLayout();
             this.InFLP.SuspendLayout();
             this.MPanelAstel.SuspendLayout();
-            this.MPanelAstelLinkPanel.SuspendLayout();
             this.MPanelAstelSCPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MPanelAstelShortcutBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MPanelAstelImage)).BeginInit();
@@ -169,26 +157,15 @@
             this.MPanelYamiraSCPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MPanelYamiraShortcutBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MPanelYamiraImage)).BeginInit();
-            this.BottomPanel.SuspendLayout();
-            this.MLFLP.SuspendLayout();
-            this.MLPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MLNetwork)).BeginInit();
-            this.MFLP.SuspendLayout();
-            this.MFLP3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MLBmac)).BeginInit();
-            this.MFLP2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MLGitHub)).BeginInit();
-            this.MFLP1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MLWeb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HeaderBanner)).BeginInit();
             this.HeaderMenu.SuspendLayout();
             this.NotifyMenu.SuspendLayout();
+            this.MPanelAstelLinkPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackPanel
             // 
             this.BackPanel.Controls.Add(this.InFLP);
-            this.BackPanel.Controls.Add(this.BottomPanel);
             this.BackPanel.Controls.Add(this.HeaderText);
             this.BackPanel.Controls.Add(this.HeaderBanner);
             this.BackPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -213,8 +190,7 @@
             this.InFLP.Controls.Add(this.MPanelYamira);
             this.InFLP.Location = new System.Drawing.Point(10, 148);
             this.InFLP.Name = "InFLP";
-            this.InFLP.Padding = new System.Windows.Forms.Padding(5);
-            this.InFLP.Size = new System.Drawing.Size(988, 371);
+            this.InFLP.Size = new System.Drawing.Size(988, 416);
             this.InFLP.TabIndex = 1;
             // 
             // MPanelAstel
@@ -226,8 +202,8 @@
             this.MPanelAstel.Controls.Add(this.MPanelAstelInText);
             this.MPanelAstel.Controls.Add(this.MPanelAstelHeadText);
             this.MPanelAstel.Controls.Add(this.MPanelAstelImage);
-            this.MPanelAstel.Location = new System.Drawing.Point(8, 8);
-            this.MPanelAstel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
+            this.MPanelAstel.Location = new System.Drawing.Point(3, 3);
+            this.MPanelAstel.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
             this.MPanelAstel.Name = "MPanelAstel";
             this.MPanelAstel.Padding = new System.Windows.Forms.Padding(5);
             this.MPanelAstel.Size = new System.Drawing.Size(314, 360);
@@ -258,25 +234,13 @@
             this.MPanelAstelWizardBtn.UseVisualStyleBackColor = false;
             this.MPanelAstelWizardBtn.Click += new System.EventHandler(this.MPanelAstelWizardBtn_Click);
             // 
-            // MPanelAstelLinkPanel
-            // 
-            this.MPanelAstelLinkPanel.BackColor = System.Drawing.Color.Transparent;
-            this.MPanelAstelLinkPanel.Controls.Add(this.MPanelAstelSCPanel);
-            this.MPanelAstelLinkPanel.Controls.Add(this.MPanelAstelLinkText);
-            this.MPanelAstelLinkPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MPanelAstelLinkPanel.Location = new System.Drawing.Point(5, 246);
-            this.MPanelAstelLinkPanel.Name = "MPanelAstelLinkPanel";
-            this.MPanelAstelLinkPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.MPanelAstelLinkPanel.Size = new System.Drawing.Size(304, 38);
-            this.MPanelAstelLinkPanel.TabIndex = 2;
-            // 
             // MPanelAstelSCPanel
             // 
             this.MPanelAstelSCPanel.Controls.Add(this.MPanelAstelShortcutBtn);
             this.MPanelAstelSCPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.MPanelAstelSCPanel.Location = new System.Drawing.Point(274, 0);
             this.MPanelAstelSCPanel.Name = "MPanelAstelSCPanel";
-            this.MPanelAstelSCPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.MPanelAstelSCPanel.Padding = new System.Windows.Forms.Padding(6);
             this.MPanelAstelSCPanel.Size = new System.Drawing.Size(30, 30);
             this.MPanelAstelSCPanel.TabIndex = 1;
             // 
@@ -287,9 +251,9 @@
             this.MPanelAstelShortcutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MPanelAstelShortcutBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MPanelAstelShortcutBtn.Enabled = false;
-            this.MPanelAstelShortcutBtn.Location = new System.Drawing.Point(5, 5);
+            this.MPanelAstelShortcutBtn.Location = new System.Drawing.Point(6, 6);
             this.MPanelAstelShortcutBtn.Name = "MPanelAstelShortcutBtn";
-            this.MPanelAstelShortcutBtn.Size = new System.Drawing.Size(20, 20);
+            this.MPanelAstelShortcutBtn.Size = new System.Drawing.Size(18, 18);
             this.MPanelAstelShortcutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.MPanelAstelShortcutBtn.TabIndex = 3;
             this.MPanelAstelShortcutBtn.TabStop = false;
@@ -384,12 +348,12 @@
             this.MPanelEncryphix.Controls.Add(this.MPanelEncryphixInText);
             this.MPanelEncryphix.Controls.Add(this.MPanelEncryphixHeadText);
             this.MPanelEncryphix.Controls.Add(this.MPanelEncryphixImage);
-            this.MPanelEncryphix.Location = new System.Drawing.Point(328, 8);
-            this.MPanelEncryphix.Margin = new System.Windows.Forms.Padding(3, 3, 3, 13);
+            this.MPanelEncryphix.Location = new System.Drawing.Point(325, 3);
+            this.MPanelEncryphix.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
             this.MPanelEncryphix.Name = "MPanelEncryphix";
             this.MPanelEncryphix.Padding = new System.Windows.Forms.Padding(5);
             this.MPanelEncryphix.Size = new System.Drawing.Size(314, 360);
-            this.MPanelEncryphix.TabIndex = 4;
+            this.MPanelEncryphix.TabIndex = 1;
             // 
             // MPanelEncryphixWizardBtn
             // 
@@ -434,7 +398,7 @@
             this.MPanelEncryphixSCPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.MPanelEncryphixSCPanel.Location = new System.Drawing.Point(274, 0);
             this.MPanelEncryphixSCPanel.Name = "MPanelEncryphixSCPanel";
-            this.MPanelEncryphixSCPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.MPanelEncryphixSCPanel.Padding = new System.Windows.Forms.Padding(6);
             this.MPanelEncryphixSCPanel.Size = new System.Drawing.Size(30, 30);
             this.MPanelEncryphixSCPanel.TabIndex = 1;
             // 
@@ -445,9 +409,9 @@
             this.MPanelEncryphixShortcutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MPanelEncryphixShortcutBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MPanelEncryphixShortcutBtn.Enabled = false;
-            this.MPanelEncryphixShortcutBtn.Location = new System.Drawing.Point(5, 5);
+            this.MPanelEncryphixShortcutBtn.Location = new System.Drawing.Point(6, 6);
             this.MPanelEncryphixShortcutBtn.Name = "MPanelEncryphixShortcutBtn";
-            this.MPanelEncryphixShortcutBtn.Size = new System.Drawing.Size(20, 20);
+            this.MPanelEncryphixShortcutBtn.Size = new System.Drawing.Size(18, 18);
             this.MPanelEncryphixShortcutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.MPanelEncryphixShortcutBtn.TabIndex = 4;
             this.MPanelEncryphixShortcutBtn.TabStop = false;
@@ -541,12 +505,12 @@
             this.MPanelGlow.Controls.Add(this.MPanelGlowInText);
             this.MPanelGlow.Controls.Add(this.MPanelGlowHeadText);
             this.MPanelGlow.Controls.Add(this.MPanelGlowImage);
-            this.MPanelGlow.Location = new System.Drawing.Point(648, 8);
-            this.MPanelGlow.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
+            this.MPanelGlow.Location = new System.Drawing.Point(647, 3);
+            this.MPanelGlow.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
             this.MPanelGlow.Name = "MPanelGlow";
             this.MPanelGlow.Padding = new System.Windows.Forms.Padding(5);
             this.MPanelGlow.Size = new System.Drawing.Size(314, 360);
-            this.MPanelGlow.TabIndex = 1;
+            this.MPanelGlow.TabIndex = 2;
             // 
             // MPanelGlowWizardBtn
             // 
@@ -591,7 +555,7 @@
             this.MPanelGlowSCPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.MPanelGlowSCPanel.Location = new System.Drawing.Point(274, 0);
             this.MPanelGlowSCPanel.Name = "MPanelGlowSCPanel";
-            this.MPanelGlowSCPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.MPanelGlowSCPanel.Padding = new System.Windows.Forms.Padding(6);
             this.MPanelGlowSCPanel.Size = new System.Drawing.Size(30, 30);
             this.MPanelGlowSCPanel.TabIndex = 1;
             // 
@@ -602,9 +566,9 @@
             this.MPanelGlowShortcutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MPanelGlowShortcutBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MPanelGlowShortcutBtn.Enabled = false;
-            this.MPanelGlowShortcutBtn.Location = new System.Drawing.Point(5, 5);
+            this.MPanelGlowShortcutBtn.Location = new System.Drawing.Point(6, 6);
             this.MPanelGlowShortcutBtn.Name = "MPanelGlowShortcutBtn";
-            this.MPanelGlowShortcutBtn.Size = new System.Drawing.Size(20, 20);
+            this.MPanelGlowShortcutBtn.Size = new System.Drawing.Size(18, 18);
             this.MPanelGlowShortcutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.MPanelGlowShortcutBtn.TabIndex = 4;
             this.MPanelGlowShortcutBtn.TabStop = false;
@@ -698,12 +662,12 @@
             this.MPanelVCardix.Controls.Add(this.MPanelVCardixInText);
             this.MPanelVCardix.Controls.Add(this.MPanelVCardixHeadText);
             this.MPanelVCardix.Controls.Add(this.MPanelVCardixImage);
-            this.MPanelVCardix.Location = new System.Drawing.Point(8, 384);
-            this.MPanelVCardix.Margin = new System.Windows.Forms.Padding(3, 3, 3, 13);
+            this.MPanelVCardix.Location = new System.Drawing.Point(3, 371);
+            this.MPanelVCardix.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
             this.MPanelVCardix.Name = "MPanelVCardix";
             this.MPanelVCardix.Padding = new System.Windows.Forms.Padding(5);
             this.MPanelVCardix.Size = new System.Drawing.Size(314, 360);
-            this.MPanelVCardix.TabIndex = 5;
+            this.MPanelVCardix.TabIndex = 3;
             // 
             // MPanelVCardixWizardBtn
             // 
@@ -748,7 +712,7 @@
             this.MPanelVCardixSCPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.MPanelVCardixSCPanel.Location = new System.Drawing.Point(274, 0);
             this.MPanelVCardixSCPanel.Name = "MPanelVCardixSCPanel";
-            this.MPanelVCardixSCPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.MPanelVCardixSCPanel.Padding = new System.Windows.Forms.Padding(6);
             this.MPanelVCardixSCPanel.Size = new System.Drawing.Size(30, 30);
             this.MPanelVCardixSCPanel.TabIndex = 1;
             // 
@@ -759,9 +723,9 @@
             this.MPanelVCardixShortcutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MPanelVCardixShortcutBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MPanelVCardixShortcutBtn.Enabled = false;
-            this.MPanelVCardixShortcutBtn.Location = new System.Drawing.Point(5, 5);
+            this.MPanelVCardixShortcutBtn.Location = new System.Drawing.Point(6, 6);
             this.MPanelVCardixShortcutBtn.Name = "MPanelVCardixShortcutBtn";
-            this.MPanelVCardixShortcutBtn.Size = new System.Drawing.Size(20, 20);
+            this.MPanelVCardixShortcutBtn.Size = new System.Drawing.Size(18, 18);
             this.MPanelVCardixShortcutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.MPanelVCardixShortcutBtn.TabIndex = 4;
             this.MPanelVCardixShortcutBtn.TabStop = false;
@@ -855,12 +819,12 @@
             this.MPanelVimera.Controls.Add(this.MPanelVimeraInText);
             this.MPanelVimera.Controls.Add(this.MPanelVimeraHeadText);
             this.MPanelVimera.Controls.Add(this.MPanelVimeraImage);
-            this.MPanelVimera.Location = new System.Drawing.Point(328, 384);
-            this.MPanelVimera.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
+            this.MPanelVimera.Location = new System.Drawing.Point(325, 371);
+            this.MPanelVimera.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
             this.MPanelVimera.Name = "MPanelVimera";
             this.MPanelVimera.Padding = new System.Windows.Forms.Padding(5);
             this.MPanelVimera.Size = new System.Drawing.Size(314, 360);
-            this.MPanelVimera.TabIndex = 2;
+            this.MPanelVimera.TabIndex = 4;
             // 
             // MPanelVimeraWizardBtn
             // 
@@ -905,7 +869,7 @@
             this.MPanelVimeraSCPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.MPanelVimeraSCPanel.Location = new System.Drawing.Point(274, 0);
             this.MPanelVimeraSCPanel.Name = "MPanelVimeraSCPanel";
-            this.MPanelVimeraSCPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.MPanelVimeraSCPanel.Padding = new System.Windows.Forms.Padding(6);
             this.MPanelVimeraSCPanel.Size = new System.Drawing.Size(30, 30);
             this.MPanelVimeraSCPanel.TabIndex = 1;
             // 
@@ -916,9 +880,9 @@
             this.MPanelVimeraShortcutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MPanelVimeraShortcutBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MPanelVimeraShortcutBtn.Enabled = false;
-            this.MPanelVimeraShortcutBtn.Location = new System.Drawing.Point(5, 5);
+            this.MPanelVimeraShortcutBtn.Location = new System.Drawing.Point(6, 6);
             this.MPanelVimeraShortcutBtn.Name = "MPanelVimeraShortcutBtn";
-            this.MPanelVimeraShortcutBtn.Size = new System.Drawing.Size(20, 20);
+            this.MPanelVimeraShortcutBtn.Size = new System.Drawing.Size(18, 18);
             this.MPanelVimeraShortcutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.MPanelVimeraShortcutBtn.TabIndex = 4;
             this.MPanelVimeraShortcutBtn.TabStop = false;
@@ -1012,12 +976,12 @@
             this.MPanelYamira.Controls.Add(this.MPanelYamiraInText);
             this.MPanelYamira.Controls.Add(this.MPanelYamiraHeadText);
             this.MPanelYamira.Controls.Add(this.MPanelYamiraImage);
-            this.MPanelYamira.Location = new System.Drawing.Point(648, 384);
-            this.MPanelYamira.Margin = new System.Windows.Forms.Padding(3, 3, 3, 13);
+            this.MPanelYamira.Location = new System.Drawing.Point(647, 371);
+            this.MPanelYamira.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
             this.MPanelYamira.Name = "MPanelYamira";
             this.MPanelYamira.Padding = new System.Windows.Forms.Padding(5);
             this.MPanelYamira.Size = new System.Drawing.Size(314, 360);
-            this.MPanelYamira.TabIndex = 3;
+            this.MPanelYamira.TabIndex = 5;
             // 
             // MPanelYamiraWizardBtn
             // 
@@ -1062,7 +1026,7 @@
             this.MPanelYamiraSCPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.MPanelYamiraSCPanel.Location = new System.Drawing.Point(274, 0);
             this.MPanelYamiraSCPanel.Name = "MPanelYamiraSCPanel";
-            this.MPanelYamiraSCPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.MPanelYamiraSCPanel.Padding = new System.Windows.Forms.Padding(6);
             this.MPanelYamiraSCPanel.Size = new System.Drawing.Size(30, 30);
             this.MPanelYamiraSCPanel.TabIndex = 1;
             // 
@@ -1073,9 +1037,9 @@
             this.MPanelYamiraShortcutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MPanelYamiraShortcutBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MPanelYamiraShortcutBtn.Enabled = false;
-            this.MPanelYamiraShortcutBtn.Location = new System.Drawing.Point(5, 5);
+            this.MPanelYamiraShortcutBtn.Location = new System.Drawing.Point(6, 6);
             this.MPanelYamiraShortcutBtn.Name = "MPanelYamiraShortcutBtn";
-            this.MPanelYamiraShortcutBtn.Size = new System.Drawing.Size(20, 20);
+            this.MPanelYamiraShortcutBtn.Size = new System.Drawing.Size(18, 18);
             this.MPanelYamiraShortcutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.MPanelYamiraShortcutBtn.TabIndex = 4;
             this.MPanelYamiraShortcutBtn.TabStop = false;
@@ -1160,149 +1124,6 @@
             this.MPanelYamiraImage.TabIndex = 1;
             this.MPanelYamiraImage.TabStop = false;
             // 
-            // BottomPanel
-            // 
-            this.BottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(32)))));
-            this.BottomPanel.Controls.Add(this.BottomText);
-            this.BottomPanel.Controls.Add(this.MLFLP);
-            this.BottomPanel.Controls.Add(this.MFLP);
-            this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BottomPanel.Location = new System.Drawing.Point(10, 532);
-            this.BottomPanel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.BottomPanel.Name = "BottomPanel";
-            this.BottomPanel.Size = new System.Drawing.Size(988, 35);
-            this.BottomPanel.TabIndex = 2;
-            // 
-            // BottomText
-            // 
-            this.BottomText.BackColor = System.Drawing.Color.Transparent;
-            this.BottomText.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BottomText.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
-            this.BottomText.ForeColor = System.Drawing.Color.White;
-            this.BottomText.Location = new System.Drawing.Point(35, 0);
-            this.BottomText.Name = "BottomText";
-            this.BottomText.Size = new System.Drawing.Size(813, 35);
-            this.BottomText.TabIndex = 1;
-            this.BottomText.Text = "Server N/A";
-            this.BottomText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // MLFLP
-            // 
-            this.MLFLP.AutoSize = true;
-            this.MLFLP.Controls.Add(this.MLPanel);
-            this.MLFLP.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MLFLP.Location = new System.Drawing.Point(0, 0);
-            this.MLFLP.Name = "MLFLP";
-            this.MLFLP.Size = new System.Drawing.Size(35, 35);
-            this.MLFLP.TabIndex = 3;
-            // 
-            // MLPanel
-            // 
-            this.MLPanel.Controls.Add(this.MLNetwork);
-            this.MLPanel.Location = new System.Drawing.Point(3, 3);
-            this.MLPanel.Name = "MLPanel";
-            this.MLPanel.Padding = new System.Windows.Forms.Padding(7);
-            this.MLPanel.Size = new System.Drawing.Size(29, 29);
-            this.MLPanel.TabIndex = 0;
-            // 
-            // MLNetwork
-            // 
-            this.MLNetwork.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MLNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MLNetwork.Location = new System.Drawing.Point(7, 7);
-            this.MLNetwork.Name = "MLNetwork";
-            this.MLNetwork.Size = new System.Drawing.Size(15, 15);
-            this.MLNetwork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MLNetwork.TabIndex = 5;
-            this.MLNetwork.TabStop = false;
-            // 
-            // MFLP
-            // 
-            this.MFLP.Controls.Add(this.MFLP3);
-            this.MFLP.Controls.Add(this.MFLP2);
-            this.MFLP.Controls.Add(this.MFLP1);
-            this.MFLP.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MFLP.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.MFLP.Location = new System.Drawing.Point(867, 0);
-            this.MFLP.Name = "MFLP";
-            this.MFLP.Size = new System.Drawing.Size(121, 35);
-            this.MFLP.TabIndex = 2;
-            // 
-            // MFLP3
-            // 
-            this.MFLP3.BackColor = System.Drawing.Color.White;
-            this.MFLP3.Controls.Add(this.MLBmac);
-            this.MFLP3.Location = new System.Drawing.Point(89, 3);
-            this.MFLP3.Margin = new System.Windows.Forms.Padding(1, 3, 3, 3);
-            this.MFLP3.Name = "MFLP3";
-            this.MFLP3.Padding = new System.Windows.Forms.Padding(5);
-            this.MFLP3.Size = new System.Drawing.Size(29, 29);
-            this.MFLP3.TabIndex = 16;
-            // 
-            // MLBmac
-            // 
-            this.MLBmac.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MLBmac.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MLBmac.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MLBmac.Location = new System.Drawing.Point(5, 5);
-            this.MLBmac.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.MLBmac.Name = "MLBmac";
-            this.MLBmac.Size = new System.Drawing.Size(19, 19);
-            this.MLBmac.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MLBmac.TabIndex = 10;
-            this.MLBmac.TabStop = false;
-            this.MLBmac.Click += new System.EventHandler(this.MLBmac_Click);
-            // 
-            // MFLP2
-            // 
-            this.MFLP2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.MFLP2.Controls.Add(this.MLGitHub);
-            this.MFLP2.Location = new System.Drawing.Point(58, 3);
-            this.MFLP2.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
-            this.MFLP2.Name = "MFLP2";
-            this.MFLP2.Padding = new System.Windows.Forms.Padding(5);
-            this.MFLP2.Size = new System.Drawing.Size(29, 29);
-            this.MFLP2.TabIndex = 12;
-            // 
-            // MLGitHub
-            // 
-            this.MLGitHub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MLGitHub.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MLGitHub.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MLGitHub.Location = new System.Drawing.Point(5, 5);
-            this.MLGitHub.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.MLGitHub.Name = "MLGitHub";
-            this.MLGitHub.Size = new System.Drawing.Size(19, 19);
-            this.MLGitHub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MLGitHub.TabIndex = 7;
-            this.MLGitHub.TabStop = false;
-            this.MLGitHub.Click += new System.EventHandler(this.MLGitHub_Click);
-            // 
-            // MFLP1
-            // 
-            this.MFLP1.BackColor = System.Drawing.Color.White;
-            this.MFLP1.Controls.Add(this.MLWeb);
-            this.MFLP1.Location = new System.Drawing.Point(27, 3);
-            this.MFLP1.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
-            this.MFLP1.Name = "MFLP1";
-            this.MFLP1.Padding = new System.Windows.Forms.Padding(5);
-            this.MFLP1.Size = new System.Drawing.Size(29, 29);
-            this.MFLP1.TabIndex = 15;
-            // 
-            // MLWeb
-            // 
-            this.MLWeb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MLWeb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MLWeb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MLWeb.Location = new System.Drawing.Point(5, 5);
-            this.MLWeb.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.MLWeb.Name = "MLWeb";
-            this.MLWeb.Size = new System.Drawing.Size(19, 19);
-            this.MLWeb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MLWeb.TabIndex = 10;
-            this.MLWeb.TabStop = false;
-            this.MLWeb.Click += new System.EventHandler(this.MLWeb_Click);
-            // 
             // HeaderText
             // 
             this.HeaderText.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -1332,6 +1153,7 @@
             this.HeaderMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
             this.checkForSoftwareUpdateToolStripMenuItem,
+            this.donateToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.HeaderMenu.Location = new System.Drawing.Point(0, 0);
             this.HeaderMenu.Name = "HeaderMenu";
@@ -1368,7 +1190,7 @@
             // 
             this.lightThemeToolStripMenuItem.Name = "lightThemeToolStripMenuItem";
             this.lightThemeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.lightThemeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lightThemeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.lightThemeToolStripMenuItem.Text = "Light Theme";
             this.lightThemeToolStripMenuItem.Click += new System.EventHandler(this.LightThemeToolStripMenuItem_Click);
             // 
@@ -1376,9 +1198,17 @@
             // 
             this.darkThemeToolStripMenuItem.Name = "darkThemeToolStripMenuItem";
             this.darkThemeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.darkThemeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.darkThemeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.darkThemeToolStripMenuItem.Text = "Dark Theme";
             this.darkThemeToolStripMenuItem.Click += new System.EventHandler(this.DarkThemeToolStripMenuItem_Click);
+            // 
+            // systemThemeToolStripMenuItem
+            // 
+            this.systemThemeToolStripMenuItem.Name = "systemThemeToolStripMenuItem";
+            this.systemThemeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
+            this.systemThemeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.systemThemeToolStripMenuItem.Text = "System Theme";
+            this.systemThemeToolStripMenuItem.Click += new System.EventHandler(this.SystemThemeToolStripMenuItem_Click);
             // 
             // languageToolStripMenuItem
             // 
@@ -1392,13 +1222,13 @@
             // englishToolStripMenuItem
             // 
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.englishToolStripMenuItem.Text = "English";
             // 
             // turkishToolStripMenuItem
             // 
             this.turkishToolStripMenuItem.Name = "turkishToolStripMenuItem";
-            this.turkishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.turkishToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.turkishToolStripMenuItem.Text = "Turkish";
             // 
             // startupToolStripMenuItem
@@ -1414,7 +1244,7 @@
             // 
             this.windowedToolStripMenuItem.Name = "windowedToolStripMenuItem";
             this.windowedToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.windowedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.windowedToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.windowedToolStripMenuItem.Text = "Windowed";
             this.windowedToolStripMenuItem.Click += new System.EventHandler(this.WindowedToolStripMenuItem_Click);
             // 
@@ -1422,7 +1252,7 @@
             // 
             this.fullScreenToolStripMenuItem.Name = "fullScreenToolStripMenuItem";
             this.fullScreenToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.fullScreenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fullScreenToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.fullScreenToolStripMenuItem.Text = "Full Screen";
             this.fullScreenToolStripMenuItem.Click += new System.EventHandler(this.FullScreenToolStripMenuItem_Click);
             // 
@@ -1439,7 +1269,7 @@
             // 
             this.iconStatusToolStripMenuItem.Name = "iconStatusToolStripMenuItem";
             this.iconStatusToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.iconStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iconStatusToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.iconStatusToolStripMenuItem.Text = "Icon Status";
             this.iconStatusToolStripMenuItem.Click += new System.EventHandler(this.IconStatusToolStripMenuItem_Click);
             // 
@@ -1447,7 +1277,7 @@
             // 
             this.closeSoftwareToolStripMenuItem.Name = "closeSoftwareToolStripMenuItem";
             this.closeSoftwareToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
-            this.closeSoftwareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeSoftwareToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.closeSoftwareToolStripMenuItem.Text = "Close Software";
             this.closeSoftwareToolStripMenuItem.Click += new System.EventHandler(this.CloseSoftwareToolStripMenuItem_Click);
             // 
@@ -1464,7 +1294,7 @@
             // 
             this.notificationOnToolStripMenuItem.Name = "notificationOnToolStripMenuItem";
             this.notificationOnToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F8;
-            this.notificationOnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.notificationOnToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.notificationOnToolStripMenuItem.Text = "Notification On";
             this.notificationOnToolStripMenuItem.Click += new System.EventHandler(this.NotificationOnToolStripMenuItem_Click);
             // 
@@ -1472,7 +1302,7 @@
             // 
             this.notificationOffToolStripMenuItem.Name = "notificationOffToolStripMenuItem";
             this.notificationOffToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
-            this.notificationOffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.notificationOffToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.notificationOffToolStripMenuItem.Text = "Notification Off";
             this.notificationOffToolStripMenuItem.Click += new System.EventHandler(this.NotificationOffToolStripMenuItem_Click);
             // 
@@ -1526,6 +1356,16 @@
             this.checkForSoftwareUpdateToolStripMenuItem.Size = new System.Drawing.Size(156, 20);
             this.checkForSoftwareUpdateToolStripMenuItem.Text = "check for software update";
             this.checkForSoftwareUpdateToolStripMenuItem.Click += new System.EventHandler(this.CheckForSoftwareUpdateToolStripMenuItem_Click);
+            // 
+            // donateToolStripMenuItem
+            // 
+            this.donateToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.donateToolStripMenuItem.Name = "donateToolStripMenuItem";
+            this.donateToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.D)));
+            this.donateToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.donateToolStripMenuItem.Text = "donate";
+            this.donateToolStripMenuItem.Click += new System.EventHandler(this.DonateToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -1581,13 +1421,17 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
-            // systemThemeToolStripMenuItem
+            // MPanelAstelLinkPanel
             // 
-            this.systemThemeToolStripMenuItem.Name = "systemThemeToolStripMenuItem";
-            this.systemThemeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.systemThemeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.systemThemeToolStripMenuItem.Text = "System Theme";
-            this.systemThemeToolStripMenuItem.Click += new System.EventHandler(this.SystemThemeToolStripMenuItem_Click);
+            this.MPanelAstelLinkPanel.BackColor = System.Drawing.Color.Transparent;
+            this.MPanelAstelLinkPanel.Controls.Add(this.MPanelAstelSCPanel);
+            this.MPanelAstelLinkPanel.Controls.Add(this.MPanelAstelLinkText);
+            this.MPanelAstelLinkPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MPanelAstelLinkPanel.Location = new System.Drawing.Point(5, 246);
+            this.MPanelAstelLinkPanel.Name = "MPanelAstelLinkPanel";
+            this.MPanelAstelLinkPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.MPanelAstelLinkPanel.Size = new System.Drawing.Size(304, 38);
+            this.MPanelAstelLinkPanel.TabIndex = 2;
             // 
             // TSWizardMain
             // 
@@ -1609,7 +1453,6 @@
             this.BackPanel.ResumeLayout(false);
             this.InFLP.ResumeLayout(false);
             this.MPanelAstel.ResumeLayout(false);
-            this.MPanelAstelLinkPanel.ResumeLayout(false);
             this.MPanelAstelSCPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MPanelAstelShortcutBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MPanelAstelImage)).EndInit();
@@ -1638,22 +1481,11 @@
             this.MPanelYamiraSCPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MPanelYamiraShortcutBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MPanelYamiraImage)).EndInit();
-            this.BottomPanel.ResumeLayout(false);
-            this.BottomPanel.PerformLayout();
-            this.MLFLP.ResumeLayout(false);
-            this.MLPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MLNetwork)).EndInit();
-            this.MFLP.ResumeLayout(false);
-            this.MFLP3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MLBmac)).EndInit();
-            this.MFLP2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MLGitHub)).EndInit();
-            this.MFLP1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MLWeb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HeaderBanner)).EndInit();
             this.HeaderMenu.ResumeLayout(false);
             this.HeaderMenu.PerformLayout();
             this.NotifyMenu.ResumeLayout(false);
+            this.MPanelAstelLinkPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1662,7 +1494,6 @@
         #endregion
         private System.Windows.Forms.Panel BackPanel;
         private System.Windows.Forms.Label HeaderText;
-        private System.Windows.Forms.Panel BottomPanel;
         private System.Windows.Forms.Panel MPanelAstel;
         private System.Windows.Forms.Panel MPanelGlow;
         private System.Windows.Forms.Panel MPanelVimera;
@@ -1688,7 +1519,6 @@
         private TSCustomButton MPanelAstelWizardBtn;
         private TSCustomButton MPanelGlowWizardBtn;
         private TSCustomButton MPanelVimeraWizardBtn;
-        private System.Windows.Forms.Label BottomText;
         private System.Windows.Forms.PictureBox HeaderBanner;
         private System.Windows.Forms.MenuStrip HeaderMenu;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
@@ -1704,7 +1534,6 @@
         private System.Windows.Forms.ToolStripMenuItem checkForUpdateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolTip MainToolTip;
-        private System.Windows.Forms.FlowLayoutPanel MFLP;
         private System.Windows.Forms.NotifyIcon NotifyMode;
         private System.Windows.Forms.ContextMenuStrip NotifyMenu;
         private System.Windows.Forms.ToolStripMenuItem updateNotificationsToolStripMenuItem;
@@ -1721,7 +1550,6 @@
         private System.Windows.Forms.ToolStripMenuItem x64BitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aRM64ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manualArchitectureToolStripMenuItem;
-        private System.Windows.Forms.Panel MPanelAstelLinkPanel;
         private System.Windows.Forms.PictureBox MPanelAstelShortcutBtn;
         private System.Windows.Forms.Panel MPanelGlowLinkPanel;
         private System.Windows.Forms.Panel MPanelYamiraLinkPanel;
@@ -1732,13 +1560,6 @@
         private System.Windows.Forms.LinkLabel MPanelVimeraLinkText;
         private System.Windows.Forms.PictureBox MPanelGlowShortcutBtn;
         private System.Windows.Forms.LinkLabel MPanelGlowLinkText;
-        private System.Windows.Forms.Panel MFLP2;
-        private System.Windows.Forms.Panel MFLP1;
-        private System.Windows.Forms.PictureBox MLWeb;
-        private System.Windows.Forms.PictureBox MLGitHub;
-        private System.Windows.Forms.FlowLayoutPanel MLFLP;
-        private System.Windows.Forms.Panel MLPanel;
-        private System.Windows.Forms.PictureBox MLNetwork;
         private System.Windows.Forms.Panel MPanelAstelSCPanel;
         private System.Windows.Forms.Panel MPanelYamiraSCPanel;
         private System.Windows.Forms.Panel MPanelVimeraSCPanel;
@@ -1764,9 +1585,9 @@
         private System.Windows.Forms.Label MPanelVCardixInText;
         private System.Windows.Forms.Label MPanelVCardixHeadText;
         private System.Windows.Forms.PictureBox MPanelVCardixImage;
-        private System.Windows.Forms.Panel MFLP3;
-        private System.Windows.Forms.PictureBox MLBmac;
         private System.Windows.Forms.ToolStripMenuItem systemThemeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem donateToolStripMenuItem;
+        private System.Windows.Forms.Panel MPanelAstelLinkPanel;
     }
 }
 

@@ -124,30 +124,6 @@
   <data name="astel_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\tswizard_images\tswizard_interface\software_logo\astel_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ctb_github_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\tswizard_images\tswizard_ui\theme_dark\ctb_github_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ctb_github_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\tswizard_images\tswizard_ui\theme_light\ctb_github_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ctb_website_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\tswizard_images\tswizard_ui\theme_dark\ctb_website_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ctb_website_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\tswizard_images\tswizard_ui\theme_light\ctb_website_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ct_bmac_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\tswizard_images\tswizard_ui\theme_dark\ct_bmac_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ct_bmac_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\tswizard_images\tswizard_ui\theme_light\ct_bmac_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ct_bmac_mc_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\tswizard_images\tswizard_ui\theme_dark\ct_bmac_mc_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ct_bmac_mc_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\tswizard_images\tswizard_ui\theme_light\ct_bmac_mc_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ct_delete_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\tswizard_images\tswizard_ui\theme_dark\ct_delete_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -159,12 +135,6 @@
   </data>
   <data name="ct_download_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\tswizard_images\tswizard_ui\theme_light\ct_download_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ct_failed_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\tswizard_images\tswizard_ui\theme_dark\ct_failed_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ct_failed_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\tswizard_images\tswizard_ui\theme_light\ct_failed_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ct_github_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\tswizard_images\tswizard_ui\theme_dark\ct_github_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -183,12 +153,6 @@
   </data>
   <data name="ct_start_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\tswizard_images\tswizard_ui\theme_light\ct_start_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ct_success_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\tswizard_images\tswizard_ui\theme_dark\ct_success_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ct_success_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\tswizard_images\tswizard_ui\theme_light\ct_success_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ct_update_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\tswizard_images\tswizard_ui\theme_dark\ct_update_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -271,6 +235,18 @@
   <data name="tm_behavior_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\tswizard_images\tswizard_ui\theme_light\tm_behavior_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="tm_donate_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\tswizard_images\tswizard_ui\theme_dark\tm_donate_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tm_donate_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\tswizard_images\tswizard_ui\theme_light\tm_donate_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tm_donate_mc_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\tswizard_images\tswizard_ui\theme_dark\tm_donate_mc_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tm_donate_mc_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\tswizard_images\tswizard_ui\theme_light\tm_donate_mc_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tm_language_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\tswizard_images\tswizard_ui\theme_dark\tm_language_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -310,8 +286,8 @@
   <data name="ts_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\tswizard_images\tswizard_ui\ts_material\ts_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ts_preloader_release" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\tswizard_images\ts_preloader\ts_preloader_release.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ts_preloader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\tswizard_images\ts_preloader\ts_preloader.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vcardix_banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\tswizard_images\tswizard_interface\software_banner\vcardix_banner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

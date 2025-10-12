@@ -24,7 +24,7 @@ namespace TSWizard{
             website_link        = "https://www.turkaysoftware.com",
             github_link         = "https://github.com/turkaysoftware",
             // Other Links
-            ts_bmac             = "https://buymeacoffee.com/turkaysoftware";
+            ts_donate           = "https://buymeacoffee.com/turkaysoftware";
         }
         // VERSIONS
         // ======================================================================================================

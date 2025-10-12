@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
@@ -10,43 +9,24 @@ namespace TSWizard{
     public partial class TS_SoftwareDetails : Form{
         public TS_SoftwareDetails(){
             InitializeComponent();
-            CheckForIllegalCrossThreadCalls = false;
-            typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty, null, InPanel, new object[] { true });
         }
         // LOCAL VARIABLES
         // ======================================================================================================
         string _rotater_link_github = string.Empty;
         string _rotater_link_pn = string.Empty;
         string _rotater_link_ts_website = string.Empty;
-        // TOOLTIP SET CONFIG
-        // ======================================================================================================
-        private void MainToolTip_Draw(object sender, DrawToolTipEventArgs e){ e.DrawBackground(); e.DrawBorder(); e.DrawText(); }
         // LOAD
         // ======================================================================================================
         private void TS_SoftwareDetails_Load(object sender, EventArgs e){ Preload_software_info(); }
         // PRELOADER
         // ======================================================================================================
         public void Preload_software_info(){
-            // COLOR SETTINGS
-            try{
-                bool isLight = TSWizardMain.theme == 1;
-                TSImageRenderer(TLinkWebSite, isLight ? Properties.Resources.ctb_website_light : Properties.Resources.ctb_website_dark, 0, ContentAlignment.MiddleCenter);
-                TSImageRenderer(TLinkGitHub, isLight ? Properties.Resources.ctb_github_light : Properties.Resources.ctb_github_dark, 0, ContentAlignment.MiddleCenter);
-                TSImageRenderer(TLinkBmac, isLight ? Properties.Resources.ct_bmac_light : Properties.Resources.ct_bmac_dark, 0, ContentAlignment.MiddleCenter);
-            }catch (Exception){ }
-            //
-            BackColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIBGColor2");
-            // TOOLTIP
-            MainToolTip.ForeColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "HeaderFEColor");
-            MainToolTip.BackColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "HeaderBGColor");
+            BackColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIBGColor1");
             // HEAD
-            TLinkWebSitePanel.BackColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIBGColor1");
-            TLinkGitHubPanel.BackColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIBGColor1");
-            TLinkBmacPanel.BackColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIBGColor1");
+            SLogo.BackColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIBGColor1");
             SInfo.ForeColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIFEColor2");
             SInfoDetail.ForeColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIFEColor2");
             // CONTENT
-            InPanel.BackColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIBGColor1");
             SPanel1.BackColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIBGColor2");
             SPanel2.BackColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIBGColor2");
             SPanel3.BackColor = TS_ThemeEngine.ColorMode(TSWizardMain.theme, "UIBGColor2");
@@ -164,10 +144,6 @@ namespace TSWizard{
                 BSLinkPN.Text = string.Format(software_lang.TSReadLangs("SoftwareDetail", "sd_pn"), TSWizardMain.ts_softwares_list[TSWizardMain.ts_active_software]);
                 BSLinkTS.Text = string.Format(software_lang.TSReadLangs("SoftwareDetail", "sd_ts_website"), Application.CompanyName);
                 //
-                MainToolTip.SetToolTip(TLinkWebSite, software_lang.TSReadLangs("SoftwareAbout", "sa_website_page"));
-                MainToolTip.SetToolTip(TLinkGitHub, software_lang.TSReadLangs("SoftwareAbout", "sa_github_page"));
-                MainToolTip.SetToolTip(TLinkBmac, software_lang.TSReadLangs("SoftwareAbout", "sa_bmac_page"));
-                //
                 _rotater_link_github = selectedSoftware.Git_link;
                 _rotater_link_pn = selectedSoftware.Pn_link;
                 _rotater_link_ts_website = selectedSoftware.Ts_website;
@@ -232,23 +208,6 @@ namespace TSWizard{
         private void BSLinkTS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e){
             try{
                 Process.Start(new ProcessStartInfo(_rotater_link_ts_website){ UseShellExecute = true });
-            }catch (Exception){ }
-        }
-        // SOCIAL MEDIA LINKS
-        // ======================================================================================================
-        private void TLinkWebSite_Click(object sender, EventArgs e){
-            try{
-                Process.Start(new ProcessStartInfo(TS_LinkSystem.website_link){ UseShellExecute = true });
-            }catch (Exception){ }
-        }
-        private void TLinkGitHub_Click(object sender, EventArgs e){
-            try{
-                Process.Start(new ProcessStartInfo(TS_LinkSystem.github_link){ UseShellExecute = true });
-            }catch (Exception){ }
-        }
-        private void TLinkBmac_Click(object sender, EventArgs e){
-            try{
-                Process.Start(new ProcessStartInfo(TS_LinkSystem.ts_bmac){ UseShellExecute = true });
             }catch (Exception){ }
         }
     }

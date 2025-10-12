@@ -31,7 +31,6 @@ namespace TSWizard{
         public TSWizardMain(){
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
-            typeof(FlowLayoutPanel).InvokeMember("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty, null, InFLP, new object[] { true });
             //
             NotifyMode.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             NotifyMode.Text = Application.ProductName;
@@ -71,7 +70,7 @@ namespace TSWizard{
         };
         //
         int __astel_i_status = 0, __encryphix_i_status = 0, __glow_i_status = 0, __vcardix_i_status = 0, __vimera_i_status = 0, __yamira_i_status = 0, startup_status, behavior_mode_status, update_notifications_status, architecture_mode_status, themeSystem;
-        bool __astel_u_status = false, __encryphix_u_status = false, __glow_u_status = false, __vcardix_u_status = false, __vimera_u_status = false, __yamira_u_status = false, dynamic_net_status, loop_status = true, exit_mode = false;
+        bool __astel_u_status = false, __encryphix_u_status = false, __glow_u_status = false, __vcardix_u_status = false, __vimera_u_status = false, __yamira_u_status = false, loop_status = true, exit_mode = false;
         readonly List<string> sUpdateNotList = new List<string>();
         // ======================================================================================================
         // COLOR MODES / Index Mode | 0 = Dark - 1 = Light
@@ -217,10 +216,8 @@ namespace TSWizard{
             RunSoftwareEngine();
             // UPDATE CHECKER
             Task softwareUpdateCheck = Task.Run(() => Software_update_check(0));
-            // SERVER CONNECTION DELAY
-            Task ts_website_control = Task.Run(() => { Ts_website_uptime_module(); });
             // AUTOMATIC UPDATE CONTROLLER
-            Task ts_avaible_update = Task.Run(() => { Auto_check_avaible_update(); });
+            Task ts_avaible_update = Task.Run(() => Auto_check_avaible_update());
             // START CHECK MODULES
             Task ts_wizard_start_module = Task.Run(() => {
                 if (update_notifications_status == 1){
@@ -230,39 +227,17 @@ namespace TSWizard{
                 }
             });
         }
-        // WEBSITE DELAY MODULE
-        // ======================================================================================================
-        private void Ts_website_uptime_module(){
-            while (loop_status){
-                TSGetLangs software_lang = new TSGetLangs(lang_path);
-                try{
-                    bool net_status = IsNetworkCheck();
-                    Image successImage = (theme == 1) ? Properties.Resources.ct_success_light : Properties.Resources.ct_success_dark;
-                    Image failImage = (theme == 1) ? Properties.Resources.ct_failed_light : Properties.Resources.ct_failed_dark;
-                    TSImageRenderer(MLNetwork, net_status ? successImage : failImage, 0, ContentAlignment.MiddleCenter);
-                    dynamic_net_status = net_status;
-                    BottomText.Text = software_lang.TSReadLangs("TSWizardUI", net_status ? "s_active_internet" : "s_deactive_internet");
-                }catch (Exception){ }
-                Thread.Sleep(45000);
-            }
-        }
         // TS WIZARD START MODULE
         // ======================================================================================================
         private void Ts_w_start_module(bool __notifi_mode){
             TSGetLangs software_lang = new TSGetLangs(lang_path);
             try{
-                if (!Directory.Exists(ts_softwares_root_path))
-                    Directory.CreateDirectory(ts_softwares_root_path);
-                //
                 var wizardButtons = new[] { MPanelAstelWizardBtn, MPanelEncryphixWizardBtn, MPanelGlowWizardBtn, MPanelVCardixWizardBtn, MPanelVimeraWizardBtn, MPanelYamiraWizardBtn };
                 var removeButtons = new[] { MPanelAstelRemoveBtn, MPanelEncryphixRemoveBtn, MPanelGlowRemoveBtn, MPanelVCardixRemoveBtn, MPanelVimeraRemoveBtn, MPanelYamiraRemoveBtn };
                 for (int i = 0; i < ts_softwares_location.Length; i++){
                     string dirPath = ts_softwares_location[i];
                     string exeName = File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ts_softwares_location[i], ts_softwares_location_exe_name[i])) ? ts_softwares_location_exe_name[i] : (File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ts_softwares_location[i], ts_softwares_location_exe_name[i].Replace("_x64", string.Empty))) ? ts_softwares_location_exe_name[i].Replace("_x64", string.Empty) : ts_softwares_location_exe_name[i]);
                     string exePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, dirPath, exeName);
-                    //
-                    if (!Directory.Exists(dirPath))
-                        Directory.CreateDirectory(dirPath);
                     //
                     var wizardBtn = wizardButtons[i];
                     var removeBtn = removeButtons[i];
@@ -458,7 +433,7 @@ namespace TSWizard{
                     Process.Start(psi);
                 }
             }catch (Exception ex){
-                TS_MessageBoxEngine.TS_MessageBox(this, 3, string.Format(software_lang.TSReadLangs("TSWizardUI", "s_sc_success"), "\n\n", ex.Message));
+                TS_MessageBoxEngine.TS_MessageBox(this, 3, string.Format(software_lang.TSReadLangs("TSWizardUI", "s_sc_error"), "\n\n", ex.Message));
             }
         }
         // SOFTWARE DETAIL ROTATE BUTTONS
@@ -498,13 +473,13 @@ namespace TSWizard{
                     try{
                         return string.Equals(p.ProcessName, exe_name, StringComparison.OrdinalIgnoreCase);
                     }catch{
-                        return false; // erişim hatalarında false döndür
+                        return false;
                     }
                 })){
-                    return true; // çalışan exe bulundu
+                    return true;
                 }
             }
-            return false; // hiçbiri çalışmıyorsa
+            return false;
         }
         // START OR DOWNLOAD AND UPDATE BUTTONS
         // ======================================================================================================
@@ -561,7 +536,7 @@ namespace TSWizard{
                     userChoice = TS_MessageBoxEngine.TS_MessageBox(this, 5, string.Format(software_lang.TSReadLangs("TSWizardUI", "s_download_select"), "\n\n", ts_softwares_list[softwareIndex]));
                 }
                 if (userChoice == DialogResult.Yes){
-                    await Ts_downloader_engine_async(softwareIndex, softwareVersion, updateStatus);
+                    await TSWizardDownloaderModule(softwareIndex, softwareVersion, updateStatus);
                     //
                     switch (softwareIndex){
                         case 0: __astel_u_status = false; break;
@@ -573,12 +548,13 @@ namespace TSWizard{
                     }
                 }
             }catch (Exception ex){
-                Debug.WriteLine($"[WizardButtonError - Index {softwareIndex}] {ex.Message}");
+                TSGetLangs software_lang = new TSGetLangs(lang_path);
+                TS_MessageBoxEngine.TS_MessageBox(this, 3, string.Format(software_lang.TSReadLangs("TSWizardUI", "s_error_dynamic"), "\n\n", ex.Message));
             }
         }
         // ADVANCED DOWNLOAD AND EXTRACT MODULE
         // ======================================================================================================
-        private async Task Ts_downloader_engine_async(int __software_mode, string __software_version, bool __software_update_mode){
+        private async Task TSWizardDownloaderModule(int __software_mode, string __software_version, bool __software_update_mode){
             TSGetLangs software_lang = new TSGetLangs(lang_path);
             string ___local_down_message = software_lang.TSReadLangs("TSWizardUI", "s_downloading");
             //
@@ -595,6 +571,16 @@ namespace TSWizard{
             Directory.CreateDirectory(targetFolder);
             //
             string zipFilePath = Path.Combine(targetFolder, $"{softwareName}_v{__software_version}.zip");
+            // Disable the action button during the download process
+            switch (__software_mode){
+                case 0: MPanelAstelWizardBtn.Enabled = false; break;
+                case 1: MPanelEncryphixWizardBtn.Enabled = false; break;
+                case 2: MPanelGlowWizardBtn.Enabled = false; break;
+                case 3: MPanelVCardixWizardBtn.Enabled = false; break;
+                case 4: MPanelVimeraWizardBtn.Enabled = false; break;
+                case 5: MPanelYamiraWizardBtn.Enabled = false; break;
+            }
+            // Downlod request process
             try{
                 using (HttpClient get_data = new HttpClient())
                 using (var in_response = await get_data.GetAsync(dynamic_url, HttpCompletionOption.ResponseHeadersRead)){
@@ -669,6 +655,7 @@ namespace TSWizard{
                 if (__software_mode >= 0 && __software_mode < statuses.Length){
                     statuses[__software_mode]();
                     wizardButtons[__software_mode].Text = software_lang.TSReadLangs("TSWizardUI", "s_launch");
+                    wizardButtons[__software_mode].Enabled = true;
                     removeButtons[__software_mode].Enabled = true;
                     Dynamic_button_colors(__software_mode, 0);
                     Sc_v_mode(__software_mode, true);
@@ -823,6 +810,7 @@ namespace TSWizard{
                     TSImageRenderer(updateNotificationsToolStripMenuItem, Properties.Resources.tm_notification_light, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(architectureModeToolStripMenuItem, Properties.Resources.tm_architecture_light, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(checkForUpdateToolStripMenuItem, Properties.Resources.tm_update_light, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(donateToolStripMenuItem, Properties.Resources.tm_donate_light, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(aboutToolStripMenuItem, Properties.Resources.tm_about_light, 0, ContentAlignment.MiddleRight);
                     //
                     TSImageRenderer(checkForSoftwareUpdateToolStripMenuItem, Properties.Resources.st_check_update_light, 0, ContentAlignment.MiddleRight);
@@ -844,12 +832,6 @@ namespace TSWizard{
                     TSImageRenderer(MPanelVCardixRemoveBtn, Properties.Resources.ct_delete_light, 15, ContentAlignment.MiddleLeft);
                     TSImageRenderer(MPanelVimeraRemoveBtn, Properties.Resources.ct_delete_light, 15, ContentAlignment.MiddleLeft);
                     TSImageRenderer(MPanelYamiraRemoveBtn, Properties.Resources.ct_delete_light, 15, ContentAlignment.MiddleLeft);
-                    //
-                    TSImageRenderer(MLWeb, Properties.Resources.ctb_website_light, 0, ContentAlignment.MiddleCenter);
-                    TSImageRenderer(MLGitHub, Properties.Resources.ctb_github_light, 0, ContentAlignment.MiddleCenter);
-                    TSImageRenderer(MLBmac, Properties.Resources.ct_bmac_light, 0, ContentAlignment.MiddleCenter);
-                    //
-                    TSImageRenderer(MLNetwork, dynamic_net_status ? Properties.Resources.ct_success_light : Properties.Resources.ct_failed_light, 0, ContentAlignment.MiddleCenter);
                 }else if (theme == 0){
                     TSImageRenderer(settingsToolStripMenuItem, Properties.Resources.tm_settings_dark, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(themeToolStripMenuItem, Properties.Resources.tm_theme_dark, 0, ContentAlignment.MiddleRight);
@@ -859,6 +841,7 @@ namespace TSWizard{
                     TSImageRenderer(updateNotificationsToolStripMenuItem, Properties.Resources.tm_notification_dark, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(architectureModeToolStripMenuItem, Properties.Resources.tm_architecture_dark, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(checkForUpdateToolStripMenuItem, Properties.Resources.tm_update_dark, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(donateToolStripMenuItem, Properties.Resources.tm_donate_dark, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(aboutToolStripMenuItem, Properties.Resources.tm_about_dark, 0, ContentAlignment.MiddleRight);
                     //
                     TSImageRenderer(checkForSoftwareUpdateToolStripMenuItem, Properties.Resources.st_check_update_dark, 0, ContentAlignment.MiddleRight);
@@ -880,12 +863,6 @@ namespace TSWizard{
                     TSImageRenderer(MPanelVCardixRemoveBtn, Properties.Resources.ct_delete_dark, 15, ContentAlignment.MiddleLeft);
                     TSImageRenderer(MPanelVimeraRemoveBtn, Properties.Resources.ct_delete_dark, 15, ContentAlignment.MiddleLeft);
                     TSImageRenderer(MPanelYamiraRemoveBtn, Properties.Resources.ct_delete_dark, 15, ContentAlignment.MiddleLeft);
-                    //
-                    TSImageRenderer(MLWeb, Properties.Resources.ctb_website_dark, 0, ContentAlignment.MiddleCenter);
-                    TSImageRenderer(MLGitHub, Properties.Resources.ctb_github_dark, 0, ContentAlignment.MiddleCenter);
-                    TSImageRenderer(MLBmac, Properties.Resources.ct_bmac_dark, 0, ContentAlignment.MiddleCenter);
-                    //
-                    TSImageRenderer(MLNetwork, dynamic_net_status ? Properties.Resources.ct_success_dark : Properties.Resources.ct_failed_dark, 0, ContentAlignment.MiddleCenter);
                 }
                 // TOOLTIP
                 MainToolTip.ForeColor = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor");
@@ -906,8 +883,8 @@ namespace TSWizard{
                 SetContextMenuColors(NotifyMenu, bg, fg);
                 // UI
                 // ===========================================
-                BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
-                HeaderBanner.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
+                BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
+                HeaderBanner.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
                 HeaderText.ForeColor = TS_ThemeEngine.ColorMode(theme, "UIFEColor2");
                 // CONTENT
                 // ===========================================
@@ -954,12 +931,12 @@ namespace TSWizard{
                 MPanelVimeraLinkText.ActiveLinkColor = TS_ThemeEngine.ColorMode(theme, "VimeraFEHover");
                 MPanelYamiraLinkText.ActiveLinkColor = TS_ThemeEngine.ColorMode(theme, "YamiraFEHover");
                 //
-                MPanelAstelSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
-                MPanelEncryphixSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
-                MPanelGlowSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
-                MPanelVCardixSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
-                MPanelVimeraSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
-                MPanelYamiraSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
+                MPanelAstelSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
+                MPanelEncryphixSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
+                MPanelGlowSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
+                MPanelVCardixSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
+                MPanelVimeraSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
+                MPanelYamiraSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
                 //
                 MPanelAstelWizardBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
                 MPanelEncryphixWizardBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
@@ -1010,15 +987,6 @@ namespace TSWizard{
                 MPanelVCardixRemoveBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
                 MPanelVimeraRemoveBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
                 MPanelYamiraRemoveBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
-                // BOTTOM
-                // ===========================================
-                BottomPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
-                BottomText.ForeColor = TS_ThemeEngine.ColorMode(theme, "UIFEColor2");
-                //
-                MLPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
-                MFLP1.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
-                MFLP2.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
-                MFLP3.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
                 // OTHER PAGE DYNAMIC UI
                 Software_other_page_preloader();
             }catch (Exception){ }
@@ -1228,6 +1196,8 @@ namespace TSWizard{
                 checkForUpdateToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderMenu", "header_menu_update");
                 // CHECK FOR SOFTWARE UPDATE
                 checkForSoftwareUpdateToolStripMenuItem.Text = software_lang.TSReadLangs("ContextMenu", "cm_s_u_check");
+                // DONATE
+                donateToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderMenu", "header_menu_donate");
                 // ABOUT
                 aboutToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderMenu", "header_menu_about");
                 //
@@ -1273,10 +1243,6 @@ namespace TSWizard{
                 Dynamic_button_colors(3, (__vcardix_i_status == 0) ? 1 : (__vcardix_u_status ? 2 : 0));
                 Dynamic_button_colors(4, (__vimera_i_status == 0) ? 1 : (__vimera_u_status ? 2 : 0));
                 Dynamic_button_colors(5, (__yamira_i_status == 0) ? 1 : (__yamira_u_status ? 2 : 0));
-                //
-                MainToolTip.SetToolTip(MLWeb, software_lang.TSReadLangs("SoftwareAbout", "sa_website_page"));
-                MainToolTip.SetToolTip(MLGitHub, software_lang.TSReadLangs("SoftwareAbout", "sa_github_page"));
-                MainToolTip.SetToolTip(MLBmac, software_lang.TSReadLangs("SoftwareAbout", "sa_bmac_page"));
                 // OTHER PAGE DYNAMIC UI
                 Software_other_page_preloader();
             }catch (Exception){ }
@@ -1333,6 +1299,9 @@ namespace TSWizard{
         private void CloseSoftwareToolStripMenuItem_Click(object sender, EventArgs e){
             if (behavior_mode_status != 0){ behavior_mode_status = 0; Window_behavior_mode_settings("0"); Select_window_behavior_mode_active(sender); }
         }
+
+       
+
         private void Window_behavior_mode_settings(string get_window_behavior_value){
             try{
                 TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
@@ -1417,23 +1386,18 @@ namespace TSWizard{
                 using (WebClient webClient = new WebClient()){
                     string client_version = TS_VersionEngine.TS_SofwareVersion(2, Program.ts_version_mode).Trim();
                     int client_num_version = Convert.ToInt32(client_version.Replace(".", string.Empty));
-                    //
                     string[] version_content = webClient.DownloadString(TS_LinkSystem.github_link_lv).Split('=');
                     string last_version = version_content[1].Trim();
                     int last_num_version = Convert.ToInt32(last_version.Replace(".", string.Empty));
-                    //
                     if (client_num_version < last_num_version){
-                        // Update available
                         DialogResult info_update = TS_MessageBoxEngine.TS_MessageBox(this, 5, string.Format(software_lang.TSReadLangs("SoftwareUpdate", "su_available"), Application.ProductName, "\n\n", client_version, "\n", last_version, "\n\n", "\n\n"), string.Format(software_lang.TSReadLangs("SoftwareUpdate", "su_title"), Application.ProductName));
                         if (info_update == DialogResult.Yes){
                             Process.Start(new ProcessStartInfo { FileName = updater_exe_name, WorkingDirectory = Path.GetDirectoryName(updater_exe_name) ?? Environment.CurrentDirectory });
                             Application.Exit();
                         }
                     }else if (_check_update_ui == 1 && client_num_version == last_num_version){
-                        // No update available
                         TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(software_lang.TSReadLangs("SoftwareUpdate", "su_not_available"), Application.ProductName, "\n", client_version), string.Format(software_lang.TSReadLangs("SoftwareUpdate", "su_title"), Application.ProductName));
                     }else if (_check_update_ui == 1 && client_num_version > last_num_version){
-                        // Access before public use
                         TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(software_lang.TSReadLangs("SoftwareUpdate", "su_newer"), "\n\n", string.Format("v{0}", client_version)), string.Format(software_lang.TSReadLangs("SoftwareUpdate", "su_title"), Application.ProductName));
                     }
                 }
@@ -1488,6 +1452,13 @@ namespace TSWizard{
             //
             update_list.Clear();
         }
+        // DONATE LINK
+        // ======================================================================================================
+        private void DonateToolStripMenuItem_Click(object sender, EventArgs e){
+            try{
+                Process.Start(new ProcessStartInfo(TS_LinkSystem.ts_donate){ UseShellExecute = true });
+            }catch (Exception){ }
+        }
         // ABOUT
         // ======================================================================================================
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e){
@@ -1505,23 +1476,6 @@ namespace TSWizard{
                     Application.OpenForms[tsw_about_name].Activate();
                     TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(software_lang.TSReadLangs("HeaderHelp", "header_help_info_notification"), software_lang.TSReadLangs("HeaderMenu", "header_menu_about")));
                 }
-            }catch (Exception){ }
-        }
-        // MEDIA LINKS
-        // ======================================================================================================
-        private void MLWeb_Click(object sender, EventArgs e){
-            try{
-                Process.Start(new ProcessStartInfo(TS_LinkSystem.website_link){ UseShellExecute = true });
-            }catch (Exception){ }
-        }
-        private void MLGitHub_Click(object sender, EventArgs e){
-            try{
-                Process.Start(new ProcessStartInfo(TS_LinkSystem.github_link){ UseShellExecute = true });
-            }catch (Exception){ }
-        }
-        private void MLBmac_Click(object sender, EventArgs e){
-            try{
-                Process.Start(new ProcessStartInfo(TS_LinkSystem.ts_bmac){ UseShellExecute = true });
             }catch (Exception){ }
         }
         // CONTEXT MENU MODES
