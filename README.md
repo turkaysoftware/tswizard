@@ -3,9 +3,7 @@
 > [!TIP]
 **_This program is completely free to use. I do not earn any income from its use. However, you can support me by donating to the address below so that I can continue my work 💚 Even if you cannot provide financial support, you can help spread the software and increase its visibility by sharing it._**
 
-**[Buy Me a Coffee - turkaysoftware](https://buymeacoffee.com/turkaysoftware)**
-
-<img width="150" height="150" alt="Buy Me a Coffee - turkaysoftware" src="https://github.com/user-attachments/assets/9987c7dc-f8dd-42ab-a7f9-d8a4fca2e3d5" />
+**[DONATE LINK](https://buymeacoffee.com/turkaysoftware)**
 
 **TS Wizard** is a powerful **central management software** created by **Eray Türkay**, programmed to enable you to use and manage all Türkay Software software under one roof. It is extremely easy to use with a **simple, user-friendly** interface.
 
@@ -15,9 +13,7 @@
 
 [Click here](https://www.turkaysoftware.com/ts-wizard) for full specifications.
 
-<img width="1010" height="633" alt="TS Wizard - Dark" src="https://github.com/user-attachments/assets/c61b5ac0-8b88-4fc0-826e-a74a959e96ed" />
-
-<img width="1010" height="633" alt="TS Wizard - Light" src="https://github.com/user-attachments/assets/0f0605a9-2835-4bdc-bc16-3a7aaf432179" />
+<img width="1010" height="633" alt="TS Wizard UI" src="https://github.com/user-attachments/assets/e10ee756-0826-44f6-8be8-6bd39a2655d7" />
 
 # Download TS Wizard
 
