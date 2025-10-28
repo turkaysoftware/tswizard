@@ -47,7 +47,7 @@ With these instructions, you can download and use the correct version of TS Wiza
 - **Notification System:** When there is an update, it can send notifications at a level that does not disturb users so that you can update the software.
 - **Working in the Background:** It can run in the icon state even if you close the program. This way it can notify you when an update is available. This feature is optional.
 
-<img width="396" height="335" alt="TS Wizard - Advanced Features" src="https://github.com/user-attachments/assets/c71eb194-5115-42a0-9716-74aa1aafb303" />
+<img width="396" height="334" alt="TS Wizard - Advanced Features" src="https://github.com/user-attachments/assets/8159f75c-8a28-454b-ba3c-f12b1f206a5e" />
 
 # System Requirements
 
