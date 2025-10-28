@@ -39,29 +39,15 @@ After downloading the TS Wizard application, you will find two options: **TSWiza
 
 With these instructions, you can download and use the correct version of TS Wizard for your device. If you need further assistance, please feel free to reach out!
 
-# User Friendly Features
-
-- **Light and Dark Theme Support:** Switch between light and dark themes to reduce eye strain and enhance your viewing experience.
-- **Multi-Language Support:** Available in 2 different languages for better accessibility.
+# Advanced Features
+- **Multi-Architecture Support:** Fully compatible with x64-x86 and ARM processors.
+- **Multi-Language System:** Fully supports 14 or more languages. **Supported Languages:** _Arabic, Chinese, English, French, German, Hindi, Italian, Japanase, Korean, Polish, Portuguese, Russian, Spanish, Turkish_ | **For translation support: [Translation Guide for TS Wizard](https://github.com/turkaysoftware/tswizard/discussions/1)**
+- Advanced interface features such as Light / Dark / System Theme.
 - **Shortcut Creation:** You can optionally shortcut the downloaded software to your desktop at any time.
 - **Notification System:** When there is an update, it can send notifications at a level that does not disturb users so that you can update the software.
 - **Working in the Background:** It can run in the icon state even if you close the program. This way it can notify you when an update is available. This feature is optional.
 
-# Supported Languages
-
-- English
-- Turkish
-- **For translation support: [Translation Guide for TS Wizard](https://github.com/turkaysoftware/tswizard/discussions/1)**
-
-# Supported Themes
-
-- Light Theme
-- Dark Theme
-
-# Supported Processor Architectures
-
-- x64 (64 Bit)
-- ARM64 (ARM CPU)
+<img width="396" height="335" alt="TS Wizard - Advanced Features" src="https://github.com/user-attachments/assets/c71eb194-5115-42a0-9716-74aa1aafb303" />
 
 # System Requirements
 
