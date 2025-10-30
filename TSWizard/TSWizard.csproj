@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{5CF211E9-3C8C-48A0-A5FA-CADA31E0B3F4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TSWizard</RootNamespace>
+    <AssemblyName>TSWizard</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
+    <OutputPath>bin\ARM64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TSWizardLogo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TSWizard.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TSCustomControls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TS_SoftwareDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TS_SoftwareDetails.Designer.cs">
+      <DependentUpon>TS_SoftwareDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TS_SoftwareInfo.cs" />
+    <Compile Include="TSWizardMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TSWizardMain.Designer.cs">
+      <DependentUpon>TSWizardMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TSModules.cs" />
+    <Compile Include="TSPreloader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TSPreloader.Designer.cs">
+      <DependentUpon>TSPreloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TSWizardAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TSWizardAbout.Designer.cs">
+      <DependentUpon>TSWizardAbout.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TSWizardLogo.ico" />
+    <None Include="tswizard_images\tswizard_ui\ts_material\ts_close.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_7.png" />
+    <None Include="tswizard_images\tswizard_interface\software_logo\yamira_logo.png" />
+    <None Include="tswizard_images\tswizard_interface\software_banner\yamira_banner.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_update_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_theme_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_startup_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_settings_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_notification_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_language_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_donate_mc_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_donate_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_behavior_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\tm_about_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\st_stop_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\st_show_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\st_check_update_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_website_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_update_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_start_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_shortcut_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_github_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_download_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_light\ct_delete_light.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_update_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_theme_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_startup_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_settings_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_notification_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_language_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_donate_mc_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_donate_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_behavior_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\tm_about_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\st_stop_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\st_show_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\st_check_update_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_website_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_update_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_start_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_shortcut_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_github_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_download_dark.png" />
+    <None Include="tswizard_images\tswizard_ui\theme_dark\ct_delete_dark.png" />
+    <None Include="tswizard_images\tswizard_interface\software_logo\vimera_logo.png" />
+    <None Include="tswizard_images\tswizard_interface\software_logo\vcardix_logo.png" />
+    <None Include="tswizard_images\tswizard_interface\software_logo\glow_logo.png" />
+    <None Include="tswizard_images\tswizard_interface\software_logo\encryphix_logo.png" />
+    <None Include="tswizard_images\tswizard_interface\software_logo\astel_logo.png" />
+    <None Include="tswizard_images\tswizard_interface\software_banner\vimera_banner.png" />
+    <None Include="tswizard_images\tswizard_interface\software_banner\vcardix_banner.png" />
+    <None Include="tswizard_images\tswizard_interface\software_banner\glow_banner.png" />
+    <None Include="tswizard_images\tswizard_interface\software_banner\encryphix_banner.png" />
+    <None Include="tswizard_images\tswizard_interface\software_banner\astel_banner.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_6.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_5.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_4.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_3.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_2.png" />
+    <None Include="tswizard_images\tswizard_interface\main_banner\mb_1.png" />
+    <None Include="tswizard_images\ts_preloader\ts_preloader.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
