@@ -13,7 +13,7 @@
 
 [Click here](https://www.turkaysoftware.com/ts-wizard) for full specifications.
 
-<img width="1010" height="633" alt="TS Wizard UI" src="https://github.com/user-attachments/assets/e10ee756-0826-44f6-8be8-6bd39a2655d7" />
+<img width="1010" height="633" alt="TS Wizard UI" src="https://github.com/user-attachments/assets/1a6a384b-5e07-415e-b961-f3de5e93929d" />
 
 # Download TS Wizard
 
