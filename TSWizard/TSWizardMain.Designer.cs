@@ -1371,7 +1371,7 @@
             // 
             this.iconStatusToolStripMenuItem.Name = "iconStatusToolStripMenuItem";
             this.iconStatusToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.iconStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iconStatusToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.iconStatusToolStripMenuItem.Text = "Icon Status";
             this.iconStatusToolStripMenuItem.Click += new System.EventHandler(this.IconStatusToolStripMenuItem_Click);
             // 
@@ -1379,7 +1379,7 @@
             // 
             this.closeSoftwareToolStripMenuItem.Name = "closeSoftwareToolStripMenuItem";
             this.closeSoftwareToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
-            this.closeSoftwareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeSoftwareToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.closeSoftwareToolStripMenuItem.Text = "Close Software";
             this.closeSoftwareToolStripMenuItem.Click += new System.EventHandler(this.CloseSoftwareToolStripMenuItem_Click);
             // 
@@ -1418,6 +1418,7 @@
             // 
             // checkForSoftwareUpdateToolStripMenuItem
             // 
+            this.checkForSoftwareUpdateToolStripMenuItem.Enabled = false;
             this.checkForSoftwareUpdateToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkForSoftwareUpdateToolStripMenuItem.Name = "checkForSoftwareUpdateToolStripMenuItem";
             this.checkForSoftwareUpdateToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));

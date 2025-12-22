@@ -1,6 +1,6 @@
 ﻿// ======================================================================================================
 // TS Wizard - Türkay Software Solutions
-// © Copyright 2025, Eray Türkay.
+// © Copyright 2025-2026, Eray Türkay.
 // Project Type: Open Source
 // License: MIT License
 // Website: https://www.turkaysoftware.com/ts-wizard
@@ -80,11 +80,11 @@ namespace TSWizard{
         public static string __astel_version = null, __encryphix_version = null, __glow_version = null, __vcardix_version = null, __vimera_version = null, __yamira_version = null;
         // LOCAL VARIABLES | 0 = Astel / 1 = Encryphix / 2 = Glow / 3 = VCardix / 4 = Vimera / 5 = Yamira
         // ======================================================================================================
-        static readonly string ts_softwares_root_path = "ts_softwares";
+        static readonly string ts_softwares_root_path = Path.Combine(StartupPath, "ts_softwares");
         static readonly string[] subfolders = { "ts_astel", "ts_encryphix", "ts_glow", "ts_vcardix", "ts_vimera", "ts_yamira" };
         static readonly string[] ts_softwares_location = subfolders.Select(s => $"{ts_softwares_root_path}\\{s}").ToArray();
         static readonly string[] ts_softwares_location_exe_name = { "Astel_x64.exe", "Encryphix_x64.exe", "Glow_x64.exe", "VCardix_x64.exe", "Vimera_x64.exe", "Yamira_x64.exe" };
-        readonly string updater_exe_name = "TSWizardUpdater_x64.exe";
+        readonly string updater_exe_name = Path.Combine(StartupPath, "TSWizardUpdater_x64.exe");
         //
         readonly string[] ts_software_version_links ={
             "https://raw.githubusercontent.com/turkaysoftware/astel/main/Astel/SoftwareVersion.txt",            // Astel
@@ -282,8 +282,8 @@ namespace TSWizard{
                 var removeButtons = new[] { MPanelAstelRemoveBtn, MPanelEncryphixRemoveBtn, MPanelGlowRemoveBtn, MPanelVCardixRemoveBtn, MPanelVimeraRemoveBtn, MPanelYamiraRemoveBtn };
                 for (int i = 0; i < ts_softwares_location.Length; i++){
                     string dirPath = ts_softwares_location[i];
-                    string exeName = File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ts_softwares_location[i], ts_softwares_location_exe_name[i])) ? ts_softwares_location_exe_name[i] : (File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ts_softwares_location[i], ts_softwares_location_exe_name[i].Replace("_x64", string.Empty))) ? ts_softwares_location_exe_name[i].Replace("_x64", string.Empty) : ts_softwares_location_exe_name[i]);
-                    string exePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, dirPath, exeName);
+                    string exeName = File.Exists(Path.Combine(ts_softwares_location[i], ts_softwares_location_exe_name[i])) ? ts_softwares_location_exe_name[i] : (File.Exists(Path.Combine(ts_softwares_location[i], ts_softwares_location_exe_name[i].Replace("_x64", string.Empty))) ? ts_softwares_location_exe_name[i].Replace("_x64", string.Empty) : ts_softwares_location_exe_name[i]);
+                    string exePath = Path.Combine(dirPath, exeName);
                     //
                     var wizardBtn = wizardButtons[i];
                     var removeBtn = removeButtons[i];
@@ -307,6 +307,7 @@ namespace TSWizard{
             MPanelVCardixLinkText.Enabled = true;
             MPanelVimeraLinkText.Enabled = true;
             MPanelYamiraLinkText.Enabled = true;
+            checkForSoftwareUpdateToolStripMenuItem.Enabled = true;
         }
         // TIMED AUTOMATIC UPDATE CONTROLLER
         // ======================================================================================================
@@ -433,7 +434,7 @@ namespace TSWizard{
             TSGetLangs software_lang = new TSGetLangs(lang_path);
             DialogResult sc_create_message = TS_MessageBoxEngine.TS_MessageBox(this, 5, string.Format(software_lang.TSReadLangs("TSWizardUI", "s_sc_content"), ts_softwares_list[softwareIndex]));
             if (sc_create_message == DialogResult.Yes){
-                Sc_create_script(Path.Combine(Application.StartupPath, ts_softwares_location[softwareIndex], get_s_name), softwareIndex);
+                Sc_create_script(Path.Combine(ts_softwares_location[softwareIndex], get_s_name), softwareIndex);
             }
         }
         private void MPanelAstelShortcutBtn_Click(object sender, EventArgs e){ Handle_shortcut_config(0); }
@@ -553,7 +554,7 @@ namespace TSWizard{
             try{
                 TSGetLangs software_lang = new TSGetLangs(lang_path);
                 if (installedStatus == 1 && !updateStatus){
-                    string app_path = $"{Application.StartupPath}\\{ts_softwares_location[softwareIndex]}\\{ts_softwares_location_exe_name[softwareIndex]}";
+                    string app_path = $"{ts_softwares_location[softwareIndex]}\\{ts_softwares_location_exe_name[softwareIndex]}";
                     if (os_arch == Architecture.Arm64){
                         app_path = $"{Path.GetDirectoryName(app_path)}\\{Path.GetFileName(app_path).Replace("x64", "arm64")}";
                     }
@@ -608,8 +609,7 @@ namespace TSWizard{
             string softwareSlug = softwareName.ToLower();
             // Dynamic URL Module
             string dynamic_url = $"https://github.com/turkaysoftware/{softwareSlug}/releases/download/v{__software_version}/{softwareName}_v{__software_version}.zip";
-            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            string targetFolder = Path.Combine(baseDir, ts_softwares_location[__software_mode]);
+            string targetFolder = ts_softwares_location[__software_mode];
             // Before download to settings save
             if (Directory.Exists(targetFolder)){
                 foreach (var file in Directory.GetFiles(targetFolder)){
@@ -783,7 +783,7 @@ namespace TSWizard{
                 TSGetLangs software_lang = new TSGetLangs(lang_path);
                 DialogResult lang_change_message = TS_MessageBoxEngine.TS_MessageBox(this, 6, string.Format(software_lang.TSReadLangs("TSWizardUI", "s_delete_query"), "\n\n", ts_softwares_list[__software_mode]));
                 if (lang_change_message == DialogResult.Yes){
-                    Ts_module_deleter($"{Application.StartupPath}\\{ts_softwares_location[__software_mode]}", __software_mode);
+                    Ts_module_deleter($"{ts_softwares_location[__software_mode]}", __software_mode);
                 }
             }finally{
                 InFLP.ResumeLayout();
@@ -805,6 +805,8 @@ namespace TSWizard{
                         File.Delete(file);
                     foreach (string dir in Directory.GetDirectories(__target_software_path))
                         Directory.Delete(dir, recursive: true);
+                    //
+                    Directory.Delete(__target_software_path, recursive: false);
                     //
                     var soft_status = new Action[] { () => __astel_i_status = 0, () => __encryphix_i_status = 0, () => __glow_i_status = 0, () => __vcardix_i_status = 0, () => __vimera_i_status = 0, () => __yamira_i_status = 0 };
                     //
@@ -1443,7 +1445,9 @@ namespace TSWizard{
         // CHECK FOR SOFTWARE UPDATE
         // ======================================================================================================
         private async void CheckForSoftwareUpdateToolStripMenuItem_Click(object sender, EventArgs e){
+            checkForSoftwareUpdateToolStripMenuItem.Enabled = false;
             await Task.Run(() => { Ts_w_start_module(false); });
+            checkForSoftwareUpdateToolStripMenuItem.Enabled = true;
             Dynamic_notification_ui();
         }
         private void Dynamic_notification_ui(){

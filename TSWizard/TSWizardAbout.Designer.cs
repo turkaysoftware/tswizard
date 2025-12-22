@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TSWizardAbout));
             this.PanelTxt = new System.Windows.Forms.Panel();
             this.About_DonateBtn = new TSWizard.TSCustomButton();
             this.AboutTable = new System.Windows.Forms.DataGridView();
@@ -320,7 +319,7 @@
             this.Controls.Add(this.PanelTxt);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = Properties.Resources.TSWizardLogo;
+            this.Icon = global::TSWizard.Properties.Resources.TSWizardLogo;
             this.Name = "TSWizardAbout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TSWizardAbout";
