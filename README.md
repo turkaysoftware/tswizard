@@ -47,8 +47,6 @@ With these instructions, you can download and use the correct version of TS Wiza
 - **Notification System:** When there is an update, it can send notifications at a level that does not disturb users so that you can update the software.
 - **Working in the Background:** It can run in the icon state even if you close the program. This way it can notify you when an update is available. This feature is optional.
 
-<img width="396" height="334" alt="TS Wizard - Advanced Features" src="https://github.com/user-attachments/assets/8159f75c-8a28-454b-ba3c-f12b1f206a5e" />
-
 # System Requirements
 
 |  | Minimum Requirements | Recommended Requirements |
@@ -56,27 +54,3 @@ With these instructions, you can download and use the correct version of TS Wiza
 | OS: | Windows 10 x64 | Windows 10 22H2 x64|
 | RAM: | 50 MB Free RAM | 100 MB Free RAM |
 | .NET: | .NET Framework 4.8.1 | .NET Framework 4.8.1 |
-
-# Shortcut Key Layouts
-
-| Main Features | Key |
-| -- | :--: |
-| **Theme:** Light | F1 |
-| **Theme:** Dark | F2 |
-| **Theme:** System | F3 |
-| **Start:** Windowed | F4 |
-| **Start:** Full Screen | F5 |
-| **Window Behavior:** Minimize to Icon | F6 |
-| **Window Behavior:** Turn Off Software | F7 |
-| **Update Notifications:** On | F8 |
-| **Update Notifications:** Off | F9 |
-| **Architecture Mode:** x64 (**64 Bit CPU**) | CTRL + 1 |
-| **Architecture Mode:** ARM64 (**ARM CPU**) | CTRL + 2 |
-| **Architecture Mode:** Manual Selection | CTRL + 3 |
-| **Check for Updates** | CTRL + R |
-
-| Extras | Key |
-| -- | :--: |
-| **Check Update** | F11 |
-| **About** | F12 |
-| **Donate** | CTRL + Shift + D |
