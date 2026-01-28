@@ -13,7 +13,7 @@
 
 [Click here](https://www.turkaysoftware.com/ts-wizard) for full specifications.
 
-<img width="1010" height="633" alt="TS Wizard UI" src="https://github.com/user-attachments/assets/6b5b6328-0192-42ca-9242-4b2da392a900" />
+<img width="1010" height="633" alt="TS Wizard UI" src="https://github.com/user-attachments/assets/95ae9657-c14b-49aa-b60a-85d82cb173ef" />
 
 # Download TS Wizard
 
@@ -41,7 +41,7 @@ With these instructions, you can download and use the correct version of TS Wiza
 
 # Advanced Features
 - **Multi-Architecture Support:** Fully compatible with x64-x86 and ARM processors.
-- **Multi-Language System:** Fully supports 14 or more languages. **Supported Languages:** _Arabic, Chinese, English, French, German, Hindi, Italian, Japanase, Korean, Polish, Portuguese, Russian, Spanish, Turkish_ | **For translation support: [Translation Guide for TS Wizard](https://github.com/turkaysoftware/tswizard/discussions/1)**
+- **Multi-Language System:** Fully supports 14 or more languages. **Supported Languages:** _Arabic, Chinese, English, Dutch, French, German, Hindi, Italian, Japanase, Korean, Polish, Portuguese, Russian, Spanish, Turkish_ | **For translation support: [Translation Guide for TS Wizard](https://github.com/turkaysoftware/tswizard/discussions/1)**
 - Advanced interface features such as Light / Dark / System Theme.
 - **Shortcut Creation:** You can optionally shortcut the downloaded software to your desktop at any time.
 - **Notification System:** When there is an update, it can send notifications at a level that does not disturb users so that you can update the software.
