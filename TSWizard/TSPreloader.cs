@@ -57,6 +57,7 @@ namespace TSWizard{
         |   ------------------------------------------------------------------------------------------
         |   0 = Dark Theme    |  Moved to             |  0 = Windowed           |  0 = Off
         |   1 = Light Theme   |  TSModules.cs         |  1 = Full Screen        |  1 = On
+        |   2 = System Theme
         |   ------------------------------------------------------------------------------------------
         */
         private bool Software_preloader(){
