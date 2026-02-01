@@ -78,14 +78,14 @@ namespace TSWizard{
         // ======================================================================================================
         public static string lang, lang_path;
         public static int theme, ts_active_software;
-        public static string[] ts_softwares_list = { "Astel", "Encryphix", "Glow", "VCardix", "Vimera", "Yamira" };
-        public static string __astel_version = null, __encryphix_version = null, __glow_version = null, __vcardix_version = null, __vimera_version = null, __yamira_version = null;
-        // LOCAL VARIABLES | 0 = Astel / 1 = Encryphix / 2 = Glow / 3 = VCardix / 4 = Vimera / 5 = Yamira
+        public static string[] ts_softwares_list = { "Astel", "Encryphix", "Glow", "VCardix", "Vimera", "Yamira", "Zafuse" };
+        public static string __astel_version = null, __encryphix_version = null, __glow_version = null, __vcardix_version = null, __vimera_version = null, __yamira_version = null, __zafuse_version = null;
+        // LOCAL VARIABLES | 0 = Astel / 1 = Encryphix / 2 = Glow / 3 = VCardix / 4 = Vimera / 5 = Yamira / 6 = Zafuse*
         // ======================================================================================================
         static readonly string ts_softwares_root_path = Path.Combine(StartupPath, "ts_softwares");
-        static readonly string[] subfolders = { "ts_astel", "ts_encryphix", "ts_glow", "ts_vcardix", "ts_vimera", "ts_yamira" };
+        static readonly string[] subfolders = { "ts_astel", "ts_encryphix", "ts_glow", "ts_vcardix", "ts_vimera", "ts_yamira", "ts_zafuse" };
         static readonly string[] ts_softwares_location = subfolders.Select(s => $"{ts_softwares_root_path}\\{s}").ToArray();
-        static readonly string[] ts_softwares_location_exe_name = { "Astel_x64.exe", "Encryphix_x64.exe", "Glow_x64.exe", "VCardix_x64.exe", "Vimera_x64.exe", "Yamira_x64.exe" };
+        static readonly string[] ts_softwares_location_exe_name = { "Astel_x64.exe", "Encryphix_x64.exe", "Glow_x64.exe", "VCardix_x64.exe", "Vimera_x64.exe", "Yamira_x64.exe", "Zafuse_x64.exe" };
         readonly string updater_exe_name = Path.Combine(StartupPath, "TSWizardUpdater_x64.exe");
         //
         readonly string[] ts_software_version_links ={
@@ -94,11 +94,12 @@ namespace TSWizard{
             "https://raw.githubusercontent.com/turkaysoftware/glow/main/Glow/SoftwareVersion.txt",              // Glow
             "https://raw.githubusercontent.com/turkaysoftware/vcardix/main/VCardix/SoftwareVersion.txt",        // VCardix
             "https://raw.githubusercontent.com/turkaysoftware/vimera/main/Vimera/SoftwareVersion.txt",          // Vimera
-            "https://raw.githubusercontent.com/turkaysoftware/yamira/main/Yamira/SoftwareVersion.txt"           // Yamira
+            "https://raw.githubusercontent.com/turkaysoftware/yamira/main/Yamira/SoftwareVersion.txt",          // Yamira
+            "https://raw.githubusercontent.com/turkaysoftware/zafuse/main/Zafuse/SoftwareVersion.txt"           // Zafuse
         };
         //
-        int __astel_i_status = 0, __encryphix_i_status = 0, __glow_i_status = 0, __vcardix_i_status = 0, __vimera_i_status = 0, __yamira_i_status = 0, startup_status, behavior_mode_status, update_notifications_status, themeSystem;
-        bool __astel_u_status = false, __encryphix_u_status = false, __glow_u_status = false, __vcardix_u_status = false, __vimera_u_status = false, __yamira_u_status = false, loop_status = true, exit_mode = false;
+        int __astel_i_status = 0, __encryphix_i_status = 0, __glow_i_status = 0, __vcardix_i_status = 0, __vimera_i_status = 0, __yamira_i_status = 0, __zafuse_i_status = 0, startup_status, behavior_mode_status, update_notifications_status, themeSystem;
+        bool __astel_u_status = false, __encryphix_u_status = false, __glow_u_status = false, __vcardix_u_status = false, __vimera_u_status = false, __yamira_u_status = false, __zafuse_u_status = false, loop_status = true, exit_mode = false;
         readonly List<string> sUpdateNotList = new List<string>();
         private FormWindowState _lastState;
         readonly Architecture os_arch = RuntimeInformation.ProcessArchitecture;
@@ -206,6 +207,7 @@ namespace TSWizard{
             MPanelVCardixImage.BackgroundImage = Properties.Resources.vcardix_banner;
             MPanelVimeraImage.BackgroundImage = Properties.Resources.vimera_banner;
             MPanelYamiraImage.BackgroundImage = Properties.Resources.yamira_banner;
+            MPanelZafuseImage.BackgroundImage = Properties.Resources.zafuse_banner;
             //
             TSGetLangs software_lang = new TSGetLangs(lang_path);
             MPanelAstelWizardBtn.Text = software_lang.TSReadLangs("TSWizardUI", "s_loader_text");
@@ -214,6 +216,7 @@ namespace TSWizard{
             MPanelVCardixWizardBtn.Text = software_lang.TSReadLangs("TSWizardUI", "s_loader_text");
             MPanelVimeraWizardBtn.Text = software_lang.TSReadLangs("TSWizardUI", "s_loader_text");
             MPanelYamiraWizardBtn.Text = software_lang.TSReadLangs("TSWizardUI", "s_loader_text");
+            MPanelZafuseWizardBtn.Text = software_lang.TSReadLangs("TSWizardUI", "s_loader_text");
             //
             MPanelAstelInText.Text = software_lang.TSReadLangs("TSWizardUI", "s_loader_text");
             MPanelEncryphixInText.Text = software_lang.TSReadLangs("TSWizardUI", "s_loader_text");
@@ -221,6 +224,7 @@ namespace TSWizard{
             MPanelVCardixInText.Text = software_lang.TSReadLangs("TSWizardUI", "s_loader_text");
             MPanelVimeraInText.Text = software_lang.TSReadLangs("TSWizardUI", "s_loader_text");
             MPanelYamiraInText.Text = software_lang.TSReadLangs("TSWizardUI", "s_loader_text");
+            MPanelZafuseInText.Text = software_lang.TSReadLangs("TSWizardUI", "s_loader_text");
         }
         // SET RANDOM HEADER IMAGE
         // ======================================================================================================
@@ -232,7 +236,8 @@ namespace TSWizard{
                 Properties.Resources.mb_4,
                 Properties.Resources.mb_5,
                 Properties.Resources.mb_6,
-                Properties.Resources.mb_7
+                Properties.Resources.mb_7,
+                Properties.Resources.mb_8,
             };
             if (Program.ts_pre_image_mode){
                 HeaderBanner.BackgroundImage = header_images[0];
@@ -282,8 +287,8 @@ namespace TSWizard{
         private void Ts_w_start_module(bool __notifi_mode){
             TSGetLangs software_lang = new TSGetLangs(lang_path);
             try{
-                var wizardButtons = new[] { MPanelAstelWizardBtn, MPanelEncryphixWizardBtn, MPanelGlowWizardBtn, MPanelVCardixWizardBtn, MPanelVimeraWizardBtn, MPanelYamiraWizardBtn };
-                var removeButtons = new[] { MPanelAstelRemoveBtn, MPanelEncryphixRemoveBtn, MPanelGlowRemoveBtn, MPanelVCardixRemoveBtn, MPanelVimeraRemoveBtn, MPanelYamiraRemoveBtn };
+                var wizardButtons = new[] { MPanelAstelWizardBtn, MPanelEncryphixWizardBtn, MPanelGlowWizardBtn, MPanelVCardixWizardBtn, MPanelVimeraWizardBtn, MPanelYamiraWizardBtn, MPanelZafuseWizardBtn };
+                var removeButtons = new[] { MPanelAstelRemoveBtn, MPanelEncryphixRemoveBtn, MPanelGlowRemoveBtn, MPanelVCardixRemoveBtn, MPanelVimeraRemoveBtn, MPanelYamiraRemoveBtn, MPanelZafuseRemoveBtn };
                 for (int i = 0; i < ts_softwares_location.Length; i++){
                     string dirPath = ts_softwares_location[i];
                     string exeName = File.Exists(Path.Combine(ts_softwares_location[i], ts_softwares_location_exe_name[i])) ? ts_softwares_location_exe_name[i] : (File.Exists(Path.Combine(ts_softwares_location[i], ts_softwares_location_exe_name[i].Replace("_x64", string.Empty))) ? ts_softwares_location_exe_name[i].Replace("_x64", string.Empty) : ts_softwares_location_exe_name[i]);
@@ -311,6 +316,7 @@ namespace TSWizard{
             MPanelVCardixLinkText.Enabled = true;
             MPanelVimeraLinkText.Enabled = true;
             MPanelYamiraLinkText.Enabled = true;
+            MPanelZafuseLinkText.Enabled = true;
             checkForSoftwareUpdateToolStripMenuItem.Enabled = true;
         }
         // TIMED AUTOMATIC UPDATE CONTROLLER
@@ -339,7 +345,7 @@ namespace TSWizard{
                     Version last_ver = Version.Parse(TS_VersionParser.ParseUINormalize(last_version_get));
                     bool isUpdateAvailable = client_ver < last_ver;
                     //
-                    string[] softwareVersions = new string[6] { __astel_version, __encryphix_version, __glow_version, __vcardix_version, __vimera_version, __yamira_version };
+                    string[] softwareVersions = new string[7] { __astel_version, __encryphix_version, __glow_version, __vcardix_version, __vimera_version, __yamira_version, __zafuse_version };
                     softwareVersions[__software_mode] = last_version_get;
                     __astel_version = softwareVersions[0];
                     __encryphix_version = softwareVersions[1];
@@ -347,9 +353,10 @@ namespace TSWizard{
                     __vcardix_version = softwareVersions[3];
                     __vimera_version = softwareVersions[4];
                     __yamira_version = softwareVersions[5];
+                    __zafuse_version = softwareVersions[6];
                     //
-                    var wizardButtons = new Button[] { MPanelAstelWizardBtn, MPanelEncryphixWizardBtn, MPanelGlowWizardBtn, MPanelVCardixWizardBtn, MPanelVimeraWizardBtn, MPanelYamiraWizardBtn };
-                    var removeButtons = new Button[] { MPanelAstelRemoveBtn, MPanelEncryphixRemoveBtn, MPanelGlowRemoveBtn, MPanelVCardixRemoveBtn, MPanelVimeraRemoveBtn, MPanelYamiraRemoveBtn };
+                    var wizardButtons = new Button[] { MPanelAstelWizardBtn, MPanelEncryphixWizardBtn, MPanelGlowWizardBtn, MPanelVCardixWizardBtn, MPanelVimeraWizardBtn, MPanelYamiraWizardBtn, MPanelZafuseWizardBtn };
+                    var removeButtons = new Button[] { MPanelAstelRemoveBtn, MPanelEncryphixRemoveBtn, MPanelGlowRemoveBtn, MPanelVCardixRemoveBtn, MPanelVimeraRemoveBtn, MPanelYamiraRemoveBtn, MPanelZafuseRemoveBtn };
                     //
                     var soft_descriptions = new[]{
                         software_lang.TSReadLangs("TSWizardUI", "s_t_astel"),
@@ -358,9 +365,10 @@ namespace TSWizard{
                         software_lang.TSReadLangs("TSWizardUI", "s_t_vcardix"),
                         software_lang.TSReadLangs("TSWizardUI", "s_t_vimera"),
                         software_lang.TSReadLangs("TSWizardUI", "s_t_yamira"),
+                        software_lang.TSReadLangs("TSWizardUI", "s_t_zafuse"),
                     };
                     // UI Elements
-                    var infoLabels = new[] { MPanelAstelInText, MPanelEncryphixInText, MPanelGlowInText, MPanelVCardixInText, MPanelVimeraInText, MPanelYamiraInText };
+                    var infoLabels = new[] { MPanelAstelInText, MPanelEncryphixInText, MPanelGlowInText, MPanelVCardixInText, MPanelVimeraInText, MPanelYamiraInText, MPanelZafuseInText };
                     //
                     string statusText;
                     if (!__installed_status)
@@ -392,6 +400,7 @@ namespace TSWizard{
                             case 3: __vcardix_i_status = 1; Sc_v_mode(3, true); break;
                             case 4: __vimera_i_status = 1; Sc_v_mode(4, true); break;
                             case 5: __yamira_i_status = 1; Sc_v_mode(5, true); break;
+                            case 6: __zafuse_i_status = 1; Sc_v_mode(6, true); break;
                         }
                     }
                     //
@@ -403,6 +412,7 @@ namespace TSWizard{
                         case 3: __vcardix_u_status = updateStatus; break;
                         case 4: __vimera_u_status = updateStatus; break;
                         case 5: __yamira_u_status = updateStatus; break;
+                        case 6: __zafuse_u_status = updateStatus; break;
                     }
                     if (__notify_mode && updateStatus){
                         sUpdateNotList.Add(ts_softwares_list[__software_mode]);
@@ -425,7 +435,7 @@ namespace TSWizard{
         // CREATE A SHORTCUT MODULE
         // ======================================================================================================
         private void Sc_v_mode(int __s_software, bool __s_mode){
-            Control[] sc_btns = { MPanelAstelShortcutBtn, MPanelEncryphixShortcutBtn, MPanelGlowShortcutBtn, MPanelVCardixShortcutBtn, MPanelVimeraShortcutBtn, MPanelYamiraShortcutBtn };
+            Control[] sc_btns = { MPanelAstelShortcutBtn, MPanelEncryphixShortcutBtn, MPanelGlowShortcutBtn, MPanelVCardixShortcutBtn, MPanelVimeraShortcutBtn, MPanelYamiraShortcutBtn, MPanelZafuseShortcutBtn };
             //
             if (__s_software >= 0 && __s_software < sc_btns.Length){
                 sc_btns[__s_software].Enabled = __s_mode;
@@ -447,6 +457,7 @@ namespace TSWizard{
         private void MPanelVCardixShortcutBtn_Click(object sender, EventArgs e) { Handle_shortcut_config(3); }
         private void MPanelVimeraShortcutBtn_Click(object sender, EventArgs e){ Handle_shortcut_config(4); }
         private void MPanelYamiraShortcutBtn_Click(object sender, EventArgs e){ Handle_shortcut_config(5); }
+        private void MPanelZafuseShortcutBtn_Click(object sender, EventArgs e){ Handle_shortcut_config(6); }
         private void Sc_create_script(string __target_exe_path, int __s_mode){
             int scrollPos = InFLP.VerticalScroll.Value;
             InFLP.SuspendLayout();
@@ -489,6 +500,7 @@ namespace TSWizard{
         private void MPanelVCardixLinkText_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e){  Launch_software_details_dynamic(3); }
         private void MPanelVimeraLinkText_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e){ Launch_software_details_dynamic(4); }
         private void MPanelYamiraLinkText_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e){ Launch_software_details_dynamic(5); }
+        private void MPanelZafuseLinkText_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e){ Launch_software_details_dynamic(6); }
         private void Launch_software_details_dynamic(int s_mode){
             int scrollPos = InFLP.VerticalScroll.Value;
             InFLP.SuspendLayout();
@@ -552,6 +564,9 @@ namespace TSWizard{
         private async void MPanelYamiraWizardBtn_Click(object sender, EventArgs e){
             await HandleWizardButtonClickAsync(5, __yamira_i_status, __yamira_u_status, __yamira_version);
         }
+        private async void MPanelZafuseWizardBtn_Click(object sender, EventArgs e){
+            await HandleWizardButtonClickAsync(6, __zafuse_i_status, __zafuse_u_status, __zafuse_version);
+        }
         private async Task HandleWizardButtonClickAsync(int softwareIndex, int installedStatus, bool updateStatus, string softwareVersion){
             var scrollPos = InFLP.VerticalScroll.Value;
             InFLP.SuspendLayout();
@@ -592,6 +607,7 @@ namespace TSWizard{
                         case 3: __vcardix_u_status = false; break;
                         case 4: __vimera_u_status = false; break;
                         case 5: __yamira_u_status = false; break;
+                        case 6: __zafuse_u_status = false; break;
                     }
                 }
             }catch (Exception ex){
@@ -637,6 +653,7 @@ namespace TSWizard{
                 case 3: MPanelVCardixWizardBtn.Enabled = false; break;
                 case 4: MPanelVimeraWizardBtn.Enabled = false; break;
                 case 5: MPanelYamiraWizardBtn.Enabled = false; break;
+                case 6: MPanelZafuseWizardBtn.Enabled = false; break;
             }
             // Downlod request process
             try{
@@ -674,6 +691,7 @@ namespace TSWizard{
                                     case 3: MPanelVCardixWizardBtn.Text = string.Format(___local_down_message_2, progress); break;
                                     case 4: MPanelVimeraWizardBtn.Text = string.Format(___local_down_message_2, progress); break;
                                     case 5: MPanelYamiraWizardBtn.Text = string.Format(___local_down_message_2, progress); break;
+                                    case 6: MPanelZafuseWizardBtn.Text = string.Format(___local_down_message_2, progress); break;
                                 }
                             }
                         }
@@ -710,9 +728,9 @@ namespace TSWizard{
                 }
                 File.Delete(zipFilePath);
                 //
-                var statuses = new Action[] { () => __astel_i_status = 1, () => __encryphix_i_status = 1, () => __glow_i_status = 1, () => __vcardix_i_status = 1, () => __vimera_i_status = 1, () => __yamira_i_status = 1 };
-                var wizardButtons = new Button[] { MPanelAstelWizardBtn, MPanelEncryphixWizardBtn, MPanelGlowWizardBtn, MPanelVCardixWizardBtn, MPanelVimeraWizardBtn, MPanelYamiraWizardBtn };
-                var removeButtons = new Button[] { MPanelAstelRemoveBtn, MPanelEncryphixRemoveBtn, MPanelGlowRemoveBtn, MPanelVCardixRemoveBtn, MPanelVimeraRemoveBtn, MPanelYamiraRemoveBtn };
+                var statuses = new Action[] { () => __astel_i_status = 1, () => __encryphix_i_status = 1, () => __glow_i_status = 1, () => __vcardix_i_status = 1, () => __vimera_i_status = 1, () => __yamira_i_status = 1, () => __zafuse_i_status = 1 };
+                var wizardButtons = new Button[] { MPanelAstelWizardBtn, MPanelEncryphixWizardBtn, MPanelGlowWizardBtn, MPanelVCardixWizardBtn, MPanelVimeraWizardBtn, MPanelYamiraWizardBtn, MPanelZafuseWizardBtn };
+                var removeButtons = new Button[] { MPanelAstelRemoveBtn, MPanelEncryphixRemoveBtn, MPanelGlowRemoveBtn, MPanelVCardixRemoveBtn, MPanelVimeraRemoveBtn, MPanelYamiraRemoveBtn, MPanelZafuseRemoveBtn };
                 if (__software_mode >= 0 && __software_mode < statuses.Length){
                     statuses[__software_mode]();
                     wizardButtons[__software_mode].Text = software_lang.TSReadLangs("TSWizardUI", "s_launch");
@@ -728,9 +746,10 @@ namespace TSWizard{
                    software_lang.TSReadLangs("TSWizardUI", "s_t_glow"),
                    software_lang.TSReadLangs("TSWizardUI", "s_t_vcardix"),
                    software_lang.TSReadLangs("TSWizardUI", "s_t_vimera"),
-                   software_lang.TSReadLangs("TSWizardUI", "s_t_yamira")
+                   software_lang.TSReadLangs("TSWizardUI", "s_t_yamira"),
+                   software_lang.TSReadLangs("TSWizardUI", "s_t_zafuse"),
                 };
-                var infoLabels = new[] { MPanelAstelInText, MPanelEncryphixInText, MPanelGlowInText, MPanelVCardixInText, MPanelVimeraInText, MPanelYamiraInText };
+                var infoLabels = new[] { MPanelAstelInText, MPanelEncryphixInText, MPanelGlowInText, MPanelVCardixInText, MPanelVimeraInText, MPanelYamiraInText, MPanelZafuseInText };
                 if (__software_mode >= 0 && __software_mode < soft_descriptions.Length){
                     infoLabels[__software_mode].Text = $"{soft_descriptions[__software_mode]}\n{string.Format(software_lang.TSReadLangs("TSWizardUI", "s_u_no_available"), __software_version, "\n", TS_FormatSize(new DirectoryInfo(ts_softwares_location[__software_mode]).GetFiles("*", SearchOption.AllDirectories).Sum(f => f.Length)))}";
                 }
@@ -780,6 +799,11 @@ namespace TSWizard{
                 Ts_module_deleter_check(5);
             }catch (Exception){ }
         }
+        private void MPanelZafuseRemoveBtn_Click(object sender, EventArgs e){
+            try{
+                Ts_module_deleter_check(6);
+            }catch (Exception){ }
+        }
         private void Ts_module_deleter_check(int __software_mode){
             int scrollPos = InFLP.VerticalScroll.Value;
             InFLP.SuspendLayout();
@@ -812,7 +836,7 @@ namespace TSWizard{
                     //
                     Directory.Delete(__target_software_path, recursive: false);
                     //
-                    var soft_status = new Action[] { () => __astel_i_status = 0, () => __encryphix_i_status = 0, () => __glow_i_status = 0, () => __vcardix_i_status = 0, () => __vimera_i_status = 0, () => __yamira_i_status = 0 };
+                    var soft_status = new Action[] { () => __astel_i_status = 0, () => __encryphix_i_status = 0, () => __glow_i_status = 0, () => __vcardix_i_status = 0, () => __vimera_i_status = 0, () => __yamira_i_status = 0, () => __zafuse_i_status = 0 };
                     //
                     if (__software_mode >= 0 && __software_mode < soft_status.Length){
                         soft_status[__software_mode]();
@@ -895,6 +919,7 @@ namespace TSWizard{
                     TSImageRenderer(MPanelVCardixShortcutBtn, Properties.Resources.ct_shortcut_light, 0, ContentAlignment.MiddleCenter);
                     TSImageRenderer(MPanelVimeraShortcutBtn, Properties.Resources.ct_shortcut_light, 0, ContentAlignment.MiddleCenter);
                     TSImageRenderer(MPanelYamiraShortcutBtn, Properties.Resources.ct_shortcut_light, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MPanelZafuseShortcutBtn, Properties.Resources.ct_shortcut_light, 0, ContentAlignment.MiddleCenter);
                     //
                     TSImageRenderer(MPanelAstelRemoveBtn, Properties.Resources.ct_delete_light, 15, ContentAlignment.MiddleLeft);
                     TSImageRenderer(MPanelEncryphixRemoveBtn, Properties.Resources.ct_delete_light, 15, ContentAlignment.MiddleLeft);
@@ -902,6 +927,7 @@ namespace TSWizard{
                     TSImageRenderer(MPanelVCardixRemoveBtn, Properties.Resources.ct_delete_light, 15, ContentAlignment.MiddleLeft);
                     TSImageRenderer(MPanelVimeraRemoveBtn, Properties.Resources.ct_delete_light, 15, ContentAlignment.MiddleLeft);
                     TSImageRenderer(MPanelYamiraRemoveBtn, Properties.Resources.ct_delete_light, 15, ContentAlignment.MiddleLeft);
+                    TSImageRenderer(MPanelZafuseRemoveBtn, Properties.Resources.ct_delete_light, 15, ContentAlignment.MiddleLeft);
                 }else if (theme == 0){
                     TSImageRenderer(settingsToolStripMenuItem, Properties.Resources.tm_settings_dark, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(themeToolStripMenuItem, Properties.Resources.tm_theme_dark, 0, ContentAlignment.MiddleRight);
@@ -925,6 +951,7 @@ namespace TSWizard{
                     TSImageRenderer(MPanelVCardixShortcutBtn, Properties.Resources.ct_shortcut_dark, 0, ContentAlignment.MiddleCenter);
                     TSImageRenderer(MPanelVimeraShortcutBtn, Properties.Resources.ct_shortcut_dark, 0, ContentAlignment.MiddleCenter);
                     TSImageRenderer(MPanelYamiraShortcutBtn, Properties.Resources.ct_shortcut_dark, 0, ContentAlignment.MiddleCenter);
+                    TSImageRenderer(MPanelZafuseShortcutBtn, Properties.Resources.ct_shortcut_dark, 0, ContentAlignment.MiddleCenter);
                     //
                     TSImageRenderer(MPanelAstelRemoveBtn, Properties.Resources.ct_delete_dark, 15, ContentAlignment.MiddleLeft);
                     TSImageRenderer(MPanelEncryphixRemoveBtn, Properties.Resources.ct_delete_dark, 15, ContentAlignment.MiddleLeft);
@@ -932,6 +959,7 @@ namespace TSWizard{
                     TSImageRenderer(MPanelVCardixRemoveBtn, Properties.Resources.ct_delete_dark, 15, ContentAlignment.MiddleLeft);
                     TSImageRenderer(MPanelVimeraRemoveBtn, Properties.Resources.ct_delete_dark, 15, ContentAlignment.MiddleLeft);
                     TSImageRenderer(MPanelYamiraRemoveBtn, Properties.Resources.ct_delete_dark, 15, ContentAlignment.MiddleLeft);
+                    TSImageRenderer(MPanelZafuseRemoveBtn, Properties.Resources.ct_delete_dark, 15, ContentAlignment.MiddleLeft);
                 }
                 // TOOLTIP
                 MainToolTip.ForeColor = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor");
@@ -964,6 +992,7 @@ namespace TSWizard{
                 MPanelVCardix.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
                 MPanelVimera.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
                 MPanelYamira.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
+                MPanelZafuse.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
                 //
                 MPanelAstelImage.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
                 MPanelEncryphixImage.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
@@ -971,6 +1000,7 @@ namespace TSWizard{
                 MPanelVCardixImage.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
                 MPanelVimeraImage.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
                 MPanelYamiraImage.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
+                MPanelZafuseImage.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor1");
                 //
                 MPanelAstelHeadText.ForeColor = TS_ThemeEngine.ColorMode(theme, "AstelFE");
                 MPanelEncryphixHeadText.ForeColor = TS_ThemeEngine.ColorMode(theme, "EncryphixFE");
@@ -978,6 +1008,7 @@ namespace TSWizard{
                 MPanelVCardixHeadText.ForeColor = TS_ThemeEngine.ColorMode(theme, "VCardixFE");
                 MPanelVimeraHeadText.ForeColor = TS_ThemeEngine.ColorMode(theme, "VimeraFE");
                 MPanelYamiraHeadText.ForeColor = TS_ThemeEngine.ColorMode(theme, "YamiraFE");
+                MPanelZafuseHeadText.ForeColor = TS_ThemeEngine.ColorMode(theme, "ZafuseFE");
                 //
                 MPanelAstelLinkText.LinkColor = TS_ThemeEngine.ColorMode(theme, "AstelFE");
                 MPanelEncryphixLinkText.LinkColor = TS_ThemeEngine.ColorMode(theme, "EncryphixFE");
@@ -985,6 +1016,7 @@ namespace TSWizard{
                 MPanelVCardixLinkText.LinkColor = TS_ThemeEngine.ColorMode(theme, "VCardixFE");
                 MPanelVimeraLinkText.LinkColor = TS_ThemeEngine.ColorMode(theme, "VimeraFE");
                 MPanelYamiraLinkText.LinkColor = TS_ThemeEngine.ColorMode(theme, "YamiraFE");
+                MPanelZafuseLinkText.LinkColor = TS_ThemeEngine.ColorMode(theme, "ZafuseFE");
                 //
                 MPanelAstelInText.ForeColor = TS_ThemeEngine.ColorMode(theme, "UIFEColor2");
                 MPanelEncryphixInText.ForeColor = TS_ThemeEngine.ColorMode(theme, "UIFEColor2");
@@ -992,6 +1024,7 @@ namespace TSWizard{
                 MPanelVCardixInText.ForeColor = TS_ThemeEngine.ColorMode(theme, "UIFEColor2");
                 MPanelVimeraInText.ForeColor = TS_ThemeEngine.ColorMode(theme, "UIFEColor2");
                 MPanelYamiraInText.ForeColor = TS_ThemeEngine.ColorMode(theme, "UIFEColor2");
+                MPanelZafuseInText.ForeColor = TS_ThemeEngine.ColorMode(theme, "UIFEColor2");
                 //
                 MPanelAstelLinkText.ActiveLinkColor = TS_ThemeEngine.ColorMode(theme, "AstelFEHover");
                 MPanelEncryphixLinkText.ActiveLinkColor = TS_ThemeEngine.ColorMode(theme, "EncryphixFEHover");
@@ -999,6 +1032,7 @@ namespace TSWizard{
                 MPanelVCardixLinkText.ActiveLinkColor = TS_ThemeEngine.ColorMode(theme, "VCardixFEHover");
                 MPanelVimeraLinkText.ActiveLinkColor = TS_ThemeEngine.ColorMode(theme, "VimeraFEHover");
                 MPanelYamiraLinkText.ActiveLinkColor = TS_ThemeEngine.ColorMode(theme, "YamiraFEHover");
+                MPanelZafuseLinkText.ActiveLinkColor = TS_ThemeEngine.ColorMode(theme, "ZafuseFEHover");
                 //
                 MPanelAstelSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
                 MPanelEncryphixSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
@@ -1006,6 +1040,7 @@ namespace TSWizard{
                 MPanelVCardixSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
                 MPanelVimeraSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
                 MPanelYamiraSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
+                MPanelZafuseSCPanel.BackColor = TS_ThemeEngine.ColorMode(theme, "UIBGColor2");
                 //
                 MPanelAstelWizardBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
                 MPanelEncryphixWizardBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
@@ -1013,6 +1048,7 @@ namespace TSWizard{
                 MPanelVCardixWizardBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
                 MPanelVimeraWizardBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
                 MPanelYamiraWizardBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
+                MPanelZafuseWizardBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
                 //
                 Dynamic_button_colors(0, (__astel_i_status == 0) ? 1 : (__astel_u_status ? 2 : 0));
                 Dynamic_button_colors(1, (__encryphix_i_status == 0) ? 1 : (__encryphix_u_status ? 2 : 0));
@@ -1020,6 +1056,7 @@ namespace TSWizard{
                 Dynamic_button_colors(3, (__vcardix_i_status == 0) ? 1 : (__vcardix_u_status ? 2 : 0));
                 Dynamic_button_colors(4, (__vimera_i_status == 0) ? 1 : (__vimera_u_status ? 2 : 0));
                 Dynamic_button_colors(5, (__yamira_i_status == 0) ? 1 : (__yamira_u_status ? 2 : 0));
+                Dynamic_button_colors(6, (__zafuse_i_status == 0) ? 1 : (__zafuse_u_status ? 2 : 0));
                 // BUTTON REMOVE
                 // ===========================================
                 MPanelAstelRemoveBtn.BackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBG");
@@ -1028,6 +1065,7 @@ namespace TSWizard{
                 MPanelVCardixRemoveBtn.BackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBG");
                 MPanelVimeraRemoveBtn.BackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBG");
                 MPanelYamiraRemoveBtn.BackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBG");
+                MPanelZafuseRemoveBtn.BackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBG");
                 //
                 MPanelAstelRemoveBtn.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBG");
                 MPanelEncryphixRemoveBtn.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBG");
@@ -1035,6 +1073,7 @@ namespace TSWizard{
                 MPanelVCardixRemoveBtn.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBG");
                 MPanelVimeraRemoveBtn.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBG");
                 MPanelYamiraRemoveBtn.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBG");
+                MPanelZafuseRemoveBtn.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBG");
                 //
                 MPanelAstelRemoveBtn.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBGHover");
                 MPanelEncryphixRemoveBtn.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBGHover");
@@ -1042,6 +1081,7 @@ namespace TSWizard{
                 MPanelVCardixRemoveBtn.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBGHover");
                 MPanelVimeraRemoveBtn.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBGHover");
                 MPanelYamiraRemoveBtn.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBGHover");
+                MPanelZafuseRemoveBtn.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBGHover");
                 //
                 MPanelAstelRemoveBtn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBGHover");
                 MPanelEncryphixRemoveBtn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBGHover");
@@ -1049,6 +1089,7 @@ namespace TSWizard{
                 MPanelVCardixRemoveBtn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBGHover");
                 MPanelVimeraRemoveBtn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBGHover");
                 MPanelYamiraRemoveBtn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBGHover");
+                MPanelZafuseRemoveBtn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(theme, "BtnDeleteBGHover");
                 //
                 MPanelAstelRemoveBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
                 MPanelEncryphixRemoveBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
@@ -1056,6 +1097,7 @@ namespace TSWizard{
                 MPanelVCardixRemoveBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
                 MPanelVimeraRemoveBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
                 MPanelYamiraRemoveBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
+                MPanelZafuseRemoveBtn.ForeColor = TS_ThemeEngine.ColorMode(theme, "BtnFEColor1");
                 // OTHER PAGE DYNAMIC UI
                 Software_other_page_preloader();
             }catch (Exception){ }
@@ -1120,6 +1162,9 @@ namespace TSWizard{
                     case 5:
                         selectedButton = MPanelYamiraWizardBtn;
                         break;
+                    case 6:
+                        selectedButton = MPanelZafuseWizardBtn;
+                        break;
                 }
                 switch (__button_status){
                     case 0:
@@ -1145,7 +1190,7 @@ namespace TSWizard{
             var baseColor = TS_ThemeEngine.ColorMode(theme, baseColorKey);
             var hoverColor = TS_ThemeEngine.ColorMode(theme, hoverColorKey);
             if (__button_mode == -1){
-                var buttons = new Button[] { MPanelAstelWizardBtn, MPanelGlowWizardBtn, MPanelVimeraWizardBtn, MPanelYamiraWizardBtn, MPanelEncryphixWizardBtn, MPanelVCardixWizardBtn };
+                var buttons = new Button[] { MPanelAstelWizardBtn, MPanelEncryphixWizardBtn, MPanelGlowWizardBtn, MPanelVCardixWizardBtn, MPanelVimeraWizardBtn, MPanelYamiraWizardBtn, MPanelZafuseWizardBtn };
                 foreach (var btn in buttons){
                     btn.BackColor = baseColor;
                     btn.FlatAppearance.BorderColor = baseColor;
@@ -1291,6 +1336,7 @@ namespace TSWizard{
                         case 3: MPanelVCardixHeadText.Text = s_name; break;
                         case 4: MPanelVimeraHeadText.Text = s_name; break;
                         case 5: MPanelYamiraHeadText.Text = s_name; break;
+                        case 6: MPanelZafuseHeadText.Text = s_name; break;
                     }
                 }
                 //
@@ -1300,6 +1346,7 @@ namespace TSWizard{
                 MPanelVCardixLinkText.Text = software_lang.TSReadLangs("TSWizardUI", "s_d_text");
                 MPanelVimeraLinkText.Text = software_lang.TSReadLangs("TSWizardUI", "s_d_text");
                 MPanelYamiraLinkText.Text = software_lang.TSReadLangs("TSWizardUI", "s_d_text");
+                MPanelZafuseLinkText.Text = software_lang.TSReadLangs("TSWizardUI", "s_d_text");
                 //
                 MPanelAstelRemoveBtn.Text = software_lang.TSReadLangs("TSWizardUI", "s_delete") + " ";
                 MPanelEncryphixRemoveBtn.Text = software_lang.TSReadLangs("TSWizardUI", "s_delete") + " ";
@@ -1307,6 +1354,7 @@ namespace TSWizard{
                 MPanelVCardixRemoveBtn.Text = software_lang.TSReadLangs("TSWizardUI", "s_delete") + " ";
                 MPanelVimeraRemoveBtn.Text = software_lang.TSReadLangs("TSWizardUI", "s_delete") + " ";
                 MPanelYamiraRemoveBtn.Text = software_lang.TSReadLangs("TSWizardUI", "s_delete") + " ";
+                MPanelZafuseRemoveBtn.Text = software_lang.TSReadLangs("TSWizardUI", "s_delete") + " ";
                 //
                 MainToolTip.SetToolTip(MPanelAstelShortcutBtn, software_lang.TSReadLangs("TSWizardUI", "s_sc_text"));
                 MainToolTip.SetToolTip(MPanelEncryphixShortcutBtn, software_lang.TSReadLangs("TSWizardUI", "s_sc_text"));
@@ -1314,6 +1362,7 @@ namespace TSWizard{
                 MainToolTip.SetToolTip(MPanelVCardixShortcutBtn, software_lang.TSReadLangs("TSWizardUI", "s_sc_text"));
                 MainToolTip.SetToolTip(MPanelVimeraShortcutBtn, software_lang.TSReadLangs("TSWizardUI", "s_sc_text"));
                 MainToolTip.SetToolTip(MPanelYamiraShortcutBtn, software_lang.TSReadLangs("TSWizardUI", "s_sc_text"));
+                MainToolTip.SetToolTip(MPanelZafuseShortcutBtn, software_lang.TSReadLangs("TSWizardUI", "s_sc_text"));
                 //
                 Dynamic_button_colors(0, (__astel_i_status == 0) ? 1 : (__astel_u_status ? 2 : 0));
                 Dynamic_button_colors(1, (__encryphix_i_status == 0) ? 1 : (__encryphix_u_status ? 2 : 0));
@@ -1321,6 +1370,7 @@ namespace TSWizard{
                 Dynamic_button_colors(3, (__vcardix_i_status == 0) ? 1 : (__vcardix_u_status ? 2 : 0));
                 Dynamic_button_colors(4, (__vimera_i_status == 0) ? 1 : (__vimera_u_status ? 2 : 0));
                 Dynamic_button_colors(5, (__yamira_i_status == 0) ? 1 : (__yamira_u_status ? 2 : 0));
+                Dynamic_button_colors(6, (__zafuse_i_status == 0) ? 1 : (__zafuse_u_status ? 2 : 0));
                 // OTHER PAGE DYNAMIC UI
                 Software_other_page_preloader();
             }catch (Exception){ }
@@ -1473,6 +1523,7 @@ namespace TSWizard{
                 __vcardix_i_status,
                 __vimera_i_status,
                 __yamira_i_status,
+                __zafuse_i_status,
             };
             bool[] update_status = new bool[]{
                 __astel_u_status,
@@ -1481,6 +1532,7 @@ namespace TSWizard{
                 __vcardix_u_status,
                 __vimera_u_status,
                 __yamira_u_status,
+                __zafuse_u_status,
             };
             //
             if (!install_status.Any(i_status => i_status != 0)){

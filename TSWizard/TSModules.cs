@@ -334,6 +334,8 @@ namespace TSWizard{
                 { "VimeraFEHover", Color.FromArgb(133, 96, 197) },
                 { "YamiraFE", Color.FromArgb(207, 24, 0) },
                 { "YamiraFEHover", Color.FromArgb(226, 38, 13) },
+                { "ZafuseFE", Color.FromArgb(158, 32, 81) },
+                { "ZafuseFEHover", Color.FromArgb(184, 36, 93) },
                 // DYNAMIC BUTTON COLOR
                 { "BtnLaunchBG", Color.FromArgb(54, 95, 146) },
                 { "BtnLaunchBGHover", Color.FromArgb(63, 109, 165) },
@@ -394,6 +396,8 @@ namespace TSWizard{
                 { "VimeraFEHover", Color.FromArgb(176, 136, 245) },
                 { "YamiraFE", Color.FromArgb(255, 77, 77) },
                 { "YamiraFEHover", Color.FromArgb(255, 88, 88) },
+                { "ZafuseFE", Color.FromArgb(211, 104, 159) },
+                { "ZafuseFEHover", Color.FromArgb(211, 113, 164) },
                 // DYNAMIC BUTTON COLOR
                 { "BtnLaunchBG", Color.FromArgb(88, 153, 233) },
                 { "BtnLaunchBGHover", Color.FromArgb(93, 165, 253) },

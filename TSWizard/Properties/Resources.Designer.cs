@@ -333,6 +333,16 @@ namespace TSWizard.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap mb_8 {
+            get {
+                object obj = ResourceManager.GetObject("mb_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap st_check_update_dark {
             get {
                 object obj = ResourceManager.GetObject("st_check_update_dark", resourceCulture);
@@ -676,6 +686,26 @@ namespace TSWizard.Properties {
         internal static System.Drawing.Bitmap yamira_logo {
             get {
                 object obj = ResourceManager.GetObject("yamira_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap zafuse_banner {
+            get {
+                object obj = ResourceManager.GetObject("zafuse_banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap zafuse_logo {
+            get {
+                object obj = ResourceManager.GetObject("zafuse_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

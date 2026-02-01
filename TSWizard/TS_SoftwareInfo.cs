@@ -94,6 +94,19 @@ namespace TSWizard{
                     Git_link = "https://github.com/turkaysoftware/yamira",
                     Pn_link = "https://www.turkaysoftware.com/yamira-pn",
                     Ts_website = "https://www.turkaysoftware.com",
+                },
+                // Zafuse
+                new TS_S_Detail {
+                    Name = "Zafuse",
+                    Developer = "Türkay Software",
+                    Copyright = "© 2025-2026, Eray Türkay.",
+                    Platform = "Windows / 10 - 11",
+                    Architectural = "x64 (64 Bit) / ARM64",
+                    Language = "AR, ZH, EN, NL, FR, DE, HI, IT, JA, KO, PL, PT, RU, ES, TR",
+                    Req = " Windows 10 x64\nRAM: 75 MB\n.NET: .NET Framework 4.8.1",
+                    Git_link = "https://github.com/turkaysoftware/zafuse",
+                    Pn_link = "https://www.turkaysoftware.com/zafuse-pn",
+                    Ts_website = "https://www.turkaysoftware.com",
                 }
             };
         }

@@ -62,6 +62,9 @@ namespace TSWizard{
                 case 5:
                     Load_software_info_ui(5, TSWizardMain.__yamira_version);
                     break;
+                case 6:
+                    Load_software_info_ui(6, TSWizardMain.__zafuse_version);
+                    break;
             }
         }
         // PRELOADER UI
@@ -118,6 +121,12 @@ namespace TSWizard{
                         SInfo.Text = software_lang.TSReadLangs("TSWizardUI", "s_t_yamira");
                         SInfoDetail.Text = software_lang.TSReadLangs("TSWizardUI", "s_d_yamira");
                         break;
+                    case 6:
+                        Text = string.Format(software_lang.TSReadLangs("SoftwareDetail", "sd_title"), Application.ProductName, TSWizardMain.ts_softwares_list[6]);
+                        TSImageRenderer(SLogo, Properties.Resources.zafuse_logo, 0, ContentAlignment.MiddleCenter);
+                        SInfo.Text = software_lang.TSReadLangs("TSWizardUI", "s_t_zafuse");
+                        SInfoDetail.Text = software_lang.TSReadLangs("TSWizardUI", "s_d_zafuse");
+                        break;
                 }
                 //
                 LDeveloper.Text = software_lang.TSReadLangs("SoftwareDetail", "sd_developer");
@@ -154,7 +163,7 @@ namespace TSWizard{
         // DYNAMIC COLOR UI TITLE
         // ======================================================================================================
         private void Text_title_color_ui(int s_mode){
-            string[] colorModes = { "AstelFE", "EncryphixFE", "GlowFE", "VCardixFE", "VimeraFE", "YamiraFE" };
+            string[] colorModes = { "AstelFE", "EncryphixFE", "GlowFE", "VCardixFE", "VimeraFE", "YamiraFE", "ZafuseFE" };
             //
             if (s_mode < 0 || s_mode >= colorModes.Length)
                 return;

@@ -199,6 +199,9 @@
   <data name="mb_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\tswizard_images\tswizard_interface\main_banner\mb_7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mb_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\tswizard_images\tswizard_interface\main_banner\mb_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="st_check_update_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\tswizard_images\tswizard_ui\theme_dark\st_check_update_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -303,5 +306,11 @@
   </data>
   <data name="yamira_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\tswizard_images\tswizard_interface\software_logo\yamira_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zafuse_banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\tswizard_images\tswizard_interface\software_banner\zafuse_banner.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zafuse_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\tswizard_images\tswizard_interface\software_logo\zafuse_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
