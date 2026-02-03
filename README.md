@@ -1,9 +1,10 @@
 # 🧙‍♂️ TS Wizard | Advanced Software Management Suite
 
-![GitHub Repo stars](https://img.shields.io/github/stars/turkaysoftware/tswizard?style=for-the-badge&color=gold)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/turkaysoftware/tswizard?style=for-the-badge&color=blue)
-![GitHub license](https://img.shields.io/github/license/turkaysoftware/tswizard?style=for-the-badge)
-![Platform](https://img.shields.io/badge/platform-Windows-0078D4?style=for-the-badge&logo=windows)
+![GitHub all releases](https://img.shields.io/github/downloads/turkaysoftware/tswizard/total?style=for-the-badge&color=DF313F)
+![GitHub Repo stars](https://img.shields.io/github/stars/turkaysoftware/tswizard?style=for-the-badge&color=167C33)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/turkaysoftware/tswizard?style=for-the-badge&color=9A194C)
+![Platform](https://img.shields.io/badge/platform-Windows-366194?style=for-the-badge&logo=windows)
+![GitHub license](https://img.shields.io/github/license/turkaysoftware/tswizard?style=for-the-badge&color=17796E)
 
 **TS Wizard** is a powerful **central management software** developed by **Eray Türkay**. It is designed to act as a unified hub, allowing you to manage and launch all Türkay Software solutions under one roof. Featuring a simple, user-friendly interface, it bridges the gap between complex system tools and effortless management.
 
@@ -12,7 +13,7 @@
 ### ☕ Support the Project
 TS Wizard is free and will always be. If you find it useful, consider supporting the development!
 
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-orange?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/turkaysoftware)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-DF313F?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/turkaysoftware)
 
 [Official Website](https://www.turkaysoftware.com/ts-wizard) | [Report a Bug](https://github.com/turkaysoftware/tswizard/issues)
 
