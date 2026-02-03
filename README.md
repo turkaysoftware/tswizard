@@ -38,14 +38,12 @@ TS Wizard provides a seamless environment for managing your software ecosystem:
 * **Intelligent Notifications:** Stay updated with non-intrusive alerts when new software versions are available.
 * **Background Mode:** Optionally runs in the tray to monitor updates without cluttering your taskbar.
 * **Desktop Shortcuts:** Easily create shortcuts for your downloaded tools directly through the wizard.
-* **Translation Support:** Open to community contributions for global accessibility.
 
 ---
 
 ## 📸 Interface Preview
 
 ![TS Wizard UI](https://github.com/user-attachments/assets/4f2a079c-270d-45a8-8d36-5016ed14bafc)
-> *Manage your entire software library with the intuitive TS Wizard interface.*
 
 ---
 
@@ -55,6 +53,7 @@ TS Wizard provides a seamless environment for managing your software ecosystem:
 | :--- | :--- | :--- |
 | **OS** | Windows 10 x64 | Windows 10 22H2 x64 |
 | **RAM** | 50 MB Free RAM | 75 MB Free RAM |
+| **Internet** | Active Internet Connection | Active Internet Connection |
 | **.NET** | .NET Framework 4.8.1 | .NET Framework 4.8.1 |
 
 ---
@@ -72,12 +71,12 @@ TS Wizard provides a seamless environment for managing your software ecosystem:
 
 ## 🛡️ Security & Integrity
 
-* **Zero Export Policy:** Your privacy is the priority; no data leaves your machine.
-* **No Dependencies:** Since it’s purely built, there’s no risk from third-party library vulnerabilities.
-* **Open Communication:** Transparent update and notification system.
+* **Zero Data Export Policy:** Your privacy is our priority; no data leaves your machine.
+* **No Dependencies:** Developed entirely from scratch using its own source code, there are no risks from security vulnerabilities in third-party libraries.
+* **Open Source:** All source code for the program is open and can be reviewed by anyone.
 
 ---
 
 ## 📄 License
 
-This software is provided for free as part of the Türkay Software solutions suite.
+This software is offered free of charge as part of the **Türkay Software solutions package** and is protected under the [**MIT License**](https://github.com/turkaysoftware/tswizard?tab=MIT-1-ov-file).
