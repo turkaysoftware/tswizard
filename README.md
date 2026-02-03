@@ -10,7 +10,7 @@
 ---
 
 ### ☕ Support the Project
-TS Wizard is completely free to use. If you'd like to support the development and help maintain these tools, consider donating!
+TS Wizard is free and will always be. If you find it useful, consider supporting the development!
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-orange?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/turkaysoftware)
 
