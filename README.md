@@ -69,7 +69,7 @@ TS Wizard provides a seamless environment for managing your software ecosystem:
 
 ---
 
-## 🛡️ Security & Integrity
+## 🛡️ Security
 
 * **Zero Data Export Policy:** Your privacy is our priority; no data leaves your machine.
 * **No Dependencies:** Developed entirely from scratch using its own source code, there are no risks from security vulnerabilities in third-party libraries.
