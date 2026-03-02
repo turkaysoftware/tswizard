@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace TSWizard{
     public class TS_S_Detail{
@@ -12,6 +14,7 @@ namespace TSWizard{
         public string Git_link { get; set; }
         public string Pn_link { get; set; }
         public string Ts_website { get; set; }
+        public static string CopyrightMain = "Eray Türkay";
     }
     public class TS_SoftwareInfo{
         public List<TS_S_Detail> TSSoftwareList { get; private set; }
@@ -20,8 +23,8 @@ namespace TSWizard{
                 // Astel
                 new TS_S_Detail {
                     Name = "Astel",
-                    Developer = "Türkay Software",
-                    Copyright = "© 2024-2025, Eray Türkay.",
+                    Developer = Application.CompanyName,
+                    Copyright = string.Format("\u00a9 2024-{0}, {1}.", DateTime.Now.Year, TS_S_Detail.CopyrightMain),
                     Platform = "Windows / 10 - 11",
                     Architectural = "x64 (64 Bit) / ARM64",
                     Language = "AR, ZH, EN, NL, FR, DE, HI, IT, JA, KO, PL, PT, RU, ES, TR",
@@ -33,8 +36,8 @@ namespace TSWizard{
                 // Encryphix
                 new TS_S_Detail {
                     Name = "Encryphix",
-                    Developer = "Türkay Software",
-                    Copyright = "© 2025, Eray Türkay.",
+                    Developer = Application.CompanyName,
+                    Copyright = string.Format("\u00a9 2025-{0}, {1}.", DateTime.Now.Year, TS_S_Detail.CopyrightMain),
                     Platform = "Windows / 10 - 11",
                     Architectural = "x64 (64 Bit) / ARM64",
                     Language = "AR, ZH, EN, NL, FR, DE, HI, IT, JA, KO, PL, PT, RU, ES, TR",
@@ -46,8 +49,8 @@ namespace TSWizard{
                 // Glow
                 new TS_S_Detail {
                     Name = "Glow",
-                    Developer = "Türkay Software",
-                    Copyright = "© 2019-2025, Eray Türkay.",
+                    Developer = Application.CompanyName,
+                    Copyright = string.Format("\u00a9 2019-{0}, {1}.", DateTime.Now.Year, TS_S_Detail.CopyrightMain),
                     Platform = "Windows / 10 - 11",
                     Architectural = "x64 (64 Bit) / ARM64",
                     Language = "AR, ZH, EN, NL, FR, DE, HI, IT, JA, KO, PL, PT, RU, ES, TR",
@@ -59,8 +62,8 @@ namespace TSWizard{
                 // VCardix
                 new TS_S_Detail {
                     Name = "VCardix",
-                    Developer = "Türkay Software",
-                    Copyright = "© 2025, Eray Türkay.",
+                    Developer = Application.CompanyName,
+                    Copyright = string.Format("\u00a9 2025-{0}, {1}.", DateTime.Now.Year, TS_S_Detail.CopyrightMain),
                     Platform = "Windows / 10 - 11",
                     Architectural = "x64 (64 Bit) / ARM64",
                     Language = "AR, ZH, EN, NL, FR, DE, HI, IT, JA, KO, PL, PT, RU, ES, TR",
@@ -72,8 +75,8 @@ namespace TSWizard{
                 // Vimera
                 new TS_S_Detail {
                     Name = "Vimera",
-                    Developer = "Türkay Software",
-                    Copyright = "© 2023-2025, Eray Türkay.",
+                    Developer = Application.CompanyName,
+                    Copyright = string.Format("\u00a9 2023-{0}, {1}.", DateTime.Now.Year, TS_S_Detail.CopyrightMain),
                     Platform = "Windows / 10 - 11",
                     Architectural = "x64 (64 Bit) / ARM64",
                     Language = "AR, ZH, EN, NL, FR, DE, HI, IT, JA, KO, PL, PT, RU, ES, TR",
@@ -85,8 +88,8 @@ namespace TSWizard{
                 // Yamira
                 new TS_S_Detail {
                     Name = "Yamira",
-                    Developer = "Türkay Software",
-                    Copyright = "© 2024-2025, Eray Türkay.",
+                    Developer = Application.CompanyName,
+                    Copyright = string.Format("\u00a9 2024-{0}, {1}.", DateTime.Now.Year, TS_S_Detail.CopyrightMain),
                     Platform = "Windows / 10 - 11",
                     Architectural = "x64 (64 Bit) / ARM64",
                     Language = "AR, ZH, EN, NL, FR, DE, HI, IT, JA, KO, PL, PT, RU, ES, TR",
@@ -98,8 +101,8 @@ namespace TSWizard{
                 // Zafuse
                 new TS_S_Detail {
                     Name = "Zafuse",
-                    Developer = "Türkay Software",
-                    Copyright = "© 2025-2026, Eray Türkay.",
+                    Developer = Application.CompanyName,
+                    Copyright = string.Format("\u00a9 2025-{0}, {1}.", DateTime.Now.Year, TS_S_Detail.CopyrightMain),
                     Platform = "Windows / 10 - 11",
                     Architectural = "x64 (64 Bit) / ARM64",
                     Language = "AR, ZH, EN, NL, FR, DE, HI, IT, JA, KO, PL, PT, RU, ES, TR",
