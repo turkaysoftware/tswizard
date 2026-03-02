@@ -44,7 +44,7 @@ TS Wizard provides a seamless environment for managing your software ecosystem:
 
 ## 📸 Interface Preview
 
-<img width="1010" height="633" alt="TS Wizard UI" src="https://github.com/user-attachments/assets/6e934147-09fb-4b9a-9e56-cf4bd9920e44" />
+<img width="1010" height="633" alt="TS Wizard UI" src="https://github.com/user-attachments/assets/cdff6ebc-5a89-4e4f-a40d-d28ade92b2a6" />
 
 ---
 
