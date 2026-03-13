@@ -1,4 +1,4 @@
-# 🧙‍♂️ TS Wizard | Advanced Software Management Suite
+# 🧙‍♂️ TS Wizard - Advanced Software Management Suite
 
 ![GitHub all releases](https://img.shields.io/github/downloads/turkaysoftware/tswizard/total?style=for-the-badge&color=DF313F)
 ![GitHub Repo stars](https://img.shields.io/github/stars/turkaysoftware/tswizard?style=for-the-badge&color=167C33)
